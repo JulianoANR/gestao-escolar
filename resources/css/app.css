@@ -1,0 +1,276 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --color-primary: 37 99 235;
+        --color-secondary: 35 35 49;
+        --color-success: 16 185 129;
+        --color-danger: 239 68 68;
+        --color-warning: 251 146 60;
+        --color-info: 6 182 212;
+        --color-info-active: 8 145 178;
+        --color-primary-active: 33 89 212;
+        --color-secondary-active: 28 28 38;
+        --color-success-active: 5 150 105;
+        --color-danger-active: 220 38 38;
+        --color-warning-active: 249 115 22;
+
+        --bg-theme: 35 35 49;
+        --bg-header: var(--bg-theme);
+        --bg-body: 248 250 252;
+        --bg-aside: 255 255 255;
+    }
+
+    .dark {
+        --bg-theme: 33 33 33;
+        --bg-header: var(--bg-theme);
+        --bg-body: 24 24 24;
+        --bg-aside: 28 28 28;
+
+        color-scheme: dark;
+    }
+
+    body {
+        @apply text-sm text-gray-600 dark:text-gray-400;
+    }
+}
+
+@layer components {
+
+    /* Buttons */
+    .button {
+        @apply inline-flex justify-center items-center gap-2 relative px-4 py-2 text-sm text-white shadow font-medium tracking-wider rounded-sm border border-transparent transition uppercase cursor-pointer
+        focus:outline-none focus:ring disabled:cursor-not-allowed disabled:ring-0;
+    }
+
+    .button-lg {
+        @apply text-base px-5 py-2.5;
+    }
+
+    .button-sm {
+        @apply px-2 py-1.5;
+    }
+
+    .button-xs {
+        @apply text-xs px-1.5 py-1;
+    }
+
+    .button-primary {
+        @apply bg-primary ring-primary/30 hover:bg-primary-active disabled:bg-primary/60;
+    }
+
+    .button-secondary {
+        @apply bg-secondary ring-secondary/30 hover:bg-secondary-active disabled:bg-secondary/60;
+    }
+
+    .button-success {
+        @apply bg-success ring-success/30 hover:bg-success-active disabled:bg-success/60;
+    }
+
+    .button-danger {
+        @apply bg-danger ring-danger/30 hover:bg-danger-active disabled:bg-danger/60;
+    }
+
+    .button-warning {
+        @apply bg-warning ring-warning/30 hover:bg-warning-active disabled:bg-warning/60;
+    }
+
+    .button-info {
+        @apply bg-info ring-info/30 hover:bg-info-active disabled:bg-info/60;
+    }
+
+    .button-primary-outline {
+        @apply bg-transparent border-primary text-primary hover:bg-primary hover:text-white focus:bg-primary focus:text-white ring-primary/30;
+    }
+
+    .button-secondary-outline {
+        @apply bg-transparent border-secondary text-secondary hover:bg-secondary hover:text-white focus:bg-secondary focus:text-white ring-secondary/30;
+    }
+
+    .button-success-outline {
+        @apply bg-transparent border-success text-success hover:bg-success hover:text-white focus:bg-success focus:text-white ring-success/30;
+    }
+
+    .button-danger-outline {
+        @apply bg-transparent border-danger text-danger hover:bg-danger hover:text-white focus:bg-danger focus:text-white ring-danger/30;
+    }
+
+    .button-warning-outline {
+        @apply bg-transparent border-warning text-warning hover:bg-warning hover:text-white focus:bg-warning focus:text-white ring-warning/30;
+    }
+
+    .button-info-outline {
+        @apply bg-transparent border-info text-info hover:bg-info hover:text-white focus:bg-info focus:text-white ring-info/30;
+    }
+
+    .button-primary-soft {
+        @apply bg-primary/30 text-primary hover:bg-primary hover:text-white focus:bg-primary focus:text-white ring-primary/30
+        dark:bg-primary dark:text-white;
+    }
+
+    .button-secondary-soft {
+        @apply bg-secondary/30 text-secondary hover:bg-secondary hover:text-white focus:bg-secondary focus:text-white ring-secondary/30
+        dark:bg-secondary dark:text-white;
+    }
+
+    .button-success-soft {
+        @apply bg-success/30 text-success hover:bg-success hover:text-white focus:bg-success focus:text-white ring-success/30
+        dark:bg-success dark:text-white;
+    }
+
+    .button-danger-soft {
+        @apply bg-danger/30 text-danger hover:bg-danger hover:text-white focus:bg-danger focus:text-white ring-danger/30
+        dark:bg-danger dark:text-white;
+    }
+
+    .button-warning-soft {
+        @apply bg-warning/30 text-warning hover:bg-warning hover:text-white focus:bg-warning focus:text-white ring-warning/30
+        dark:bg-warning dark:text-white;
+    }
+
+    .button-info-soft {
+        @apply bg-info/30 text-info hover:bg-info hover:text-white focus:bg-info focus:text-white ring-info/30
+        dark:bg-info dark:text-white;
+    }
+
+    .input {
+        @apply px-3 py-2 bg-transparent border border-gray-300 rounded-md shadow w-full transition focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-30 focus:outline-none disabled:bg-gray-100
+        dark:border-zinc-700 dark:focus:border-primary dark:disabled:bg-white/10;
+    }
+
+    .input-lg {
+        @apply px-3.5 py-2.5 text-lg;
+    }
+
+    .input-sm {
+        @apply py-1.5 px-2 text-sm;
+    }
+
+    .checkbox {
+        @apply text-primary bg-transparent border-gray-300 transition shadow rounded cursor-pointer scale-110 focus:ring focus:ring-offset-0 focus:ring-primary/30
+        dark:border-zinc-700;
+    }
+
+    .checkbox-secondary {
+        @apply text-secondary focus:ring-secondary/30 ;
+    }
+
+    .checkbox-success {
+        @apply text-success focus:ring-success/30;
+    }
+
+    .checkbox-danger {
+        @apply text-danger focus:ring-danger/30;
+    }
+
+    .checkbox-warning {
+        @apply text-warning focus:ring-warning/30;
+    }
+
+    .checkbox-info {
+        @apply text-info focus:ring-info/30;
+    }
+
+    .badge {
+        @apply text-xs font-semibold px-2.5 py-1 uppercase rounded-md whitespace-nowrap;
+    }
+
+    .badge-primary {
+        @apply bg-primary/30 text-primary dark:bg-primary dark:text-white;
+    }
+
+    .badge-secondary {
+        @apply bg-secondary/30 text-secondary dark:bg-secondary dark:text-white;
+    }
+
+    .badge-success {
+        @apply bg-success/30 text-success dark:bg-success dark:text-white;
+    }
+
+    .badge-danger {
+        @apply bg-danger/30 text-danger dark:bg-danger dark:text-white;
+    }
+
+    .badge-warning {
+        @apply bg-warning/30 text-warning dark:bg-warning dark:text-white;
+    }
+
+    .badge-info {
+        @apply bg-info/30 text-info dark:bg-info dark:text-white;
+    }
+
+    .badge-light {
+        @apply bg-white/30 text-white dark:bg-white/20 dark:text-white;
+    }
+
+    .badge-dark {
+        @apply bg-gray-800/30 text-gray-800 dark:bg-gray-700 dark:text-white;
+    }
+
+    .card {
+        @apply flex flex-col bg-white shadow rounded-sm dark:bg-aside;
+    }
+
+    .card-header {
+        @apply w-full flex items-center justify-between px-5 py-4 text-base font-bold text-gray-700 uppercase rounded-t border-b border-dashed /* bg-gray-50 */
+        dark:text-gray-300 dark:bg-aside/5 dark:border-zinc-700;
+    }
+
+    .card-body {
+        @apply w-full grow px-5 py-4;
+    }
+
+    .card-footer {
+        @apply w-full px-5 py-4 rounded-b border-t border-dashed font-semibold bg-gray-50
+        dark:bg-aside/5 dark:border-zinc-700;
+    }
+
+    .card-primary {
+        @apply bg-gradient-to-b from-primary to-primary-active;
+    }
+
+    .card-secondary {
+        @apply bg-gradient-to-b from-secondary to-secondary-active;
+    }
+
+    .card-success {
+        @apply bg-gradient-to-b from-success to-success-active;
+    }
+
+    .card-danger{
+        @apply bg-gradient-to-b from-danger to-danger-active;
+    }
+
+    .card-warning{
+        @apply bg-gradient-to-b from-warning to-warning-active;
+    }
+
+    .card-info{
+        @apply bg-gradient-to-b from-info to-info-active;
+    }
+
+    .card-base {
+        @apply bg-white dark:bg-aside;
+    }
+
+    .animate-up {
+        @apply hover:-translate-y-1.5 hover:shadow-lg transition ease-in-out duration-500;
+    }
+
+    .animate-down {
+        @apply hover:translate-y-1.5 transition ease-in-out duration-500;
+    }
+}
+
+@layer utilities {
+
+    .is-border-success {
+        @apply border-success focus:border-success focus:ring-success focus:ring-opacity-30 dark:border-success dark:focus:ring-success dark:focus:ring-opacity-30;
+    }
+
+    .is-border-danger {
+        @apply border-danger focus:border-danger focus:ring-danger focus:ring-opacity-30 dark:border-danger dark:focus:ring-danger dark:focus:ring-opacity-30
+    }
+}
