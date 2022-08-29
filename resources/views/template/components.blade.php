@@ -1,4 +1,4 @@
-<x-dashboard-layout title="Dashboard">
+<x-app-layout title="Components">
 
     <!-- Header page -->
     <div class="my-6 px-5 md:px-7">
@@ -7,7 +7,7 @@
                 Components
             </h1>
 
-            <x-breadcrumb :path="['Settings' => route('components')]" />
+            <x-layout.breadcrumb :path="['Settings' => route('components')]" />
         </div>
     </div>
 
@@ -682,5 +682,5 @@
         </div>
     </div>
 
-</x-dashboard-layout>
+</x-app-layout>
 

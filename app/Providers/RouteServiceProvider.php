@@ -20,7 +20,7 @@ class RouteServiceProvider extends ServiceProvider
     public const HOME = '/dashboard';
 
     /**
-     * Define your route model bindings, pattern filters, and other route configuration.
+     * Define your route model bindinPgs, pattern filters, and other route configuration.
      *
      * @return void
      */
@@ -35,6 +35,13 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
+
+            // Created Routes Files
+
+            Route::middleware('web')
+                ->prefix('alunos')
+                ->namespace($this->namespace)
+                ->group(base_path('routes/alunos.php'));
         });
     }
 
