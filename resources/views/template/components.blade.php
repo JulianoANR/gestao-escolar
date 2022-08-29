@@ -7,7 +7,7 @@
                 Components
             </h1>
 
-            <x-layout.breadcrumb :path="['Settings' => route('components')]" />
+            <x-layouts.breadcrumb :path="['Settings' => route('components')]" />
         </div>
     </div>
 
