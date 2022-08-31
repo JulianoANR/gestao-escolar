@@ -2785,7 +2785,7 @@ select.input {
 }
 .is-dropdown-show {
   visibility: visible;
-  display: block;
+  display: block !important;
   opacity: 1;
   transition-property: color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;

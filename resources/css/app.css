@@ -262,6 +262,10 @@
     .animate-down {
         @apply hover:translate-y-1.5 transition ease-in-out duration-500;
     }
+
+    .is-dropdown-show {
+        @apply block opacity-100 visible transition duration-300 ease-out;
+    }
 }
 
 @layer utilities {
@@ -273,4 +277,5 @@
     .is-border-danger {
         @apply border-danger focus:border-danger focus:ring-danger focus:ring-opacity-30 dark:border-danger dark:focus:ring-danger dark:focus:ring-opacity-30
     }
+
 }
