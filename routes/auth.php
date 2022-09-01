@@ -19,6 +19,10 @@ Route::middleware('guest')->group(function () {
     Route::get('login', [AuthenticatedSessionController::class, 'create'])
                 ->name('login');
 
+    Route::get('login-breeze', function() {
+        return view('auth.login-breeze');
+    })->name('login.breeze');
+
     Route::post('login', [AuthenticatedSessionController::class, 'store']);
 
     Route::get('forgot-password', [PasswordResetLinkController::class, 'create'])
