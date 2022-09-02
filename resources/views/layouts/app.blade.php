@@ -51,23 +51,6 @@
             }
         </script>
     </head>
-    {{-- <body class="font-sans antialiased" >
-        <div class="min-h-screen bg-gray-100">
-            @include('layouts.navigation')
-
-            <!-- Page Heading -->
-            <header class="bg-white shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                    {{ $header }}
-                </div>
-            </header>
-
-            <!-- Page Content -->
-            <main>
-                {{ $slot }}
-            </main>
-        </div> --}}
-
 
     <body {{ $attributes }}>
 
@@ -75,10 +58,8 @@
             <!-- Wrapper Global -->
             <div class="flex flex-col w-full h-screen !overflow-y-auto overflow-x-hidden relative" id="wrapper_global">
 
-                <!-- Header -->
-                <x-layouts.header />
+                <x-layouts.navbar />
 
-                <!-- Sidebar -->
                 <div>
                     <x-layouts.sidebar />
 
@@ -91,12 +72,16 @@
                 <div class="grow flex flex-col bg-body xl:ml-72">
 
                     <main class="grow pb-12">
+
+                        {{-- Alerts --}}
+                        <x-layouts.alert />
+
+                        {{-- Content --}}
                         {{ $slot }}
                     </main>
 
                     {{-- Footer --}}
                     <x-layouts.footer-min />
-
                 </div>
             </div>
         </div>

@@ -17,7 +17,7 @@
                 </h3>
 
                 <a class="flex items-center gap-x-3 relative py-2 px-4 mb-1 w-full cursor-pointer rounded-sm transition text-sm hover:bg-gray-100 focus:bg-gray-200 dark:hover:bg-white/5 dark:focus:bg-white/10
-                          {{ strtolower($active) == 'account_data' ? $activeClasses : '' }}" href="{{ route('settings.account_data') }}">
+                          {{ strtolower($active) == 'account_data' ? $activeClasses : '' }}" href="{{ route('settings.profile') }}">
 
                     <x-icon class="w-5 h-5 text-xl" name="person-outline" library="ion-icon"></x-icon>
                     Account data
@@ -54,7 +54,7 @@
                 </h3>
 
                 <a class="flex items-center gap-x-3 relative py-2 px-4 mb-1 w-full cursor-pointer rounded-sm transition text-sm hover:bg-gray-100 focus:bg-gray-200 dark:hover:bg-white/5 dark:focus:bg-white/10
-                          {{ strtolower($active) == 'company_data' ? $activeClasses : '' }}" href="{{ route('settings.company_data') }}">
+                          {{ strtolower($active) == 'company_data' ? $activeClasses : '' }}" href="{{ route('settings.school') }}">
 
                     <x-icon class="w-5 h-5 text-xl" name="business-outline" library="ion-icon"></x-icon>
                     Company data

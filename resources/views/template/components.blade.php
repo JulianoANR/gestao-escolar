@@ -1,13 +1,15 @@
-<x-app-layout title="Components">
+<x-app-layout title="Componentes">
 
     <!-- Header page -->
     <div class="my-6 px-5 md:px-7">
         <div class="flex flex-wrap gap-2 justify-between items-center">
             <h1 class="text-xl font-semibold text-gray-400 dark:text-white">
-                Components
+                Componentes
             </h1>
 
-            <x-layouts.breadcrumb :path="['Settings' => route('components')]" />
+            <x-layouts.breadcrumb :path="[
+                __('layout.settings') => route('components')
+            ]"/>
         </div>
     </div>
 

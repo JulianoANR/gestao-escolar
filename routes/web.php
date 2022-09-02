@@ -21,23 +21,23 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
-Route::get('/components', function () {
+Route::get('/componentes', function () {
     return view('template.components');
 })->middleware(['auth'])->name('components');
 
-Route::prefix('settings')->group(function () {
+Route::middleware(['auth'])->prefix('configuracoes')->group(function () {
 
     Route::get('/', function () {
-        return view('settings.account');
-    })->middleware(['auth'])->name('settings.account_data');
+        return view('settings.profile');
+    })->name('settings.profile');
 
-    Route::get('/preferences', function () {
+    Route::get('/preferencias', function () {
         return view('settings.preferences');
-    })->middleware(['auth'])->name('settings.preferences');
+    })->name('settings.preferences');
 
-    Route::get('/company', function () {
-        return view('settings.company');
-    })->middleware(['auth'])->name('settings.company_data');
+    Route::get('/escola', function () {
+        return view('settings.school');
+    })->name('settings.school');
 });
 
 require __DIR__.'/auth.php';

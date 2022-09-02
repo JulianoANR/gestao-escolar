@@ -13,6 +13,12 @@ return [
     |
     */
 
-    'logout' => 'sair',
+    'logout' => 'logout',
+    'profile' => 'profile',
+    'preferences' => 'preferences',
 
+    // Settings
+    'settings-profile' => 'settings profile',
+    'settings-preferences' => 'preferences',
+    'settings-school' => 'settings school',
 ];

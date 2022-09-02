@@ -5,8 +5,8 @@
             <h1 class="text-xl font-semibold text-gray-400 dark:text-white">
                 Settings
             </h1>
-
-            <x-breadcrumb :path="['Dashboard' => route('dashboard')]" />
+            
+            <x-layouts.breadcrumb :path="['Settings' => route('dashboard')]" />
         </div>
     </div>
 

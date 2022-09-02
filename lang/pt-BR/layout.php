@@ -13,6 +13,13 @@ return [
     |
     */
 
-    'logout' => 'logout',
+    'logout' => 'sair',
+    'profile' => 'perfil',
+    'preferences' => 'preferências',
+    'school' => 'escola',
 
+    // Settings
+    'settings' => 'configurações',
+    'settings-profile' => 'configurações de perfil',
+    'settings-school' => 'configurações da escola',
 ];

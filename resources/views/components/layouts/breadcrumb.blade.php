@@ -11,7 +11,7 @@
             <x-icon name="chevron-forward" library="ion-icon" class="mr-2 w-h h-4 text-gray-400" />
 
             <a class="text-sm text-gray-400 font-semibold hover:text-gray-500 dark:text-gray-400 dark:hover:text-gray-300" href="{{ $url }}">
-                {{ array_keys($path)[$loop->index] }}
+                {{ ucfirst(array_keys($path)[$loop->index]) }}
             </a>
         </span>
     @endforeach
