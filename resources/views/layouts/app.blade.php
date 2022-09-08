@@ -68,16 +68,20 @@
                     </label>
                 </div>
 
-                <!-- Page Content -->
                 <div class="grow flex flex-col bg-body xl:ml-72">
 
                     <main class="grow pb-12">
 
-                        {{-- Alerts --}}
-                        <x-layouts.alert />
+                        {{-- Alertas --}}
+                        @if (session('status') && session('class'))
+                            <x-layouts.alerta class="{{ session('class') }}">
+                                {{ session('status')  }}
+                            </x-layouts.alerta>
+                        @endif
 
                         {{-- Content --}}
                         {{ $slot }}
+
                     </main>
 
                     {{-- Footer --}}

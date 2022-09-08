@@ -28,16 +28,16 @@ Route::get('/componentes', function () {
 Route::middleware(['auth'])->prefix('configuracoes')->group(function () {
 
     Route::get('/', function () {
-        return view('settings.profile');
-    })->name('settings.profile');
+        return view('configuracoes.perfil');
+    })->name('configuracoes.perfil');
 
     Route::get('/preferencias', function () {
-        return view('settings.preferences');
-    })->name('settings.preferences');
+        return view('configuracoes.preferences');
+    })->name('configuracoes.preferencias');
 
     Route::get('/escola', function () {
-        return view('settings.school');
-    })->name('settings.school');
+        return view('configuracoes.school');
+    })->name('configuracoes.school');
 });
 
 require __DIR__.'/auth.php';
