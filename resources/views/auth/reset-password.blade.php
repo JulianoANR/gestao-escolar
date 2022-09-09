@@ -1,57 +1,31 @@
 <x-guest-layout>
-    <div class="bg-gradient-to-b from-blue-700 to-blue-900">
-        <div class="flex flex-col h-screen w-screen justify-center items-center">
-            <div class="card md:w-2/3 h-auto mx-4 rounded-lg">
-                <div class="flex flex-row justify-between w-full rounded-lg">
-                    <div class="hidden md:flex flex-col justify-between items-center card-body w-1/2">
-                        <img src="{{ asset('assets/images/informatica_educativa/logo_1.png') }}"
-                        alt="Gestão Escolar"
-                        class="w-72 rounded-lg shadow-lg shadow-gray-600"
-                        >
-                        <h3 class="font-bold text-lg text-center">Prefeitura Municipal de Caraguatatuba</h3>
-                        <h4 class="font-bold text-center">Secretaria de Educação</h4>
-                    </div>
-                    <div class="flex flex-col justify-evenly items-center card-body w-1/2">
-                        <h1 class="font-medium text-2xl">Redefinir sua Senha!</h1>
-                        <form
-                        action="{{ route('password.email') }}"
-                        method="post"
-                        class="w-full space-y-5"
-                        >
-                            @csrf
-                            <input type="hidden" name="token" value="{{ $request->route('token') }}">
-                            @dd($request->route('token'))
-                            <div>
-                                <x-label for="password" value="Nova Senha"/>
-                                <x-input
-                                    name="password"
-                                    class="input-sm rounded-md p-3 w-full"
-                                    type="password"
-                                    placeholder="Senha"
-                                />
-                            </div>
+    <x-auth-screen action="password.update" title="{{ __('auth.reset-password-screen') }}">
+        <input type="hidden" name="email" value="{{ old('email', $request->email) }}">
+        <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
-                            <div>
-                                <x-label for="password_confirmed" value="Confirmar Senha" />
-                                <x-input
-                                    name="password_confirmed"
-                                    class="input-sm rounded-md p-3 w-full"
-                                    type="password"
-                                    placeholder="Senha"
-                                />
-                            </div>
-                            <div class="flex justify-center">
-                                <button class="button button-primary w-full rounded-md">
-                                    Confirmar Senha
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <div class="flex w-[12rem] my-4 justify-center">
-                <img src="{{ asset('assets/images/informatica_educativa/logo_informatica_light.png') }}" alt="">
-            </div>
+        <div>
+            <x-label for="password" value="{{ __('auth.new-password') }}"/>
+            <x-input
+                name="password"
+                class="input-sm rounded-md p-3 w-full"
+                type="password"
+                placeholder="{{ __('auth.password') }}"
+            />
         </div>
-    </div>
+
+        <div>
+            <x-label for="password_confirmed" value="{{ __('auth.password-confirm') }}" />
+            <x-input
+                name="password_confirmation"
+                class="input-sm rounded-md p-3 w-full"
+                type="password"
+                placeholder="{{ __('auth.password-confirm') }}"
+            />
+        </div>
+        <div class="flex justify-center">
+            <button class="button button-primary w-full rounded-md">
+                {{ __('auth.password-confirm') }}
+            </button>
+        </div>
+    </x-auth-screen>
 </x-guest-layout>

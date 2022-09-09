@@ -1,5 +1,34 @@
 <x-guest-layout>
-    <div class="bg-gradient-to-b from-blue-700 to-blue-900">
+    <x-auth-screen action="login" title="{{ __('auth.login-screen') }}">
+        <x-input
+            name="email"
+            class="input-sm rounded-md p-3 w-full"
+            type="email"
+            placeholder=" {{ __('auth.mail') }}"
+        />
+        <x-input
+            name="password"
+            class="input-sm rounded-md p-3 w-full"
+            type="password"
+            placeholder="{{ __('auth.password') }}"
+        />
+        <div class="flex flex-col space-y-2 md:space-y-0 md:flex-row justify-between items-center px-2">
+            <a
+            href="{{ route('password.email') }}"
+            class="text-base font-medium text-gray-600 hover:text-blue-600 duration-300"
+            >
+                {{ __('auth.forgot-password') }}
+            </a>
+            <x-login.remember-me />
+        </div>
+        <div class="flex justify-center">
+            <button class="button button-primary w-full rounded-md">
+                {{ __('auth.login') }}
+            </button>
+        </div>
+    </x-auth-screen>
+
+    {{-- <div class="bg-gradient-to-b from-blue-700 to-blue-900">
         <div class="flex flex-col h-screen w-screen justify-center items-center">
             <div class="card md:w-2/3 h-auto mx-4 rounded-lg">
                 <div class="flex flex-row justify-between w-full rounded-lg">
@@ -53,5 +82,6 @@
                 <img src="{{ asset('assets/images/informatica_educativa/logo_informatica_light.png') }}" alt="">
             </div>
         </div>
-    </div>
+    </div> --}}
+
 </x-guest-layout>

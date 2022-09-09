@@ -18,7 +18,6 @@
 
         <form method="POST" action="{{ route('password.email') }}">
             @csrf
-
             <!-- Email Address -->
             <div>
                 <x-label for="email" :value="__('Email')" />

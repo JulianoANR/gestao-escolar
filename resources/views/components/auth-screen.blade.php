@@ -2,7 +2,7 @@
     <div class="flex flex-col h-screen w-screen justify-center items-center">
         <div class="card md:w-2/3 h-auto mx-4 rounded-lg">
             <div class="flex flex-row justify-between w-full rounded-lg">
-                <div class="hidden md:flex flex-col justify-between items-center card-body w-1/2">
+                <div class="hidden md:flex flex-col justify-evenly items-center card-body w-1/2">
                     <img src="{{ asset('assets/images/informatica_educativa/logo_1.png') }}"
                     alt="Gestão Escolar"
                     class="w-72 rounded-lg shadow-lg shadow-gray-600"
@@ -13,7 +13,7 @@
                 <div class="flex flex-col justify-evenly items-center card-body w-1/2">
                     <h1 class="font-medium text-2xl">{{ $title }}</h1>
                     <form
-                    action="{{ route('password.email') }}"
+                    action="{{ route($action) }}"
                     method="post"
                     class="w-full space-y-5"
                     >
