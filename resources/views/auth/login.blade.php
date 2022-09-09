@@ -21,6 +21,7 @@
             </a>
             <x-login.remember-me />
         </div>
+        <hr>
         <div class="flex justify-center">
             <button class="button button-primary w-full rounded-md">
                 {{ __('auth.login') }}

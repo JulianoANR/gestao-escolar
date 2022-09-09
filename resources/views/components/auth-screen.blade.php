@@ -7,10 +7,10 @@
                     alt="Gestão Escolar"
                     class="w-72 rounded-lg shadow-lg shadow-gray-600"
                     >
-                    <h3 class="font-bold text-lg text-center">Prefeitura Municipal de Caraguatatuba</h3>
+                    <h3 class="font-bold text-lg mt-4 text-center">Prefeitura Municipal de Caraguatatuba</h3>
                     <h4 class="font-bold text-center">Secretaria de Educação</h4>
                 </div>
-                <div class="flex flex-col justify-evenly items-center card-body w-1/2">
+                <div class="flex flex-col justify-evenly items-center card-body w-1/2 p-8">
                     <h1 class="font-medium text-2xl">{{ $title }}</h1>
                     <form
                     action="{{ route($action) }}"

@@ -3,25 +3,20 @@
         <input type="hidden" name="email" value="{{ old('email', $request->email) }}">
         <input type="hidden" name="token" value="{{ $request->route('token') }}">
 
-        <div>
-            <x-label for="password" value="{{ __('auth.new-password') }}"/>
-            <x-input
-                name="password"
-                class="input-sm rounded-md p-3 w-full"
-                type="password"
-                placeholder="{{ __('auth.password') }}"
-            />
-        </div>
+        <x-input
+            name="password"
+            class="input-sm rounded-md p-3 w-full"
+            type="password"
+            placeholder="{{ __('auth.password') }}"
+        />
 
-        <div>
-            <x-label for="password_confirmed" value="{{ __('auth.password-confirm') }}" />
-            <x-input
-                name="password_confirmation"
-                class="input-sm rounded-md p-3 w-full"
-                type="password"
-                placeholder="{{ __('auth.password-confirm') }}"
-            />
-        </div>
+        <x-input
+            name="password_confirmation"
+            class="input-sm rounded-md p-3 w-full"
+            type="password"
+            placeholder="{{ __('auth.password-confirm') }}"
+        />
+        <hr>
         <div class="flex justify-center">
             <button class="button button-primary w-full rounded-md">
                 {{ __('auth.password-confirm') }}
