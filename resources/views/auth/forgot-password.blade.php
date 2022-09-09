@@ -1,36 +1,58 @@
 <x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
-
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+    <x-auth-screen title="Esqueci minha senha">
+        <x-label value="Insira o e-mail da sua conta: "/>
+        <x-input
+            name="email"
+            class="input-sm rounded-md p-3 w-full"
+            type="email"
+            placeholder="Endereço de e-mail"
+        />
+        <div class="flex justify-center">
+            <button class="button button-primary w-full rounded-md">
+                Enviar
+            </button>
         </div>
-
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('password.email') }}">
-            @csrf
-
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
+    </x-auth-screen>
+    {{-- <div class="bg-gradient-to-b from-blue-700 to-blue-900">
+        <div class="flex flex-col h-screen w-screen justify-center items-center">
+            <div class="card md:w-2/3 h-auto mx-4 rounded-lg">
+                <div class="flex flex-row justify-between w-full rounded-lg">
+                    <div class="hidden md:flex flex-col justify-between items-center card-body w-1/2">
+                        <img src="{{ asset('assets/images/informatica_educativa/logo_1.png') }}"
+                        alt="Gestão Escolar"
+                        class="w-72 rounded-lg shadow-lg shadow-gray-600"
+                        >
+                        <h3 class="font-bold text-lg text-center">Prefeitura Municipal de Caraguatatuba</h3>
+                        <h4 class="font-bold text-center">Secretaria de Educação</h4>
+                    </div>
+                    <div class="flex flex-col justify-evenly items-center card-body w-1/2">
+                        <h1 class="font-medium text-2xl">Recuperação de Senha!</h1>
+                        <form
+                        action="{{ route('password.email') }}"
+                        method="post"
+                        class="w-full space-y-5"
+                        >
+                            @csrf
+                            <x-label value="Insira o e-mail da sua conta: "/>
+                            <x-input
+                                name="email"
+                                class="input-sm rounded-md p-3 w-full"
+                                type="email"
+                                placeholder="Endereço de e-mail"
+                            />
+                            <div class="flex justify-center">
+                                <button class="button button-primary w-full rounded-md">
+                                    Enviar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Email Password Reset Link') }}
-                </x-button>
+            <div class="flex w-[12rem] my-4 justify-center">
+                <img src="{{ asset('assets/images/informatica_educativa/logo_informatica_light.png') }}" alt="">
             </div>
-        </form>
-    </x-auth-card>
+        </div>
+    </div> --}}
+
 </x-guest-layout>

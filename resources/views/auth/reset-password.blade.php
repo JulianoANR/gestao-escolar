@@ -1,48 +1,57 @@
 <x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('password.update') }}">
-            @csrf
-
-            <!-- Password Reset Token -->
-            <input type="hidden" name="token" value="{{ $request->route('token') }}">
-
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email', $request->email)" required autofocus />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full" type="password" name="password" required />
-            </div>
-
-            <!-- Confirm Password -->
-            <div class="mt-4">
-                <x-label for="password_confirmation" :value="__('Confirm Password')" />
-
-                <x-input id="password_confirmation" class="block mt-1 w-full"
+    <div class="bg-gradient-to-b from-blue-700 to-blue-900">
+        <div class="flex flex-col h-screen w-screen justify-center items-center">
+            <div class="card md:w-2/3 h-auto mx-4 rounded-lg">
+                <div class="flex flex-row justify-between w-full rounded-lg">
+                    <div class="hidden md:flex flex-col justify-between items-center card-body w-1/2">
+                        <img src="{{ asset('assets/images/informatica_educativa/logo_1.png') }}"
+                        alt="Gestão Escolar"
+                        class="w-72 rounded-lg shadow-lg shadow-gray-600"
+                        >
+                        <h3 class="font-bold text-lg text-center">Prefeitura Municipal de Caraguatatuba</h3>
+                        <h4 class="font-bold text-center">Secretaria de Educação</h4>
+                    </div>
+                    <div class="flex flex-col justify-evenly items-center card-body w-1/2">
+                        <h1 class="font-medium text-2xl">Redefinir sua Senha!</h1>
+                        <form
+                        action="{{ route('password.email') }}"
+                        method="post"
+                        class="w-full space-y-5"
+                        >
+                            @csrf
+                            <input type="hidden" name="token" value="{{ $request->route('token') }}">
+                            @dd($request->route('token'))
+                            <div>
+                                <x-label for="password" value="Nova Senha"/>
+                                <x-input
+                                    name="password"
+                                    class="input-sm rounded-md p-3 w-full"
                                     type="password"
-                                    name="password_confirmation" required />
-            </div>
+                                    placeholder="Senha"
+                                />
+                            </div>
 
-            <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Reset Password') }}
-                </x-button>
+                            <div>
+                                <x-label for="password_confirmed" value="Confirmar Senha" />
+                                <x-input
+                                    name="password_confirmed"
+                                    class="input-sm rounded-md p-3 w-full"
+                                    type="password"
+                                    placeholder="Senha"
+                                />
+                            </div>
+                            <div class="flex justify-center">
+                                <button class="button button-primary w-full rounded-md">
+                                    Confirmar Senha
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-        </form>
-    </x-auth-card>
+            <div class="flex w-[12rem] my-4 justify-center">
+                <img src="{{ asset('assets/images/informatica_educativa/logo_informatica_light.png') }}" alt="">
+            </div>
+        </div>
+    </div>
 </x-guest-layout>
