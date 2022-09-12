@@ -45,6 +45,7 @@
     body {
         @apply text-sm text-gray-500 dark:text-gray-400
     }
+
 }
 
 @layer components {
@@ -147,7 +148,7 @@
 
     .input {
         @apply px-3 py-2 bg-transparent border border-gray-300 rounded shadow w-full transition focus:border-primary focus:ring focus:ring-primary focus:ring-opacity-30 focus:outline-none disabled:bg-gray-100
-        dark:border-zinc-700 dark:focus:border-primary dark:disabled:bg-white/10;
+        dark:border-gray-600 dark:focus:border-primary dark:disabled:bg-white/10;
     }
 
     select.input {
@@ -312,6 +313,19 @@
 
     .is-dropdown-show {
         @apply block opacity-100 visible transition duration-300 ease-out;
+    }
+
+
+    .txt-title{
+        @apply text-gray-900 dark:text-gray-100;
+    }
+
+    .txt-subtitle{
+        @apply text-gray-700 dark:text-gray-300;
+    }
+
+    .txt-base{
+        @apply text-gray-600 dark:text-gray-400;
     }
 }
 
