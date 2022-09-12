@@ -32,7 +32,7 @@ return [
     'remember-me' => 'Remember me',
     'login' => 'Login',
     'send' => 'Send',
-
+    'logout' => 'Logout',
 
     // Placeholders Input
 
@@ -49,5 +49,11 @@ return [
     'new-password' => 'New Password',
     'password-confirm-label' => 'Confirm Password',
     'insert-email' => 'Insert your account email:',
+    'verify-email' => 'Email Verification',
+
+    // Texts
+
+    'verify-text' => 'Now you must verify your email to confirm your registration.
+                      Press the button below to send your confirmation email.'
 
 ];

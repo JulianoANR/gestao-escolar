@@ -14,7 +14,7 @@
                 <strong> {{ session('message') }}</strong>
             </span>
         @endif
-        <hr>
+        <hr class="dark:border-gray-400">
         <div class="flex justify-center">
             <button class="button button-primary w-full rounded-md">
                 {{ __('auth.send') }}

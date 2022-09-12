@@ -2,6 +2,6 @@
     <x-checkbox name="remember_me" />
     <x-label
     value="{{ __('auth.remember-me') }}"
-    class="text-base text-gray-600"
+    class="text-base"
     />
 </div>

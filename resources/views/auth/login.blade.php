@@ -1,11 +1,13 @@
 <x-guest-layout>
     <x-auth-screen action="login" title="{{ __('auth.login-screen') }}">
+        
         <x-input
             name="email"
             class="input-sm rounded-md p-3 w-full"
             type="email"
             placeholder=" {{ __('auth.mail') }}"
         />
+
         <x-input
             name="password"
             class="input-sm rounded-md p-3 w-full"
@@ -15,13 +17,13 @@
         <div class="flex flex-col space-y-2 md:space-y-0 md:flex-row justify-between items-center px-2">
             <a
             href="{{ route('password.email') }}"
-            class="text-base font-medium text-gray-600 hover:text-blue-600 duration-300"
+            class="text-base font-medium hover:text-blue-600 duration-300"
             >
                 {{ __('auth.forgot-password') }}
             </a>
             <x-login.remember-me />
         </div>
-        <hr>
+        <hr class="dark:border-gray-400">
         <div class="flex justify-center">
             <button class="button button-primary w-full rounded-md">
                 {{ __('auth.login') }}

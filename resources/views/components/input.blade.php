@@ -1,5 +1,6 @@
 @props(['formatted' => isset($name) ? str_replace(']', '', str_replace('[', '.', $name)) : false])
 
+<div>
 <input {{ $attributes->merge(['class' => "input" . ($errors->has($formatted) ? ' is-border-danger' : '')]) }} value="{{ $value ?? old($formatted) }}">
 
 @error($formatted)
@@ -7,3 +8,4 @@
         <strong>{{ $message }}</strong>
     </span>
 @enderror
+</div>

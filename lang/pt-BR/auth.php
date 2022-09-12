@@ -31,6 +31,7 @@ return [
     'remember-me' => 'Lembrar de mim',
     'login' => 'Entrar',
     'send' => 'Enviar',
+    'logout' => 'Sair',
 
     // Placeholders Input
 
@@ -47,4 +48,10 @@ return [
     'new-password' => 'Nova senha',
     'password-confirm-label' => 'Confirmar Senha',
     'insert-email' => 'Insira o email da sua conta:',
+    'verify-email' => 'Verificação de E-mail',
+
+    // Texts
+
+    'verify-text' => 'Agora você deve verificar seu e-mail para confirmar seu cadastro.
+                      Aperte no botão abaixo para enviar o seu e-mail de confirmação.'
 ];
