@@ -13,8 +13,9 @@
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
-    <body>
-        <div class="font-sans text-gray-900 antialiased">
+
+    <body class="bg-gradient-to-b from-blue-500 to-blue-800">
+        <div class="font-sans antialiased">
             {{ $slot }}
         </div>
     </body>

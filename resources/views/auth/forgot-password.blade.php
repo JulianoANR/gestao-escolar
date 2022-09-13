@@ -1,36 +1,24 @@
 <x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
-        </x-slot>
-
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
+    <x-auth-screen action="password.email" title="{{ __('auth.forgot-password-screen') }}">
+        <x-label value="{{ __('auth.insert-email') }}"/>
+        <div>
+        <x-input
+            name="email"
+            class="input-sm rounded-md p-3 w-full"
+            type="email"
+            placeholder="{{ __('auth.mail') }}"
+        />
         </div>
-
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('password.email') }}">
-            @csrf
-
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
-
-            <div class="flex items-center justify-end mt-4">
-                <x-button>
-                    {{ __('Email Password Reset Link') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
+        @if(session('status'))
+            <span class="inline-block uppercase text-success text-[12px] pl-2 mt-1" role="alert">
+                <strong> {{ session('message') }}</strong>
+            </span>
+        @endif
+        <hr class="dark:border-gray-400">
+        <div class="flex justify-center">
+            <button class="button button-primary w-full rounded-md">
+                {{ __('auth.send') }}
+            </button>
+        </div>
+    </x-auth-screen>
 </x-guest-layout>
