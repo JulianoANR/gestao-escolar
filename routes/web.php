@@ -1,5 +1,6 @@
 <?php
 
+use App\Service\Sed\AuthService;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -19,6 +20,11 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
+
+    $teste = new AuthService;
+
+    $teste->generateAccessToken();
+
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/componentes', function () {
@@ -28,16 +34,16 @@ Route::get('/componentes', function () {
 Route::middleware(['auth'])->prefix('configuracoes')->group(function () {
 
     Route::get('/', function () {
-        return view('configuracoes.perfil');
-    })->name('configuracoes.perfil');
+        return view('settings.profile');
+    })->name('settings.profile');
 
     Route::get('/preferencias', function () {
-        return view('configuracoes.preferences');
-    })->name('configuracoes.preferencias');
+        return view('settings.preferences');
+    })->name('settings.preferences');
 
     Route::get('/escola', function () {
-        return view('configuracoes.school');
-    })->name('configuracoes.school');
+        return view('settings.school');
+    })->name('settings.school');
 });
 
 require __DIR__.'/auth.php';
