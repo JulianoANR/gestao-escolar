@@ -1,6 +1,6 @@
 <x-guest-layout>
     <x-auth-screen action="login" title="{{ __('auth.login-screen') }}">
-        
+
         <x-input
             name="email"
             class="input-sm rounded-md p-3 w-full"
@@ -25,9 +25,9 @@
         </div>
         <hr class="dark:border-gray-400">
         <div class="flex justify-center">
-            <button class="button button-primary w-full rounded-md">
+            <x-submit-btn class="button button-primary w-full rounded-md" type="submit">
                 {{ __('auth.login') }}
-            </button>
+            </x-submit-btn>
         </div>
     </x-auth-screen>
 

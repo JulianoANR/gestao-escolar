@@ -18,9 +18,9 @@
         />
         <hr class="dark:border-gray-400">
         <div class="flex justify-center">
-            <button class="button button-primary w-full rounded-md">
+            <x-submit-btn class="button button-primary w-full rounded-md">
                 {{ __('auth.password-confirm') }}
-            </button>
+            </x-submit-btn>
         </div>
     </x-auth-screen>
 </x-guest-layout>

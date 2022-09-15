@@ -7,6 +7,9 @@
 
         <title>{{ config('app.name', 'Laravel') }}</title>
 
+        <!-- Fontawesome 6.1.1 -->
+        <link href="{{ asset('assets/fontawesome/css/all.css') }}" rel="stylesheet">
+
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
 

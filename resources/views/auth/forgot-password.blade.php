@@ -8,17 +8,18 @@
             type="email"
             placeholder="{{ __('auth.mail') }}"
         />
-        </div>
         @if(session('status'))
             <span class="inline-block uppercase text-success text-[12px] pl-2 mt-1" role="alert">
-                <strong> {{ session('message') }}</strong>
+                <strong> {{ session('status') }}</strong>
             </span>
         @endif
+        </div>
         <hr class="dark:border-gray-400">
+
         <div class="flex justify-center">
-            <button class="button button-primary w-full rounded-md">
+            <x-submit-btn class="button button-primary w-full rounded-md">
                 {{ __('auth.send') }}
-            </button>
+            </x-submit-btn>
         </div>
     </x-auth-screen>
 </x-guest-layout>
