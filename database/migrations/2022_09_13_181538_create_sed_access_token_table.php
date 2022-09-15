@@ -14,12 +14,10 @@ return new class extends Migration
     public function up()
     {
         Schema::create('sed_access_token', function (Blueprint $table) {
-            Schema::create('sed_access_token', function (Blueprint $table) {
-                $table->id();
-                $table->string('sistema', 255);
-                $table->string('token', 500);
-                $table->timestamps();
-            });
+            $table->id();
+            $table->string('sistema', 255);
+            $table->string('token', 500);
+            $table->timestamps();
         });
     }
 
