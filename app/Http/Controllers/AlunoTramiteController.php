@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreEscolaRequest;
-use App\Http\Requests\UpdateEscolaRequest;
-use App\Models\Escola;
+use App\Http\Requests\StoreAlunoTramiteRequest;
+use App\Http\Requests\UpdateAlunoTramiteRequest;
+use App\Models\AlunoTramite;
 
-class EscolaController extends Controller
+class AlunoTramiteController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class EscolaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreEscolaRequest  $request
+     * @param  \App\Http\Requests\StoreAlunoTramiteRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreEscolaRequest $request)
+    public function store(StoreAlunoTramiteRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class EscolaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Escola  $escola
+     * @param  \App\Models\AlunoTramite  $alunoTramite
      * @return \Illuminate\Http\Response
      */
-    public function show(Escola $escola)
+    public function show(AlunoTramite $alunoTramite)
     {
         //
     }
@@ -53,10 +53,10 @@ class EscolaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Escola  $escola
+     * @param  \App\Models\AlunoTramite  $alunoTramite
      * @return \Illuminate\Http\Response
      */
-    public function edit(Escola $escola)
+    public function edit(AlunoTramite $alunoTramite)
     {
         //
     }
@@ -64,11 +64,11 @@ class EscolaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateEscolaRequest  $request
-     * @param  \App\Models\Escola  $escola
+     * @param  \App\Http\Requests\UpdateAlunoTramiteRequest  $request
+     * @param  \App\Models\AlunoTramite  $alunoTramite
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateEscolaRequest $request, Escola $escola)
+    public function update(UpdateAlunoTramiteRequest $request, AlunoTramite $alunoTramite)
     {
         //
     }
@@ -76,10 +76,10 @@ class EscolaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Escola  $escola
+     * @param  \App\Models\AlunoTramite  $alunoTramite
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Escola $escola)
+    public function destroy(AlunoTramite $alunoTramite)
     {
         //
     }

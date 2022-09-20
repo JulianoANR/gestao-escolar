@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreEscolaRequest;
-use App\Http\Requests\UpdateEscolaRequest;
-use App\Models\Escola;
+use App\Http\Requests\StoreTipoRequest;
+use App\Http\Requests\UpdateTipoRequest;
+use App\Models\Tipo;
 
-class EscolaController extends Controller
+class TipoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class EscolaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreEscolaRequest  $request
+     * @param  \App\Http\Requests\StoreTipoRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreEscolaRequest $request)
+    public function store(StoreTipoRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class EscolaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Escola  $escola
+     * @param  \App\Models\Tipo  $tipo
      * @return \Illuminate\Http\Response
      */
-    public function show(Escola $escola)
+    public function show(Tipo $tipo)
     {
         //
     }
@@ -53,10 +53,10 @@ class EscolaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Escola  $escola
+     * @param  \App\Models\Tipo  $tipo
      * @return \Illuminate\Http\Response
      */
-    public function edit(Escola $escola)
+    public function edit(Tipo $tipo)
     {
         //
     }
@@ -64,11 +64,11 @@ class EscolaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateEscolaRequest  $request
-     * @param  \App\Models\Escola  $escola
+     * @param  \App\Http\Requests\UpdateTipoRequest  $request
+     * @param  \App\Models\Tipo  $tipo
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateEscolaRequest $request, Escola $escola)
+    public function update(UpdateTipoRequest $request, Tipo $tipo)
     {
         //
     }
@@ -76,10 +76,10 @@ class EscolaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Escola  $escola
+     * @param  \App\Models\Tipo  $tipo
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Escola $escola)
+    public function destroy(Tipo $tipo)
     {
         //
     }

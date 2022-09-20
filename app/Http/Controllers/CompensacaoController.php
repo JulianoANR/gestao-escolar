@@ -2,11 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreEscolaRequest;
-use App\Http\Requests\UpdateEscolaRequest;
-use App\Models\Escola;
+use App\Http\Requests\StoreCompensacaoRequest;
+use App\Http\Requests\UpdateCompensacaoRequest;
+use App\Models\Compensacao;
 
-class EscolaController extends Controller
+class CompensacaoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -31,10 +31,10 @@ class EscolaController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreEscolaRequest  $request
+     * @param  \App\Http\Requests\StoreCompensacaoRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreEscolaRequest $request)
+    public function store(StoreCompensacaoRequest $request)
     {
         //
     }
@@ -42,10 +42,10 @@ class EscolaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Escola  $escola
+     * @param  \App\Models\Compensacao  $compensacao
      * @return \Illuminate\Http\Response
      */
-    public function show(Escola $escola)
+    public function show(Compensacao $compensacao)
     {
         //
     }
@@ -53,10 +53,10 @@ class EscolaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Escola  $escola
+     * @param  \App\Models\Compensacao  $compensacao
      * @return \Illuminate\Http\Response
      */
-    public function edit(Escola $escola)
+    public function edit(Compensacao $compensacao)
     {
         //
     }
@@ -64,11 +64,11 @@ class EscolaController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateEscolaRequest  $request
-     * @param  \App\Models\Escola  $escola
+     * @param  \App\Http\Requests\UpdateCompensacaoRequest  $request
+     * @param  \App\Models\Compensacao  $compensacao
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateEscolaRequest $request, Escola $escola)
+    public function update(UpdateCompensacaoRequest $request, Compensacao $compensacao)
     {
         //
     }
@@ -76,10 +76,10 @@ class EscolaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Escola  $escola
+     * @param  \App\Models\Compensacao  $compensacao
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Escola $escola)
+    public function destroy(Compensacao $compensacao)
     {
         //
     }
