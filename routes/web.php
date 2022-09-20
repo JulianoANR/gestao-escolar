@@ -1,6 +1,6 @@
 <?php
 
-use App\Service\Sed\AuthService;
+use App\Services\Sed\AuthService;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,11 +20,6 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-
-    $teste = new AuthService;
-
-    $teste->generateAccessToken();
-
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/componentes', function () {

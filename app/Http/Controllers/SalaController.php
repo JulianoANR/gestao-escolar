@@ -2,17 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Escola;
-use App\Services\Sed\Escolas\GetEscolasService;
 use Illuminate\Http\Request;
 
-class EscolaController extends Controller
+class SalaController extends Controller
 {
-    public function __construct(
-        protected Escola $escola,
-        protected GetEscolasService $getEscolasService
-    ){}
-
     /**
      * Display a listing of the resource.
      *
@@ -20,10 +13,7 @@ class EscolaController extends Controller
      */
     public function index()
     {
-        $teste = ($this->getEscolasService)();
-        dd('construtor', $teste);
-
-        return $this->escola->all();
+        //
     }
 
     /**
@@ -50,10 +40,10 @@ class EscolaController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Escola  $escola
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Escola $escola)
+    public function show($id)
     {
         //
     }
@@ -61,10 +51,10 @@ class EscolaController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Escola  $escola
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Escola $escola)
+    public function edit($id)
     {
         //
     }
@@ -73,10 +63,10 @@ class EscolaController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Escola  $escola
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Escola $escola)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -84,10 +74,10 @@ class EscolaController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Escola  $escola
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Escola $escola)
+    public function destroy($id)
     {
         //
     }
