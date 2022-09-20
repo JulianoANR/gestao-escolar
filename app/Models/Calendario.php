@@ -26,19 +26,22 @@ class Calendario extends Model
 {
     use HasFactory;
 
-    protected $table = "calendario";
+    protected $table = 'calendario';
+
     protected $fillable = ['descricao', 'data', 'escopo', 'letivo'];
 
     //Marcações de calendario
     public function getPrimeiroDiaLetivoAttribute()
     {
         $data = $this::findOrFail(1);
+
         return $data ? $data->data : date('Y').'-01-01';
     }
 
     public function getUltimoDiaLetivoAttribute()
     {
         $data = $this::findOrFail(2);
+
         return $data ? $data->data : date('Y').'-12-31';
     }
 
@@ -74,24 +77,22 @@ class Calendario extends Model
 
     public function getDiasNaoLetivosAttribute()
     {
-        return $this::where('letivo','!=', 1)->get();
+        return $this::where('letivo', '!=', 1)->get();
     }
 
     public function getValidateDataAtividadeAttribute()
     {
-        # code...
+        // code...
     }
 
     //Logica de datas
     public function getBimestreAttribute($data)
     {
         return $data;
-        if($data >= $this->primeiro_dia_letivo && $data <= $this->ultimo_dia_bimestre_um){
+        if ($data >= $this->primeiro_dia_letivo && $data <= $this->ultimo_dia_bimestre_um) {
             return true;
         } else {
             return false;
         }
     }
-
 }
-

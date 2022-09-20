@@ -9,10 +9,11 @@ class AulaPrevista extends Model
 {
     use HasFactory;
 
-    protected $table = "aulas_previstas";
+    protected $table = 'aulas_previstas';
+
     protected $fillable = [
         'id', 'sala_id', 'disciplina_id', 'previsao_bimestre1',
-        'previsao_bimestre2', 'previsao_bimestre3', 'previsao_bimestre4'
+        'previsao_bimestre2', 'previsao_bimestre3', 'previsao_bimestre4',
     ];
 
     //Tem q que criar as relações ainda, qnd for necessario

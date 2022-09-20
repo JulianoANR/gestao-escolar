@@ -14,7 +14,6 @@ class AuthService
      */
     protected $sistema = 'gestaoEscolar';
 
-
     /**
      * Pega o token de autentificação do sed no banco de dados
      *
@@ -36,9 +35,9 @@ class AuthService
      * @param  \App\Http\Requests\Auth\LoginRequest  $request
      * @return \Illuminate\Http\RedirectResponse
      */
-    public function generateAccessToken() : void
+    public function generateAccessToken(): void
     {
-        $response = Http::withBasicAuth( config('sed.user'), config('sed.password'))->post( config('sed.url'));
+        $response = Http::withBasicAuth(config('sed.user'), config('sed.password'))->post(config('sed.url'));
 
         dd($response);
         // return ;

@@ -1,5 +1,7 @@
 <?php
+
 namespace App\Models;
+
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -17,7 +19,9 @@ use Illuminate\Database\Eloquent\Model;
  *
  * @return void
  */
-class Config extends Model {
+class Config extends Model
+{
     use HasFactory;
+
     protected $fillable = ['descricao', 'status'];
 }

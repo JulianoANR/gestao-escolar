@@ -24,7 +24,6 @@ Route::get('/dashboard', function () {
     $teste = new AuthService;
 
     $teste->generateAccessToken();
-
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/componentes', function () {
@@ -32,7 +31,6 @@ Route::get('/componentes', function () {
 })->middleware(['auth'])->name('components');
 
 Route::middleware(['auth'])->prefix('configuracoes')->group(function () {
-
     Route::get('/', function () {
         return view('settings.profile');
     })->name('settings.profile');

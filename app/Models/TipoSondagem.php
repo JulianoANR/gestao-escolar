@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class TipoSondagem extends Model
 {
     use HasFactory;
-    protected $table = "tipo_sondagem";
-    protected $fillable = ['id','descricao','aspecto'];
+
+    protected $table = 'tipo_sondagem';
+
+    protected $fillable = ['id', 'descricao', 'aspecto'];
 }
