@@ -4,10 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreEscolaRequest;
 use App\Http\Requests\UpdateEscolaRequest;
+use App\Services\Sed\Escolas\GetEscolasService;
 use App\Models\Escola;
 
 class EscolaController extends Controller
 {
+    public function __construct(
+        protected Escola $escola,
+        protected GetEscolasService $getEscolasService
+    ){}
+
     /**
      * Display a listing of the resource.
      *
@@ -15,7 +21,10 @@ class EscolaController extends Controller
      */
     public function index()
     {
-        //
+        $teste = ($this->getEscolasService)();
+        dd('construtor', $teste);
+
+        return $this->escola->all();
     }
 
     /**

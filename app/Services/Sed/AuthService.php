@@ -1,9 +1,10 @@
 <?php
 
-namespace App\Service\Sed;
+namespace App\Services\Sed;
 
-use Illuminate\Support\Facades\DB;
-use Illuminate\Support\Facades\Http;
+use App\Enums\{SedRouters};
+use GuzzleHttp\Exception\RequestException;
+use Illuminate\Support\Facades\{DB, Http};
 
 class AuthService
 {
@@ -17,39 +18,78 @@ class AuthService
     /**
      * Pega o token de autentificação do sed no banco de dados
      *
-     * @param  \App\Http\Requests\Auth\LoginRequest  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return string
      */
     public function getAccessToken()
     {
-        $token = DB::table('sed_access_token')->where('sistema', $this->sistema)->first();
+        $accessToken = DB::table('sed_access_token')->where('sistema', $this->sistema)->first();
 
-        // Lançar exceção caso não exista token
+        // Caso token não esteja cadastrado no banco de dados
+        if (!$accessToken) {
+            Self::generateAccessToken();
+            $accessToken = DB::table('sed_access_token')->where('sistema', $this->sistema)->first();
+        }
 
-        return $token;
+        return $accessToken->token;
     }
 
     /**
      * Função responsavel por gerar novos tokens
      *
-     * @param  \App\Http\Requests\Auth\LoginRequest  $request
-     * @return \Illuminate\Http\RedirectResponse
+     * @return void
      */
     public function generateAccessToken(): void
     {
-        $response = Http::withBasicAuth(config('sed.user'), config('sed.password'))->post(config('sed.url'));
+        $response = Http::withBasicAuth(
+                    config('sed.user'),
+                    config('sed.password'))
+                ->get(
+                    config('sed.url') . SedRouters::VALIDA_USUARIO->value
+                );
 
-        dd($response);
-        // return ;
+        Self::storeAccessToken($response->object()->outAutenticacao);
     }
 
-    // $response = Http::withToken($this->getToken())->retry(2, 0, function ($exception, $request) {
-    //     if (! $exception instanceof RequestException || $exception->response->status() !== 401) {
-    //         return false;
-    //     }
+    /**
+     * Salva o token de autentificação no banco de dados
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function storeAccessToken($token) : void
+    {
+        // TO DO: Implementar fila
+        DB::table('sed_access_token')->where('sistema', $this->sistema)
+            ->update([
+                'token' => $token,
+                'sistema' => $this->sistema,
+                'updated_at' => now(),
+            ]);
+    }
 
-    //     $request->withToken($this->getNewToken());
+    /**
+     * Abstrai a lógica de de consumo de api do sed em rotas GET
+     *
+     * @param  string  $route
+     * @param  array?  $body
+     * @param  array?  $headers
+     * @return void
+     */
+    public function get($route, $body = [], $headers = [])
+    {
+        $response = Http::withToken($this->getAccessToken())->retry(3, 100, function ($exception, $request) {
 
-    //     return true;
-    // })->post(/* ... */);
+            // Caso o token esteja expirado, gera um novo token e tenta novamente
+            if ($exception->response->status() !== 401) {
+                return false;
+            }
+            $request->withToken($this->generateAccessToken());
+            return true;
+
+        })->get(config('sed.url') . $route, $body);
+
+        dd($response->collect());
+
+        return $response;
+    }
 }

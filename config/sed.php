@@ -4,17 +4,6 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | ID da diretoria
-    |--------------------------------------------------------------------------
-    |
-    | Para realizar as consultas as APIs
-    |
-    */
-
-    'diretoriaId' => '2',
-
-    /*
-    |--------------------------------------------------------------------------
     | Credenciais SED
     |--------------------------------------------------------------------------
     |
@@ -48,14 +37,40 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Session Database Connection
+    | ID da Diretoria
     |--------------------------------------------------------------------------
     |
-    | When using the "database" or "redis" session drivers, you may specify a
-    | connection that should be used to manage these sessions. This should
-    | correspond to a connection in your database configuration options.
+    | Para realizar as consultas as APIs
+    */
+
+    'diretoriaId' => 20208,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Codigo do Municipio
+    |--------------------------------------------------------------------------
+    |
+    | Para realizar as consultas as APIs
+    | Equivalente no SED : inCodMunicipio
     |
     */
 
-    // 'connection' => env('SESSION_CONNECTION'),
+    'municipioId' => 9043,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Codigo da Rede de Ensino
+    |--------------------------------------------------------------------------
+    |
+    | Para realizar as consultas as APIs
+    | Equivalente no SED : inCodRedeEnsino
+    |
+    |   1 – Estadual
+    |   2 – Municipal
+    |   3 – Privada
+    |   4 – Federal
+    |   5 – Estadual Outros (Centro Paula Souza)
+    */
+
+    'redeEnsinoCod' => 2,
 ];
