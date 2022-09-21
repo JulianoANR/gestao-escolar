@@ -1,57 +1,90 @@
 <x-guest-layout>
-    <x-auth-card>
-        <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
+    <x-auth-screen action="login" title="{{ __('auth.login-screen') }}">
+
+        <x-input
+            name="email"
+            class="input-sm rounded-md p-3 w-full"
+            type="email"
+            placeholder=" {{ __('auth.mail') }}"
+        />
+
+        <x-input
+            name="password"
+            class="input-sm rounded-md p-3 w-full"
+            type="password"
+            placeholder="{{ __('auth.password') }}"
+        />
+        <div class="flex flex-col space-y-2 md:space-y-0 md:flex-row justify-between items-center px-2">
+            <a
+            href="{{ route('password.email') }}"
+            class="text-base font-medium hover:text-blue-600 duration-300"
+            >
+                {{ __('auth.forgot-password') }}
             </a>
-        </x-slot>
+            <x-login.remember-me />
+        </div>
+        <hr class="dark:border-gray-400">
+        <div class="flex justify-center">
+            <x-submit-btn class="button button-primary w-full rounded-md" type="submit">
+                {{ __('auth.login') }}
+            </x-submit-btn>
+        </div>
+    </x-auth-screen>
 
-        <!-- Session Status -->
-        <x-auth-session-status class="mb-4" :status="session('status')" />
-
-        <!-- Validation Errors -->
-        <x-auth-validation-errors class="mb-4" :errors="$errors" />
-
-        <form method="POST" action="{{ route('login') }}">
-            @csrf
-
-            <!-- Email Address -->
-            <div>
-                <x-label for="email" :value="__('Email')" />
-
-                <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
-
-            <!-- Password -->
-            <div class="mt-4">
-                <x-label for="password" :value="__('Password')" />
-
-                <x-input id="password" class="block mt-1 w-full"
-                                type="password"
+    {{-- <div class="bg-gradient-to-b from-blue-700 to-blue-900">
+        <div class="flex flex-col h-screen w-screen justify-center items-center">
+            <div class="card md:w-2/3 h-auto mx-4 rounded-lg">
+                <div class="flex flex-row justify-between w-full rounded-lg">
+                    <div class="hidden md:flex flex-col justify-between items-center card-body w-1/2">
+                        <img src="{{ asset('assets/images/informatica_educativa/logo_1.png') }}"
+                        alt="Gestão Escolar"
+                        class="w-72 rounded-lg shadow-lg shadow-gray-600"
+                        >
+                        <h3 class="font-bold text-lg text-center">Prefeitura Municipal de Caraguatatuba</h3>
+                        <h4 class="font-bold text-center">Secretaria de Educação</h4>
+                    </div>
+                    <div class="flex flex-col justify-evenly items-center card-body w-1/2">
+                        <h1 class="font-medium text-2xl">Entre na sua Conta!</h1>
+                        <form
+                        action="{{ route('login') }}"
+                        method="post"
+                        class="w-full space-y-5"
+                        >
+                            @csrf
+                            <x-input
+                                name="email"
+                                class="input-sm rounded-md p-3 w-full"
+                                type="email"
+                                placeholder="Endereço de e-mail"
+                            />
+                            <x-input
                                 name="password"
-                                required autocomplete="current-password" />
+                                class="input-sm rounded-md p-3 w-full"
+                                type="password"
+                                placeholder="Senha"
+                            />
+                            <div class="flex flex-col space-y-2 md:space-y-0 md:flex-row justify-between items-center px-2">
+                                <a
+                                href="{{ route('password.email') }}"
+                                class="text-base font-medium text-gray-600 hover:text-blue-600 duration-300"
+                                >
+                                    Esqueceu sua senha?
+                                </a>
+                                <x-login.remember-me />
+                            </div>
+                            <div class="flex justify-center">
+                                <button class="button button-primary w-full rounded-md">
+                                    Entrar
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
-
-            <!-- Remember Me -->
-            <div class="block mt-4">
-                <label for="remember_me" class="inline-flex items-center">
-                    <input id="remember_me" type="checkbox" class="rounded border-gray-300 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50" name="remember">
-                    <span class="ml-2 text-sm text-gray-600">{{ __('Remember me') }}</span>
-                </label>
+            <div class="flex w-[12rem] my-4 justify-center">
+                <img src="{{ asset('assets/images/informatica_educativa/logo_informatica_light.png') }}" alt="">
             </div>
-
-            <div class="flex items-center justify-end mt-4">
-                @if (Route::has('password.request'))
-                    <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('password.request') }}">
-                        {{ __('Forgot your password?') }}
-                    </a>
-                @endif
-
-                <x-button class="ml-3">
-                    {{ __('Log in') }}
-                </x-button>
-            </div>
-        </form>
-    </x-auth-card>
+        </div>
+    </div> --}}
 
 </x-guest-layout>
