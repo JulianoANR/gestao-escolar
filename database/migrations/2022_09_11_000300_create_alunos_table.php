@@ -26,7 +26,7 @@ return new class extends Migration
             $table->string('dt_nascimento');
             $table->date('dt_matricula');
             $table->string('cor_raca');//*
-            $table->string('sangue')->nullable(true);
+            $table->string('sangue')->default('Não informado');
             $table->string('religiao')->nullable(true);
             $table->string('sexo')->nullable(true);
             $table->boolean('deficiencia')->nullable();
@@ -54,7 +54,7 @@ return new class extends Migration
         // $table->string('email') ;
         // $table->string('nacionalidade') ;//*
         // $table->string('nomeMunNascto') ;//* quando nacionalidade igual a 1
-        // $table->string('uFMunNascto') ;//* quando nacionalidade igual a 1 
+        // $table->string('uFMunNascto') ;//* quando nacionalidade igual a 1
         // $table->string('codMunNasctoDNE') ;
         // $table->date('dataEntradaPais') ;//* quando nacionalidade igual a 2
         // $table->string('codPaisOrigem') ;//*
@@ -81,7 +81,7 @@ return new class extends Migration
         // $table->string('certMatr09');//*
         // $table->string('dataEmissaoCertidaoNova');//*
     //CERTIDAO ANTIGA
-        // $table->string('numCertidao'); //* quando informado 
+        // $table->string('numCertidao'); //* quando informado
         // $table->string('livro');
         // $table->string('folha');
         // $table->string('distribuicaoCertidao');
@@ -139,7 +139,7 @@ return new class extends Migration
         // $table->string('cdAudioDefVisual');
         // $table->string('provaLinguaPortuguesa');
         });
-    }    
+    }
     /**
      * Reverse the migrations.
      *
