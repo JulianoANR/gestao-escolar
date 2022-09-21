@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreAlunoRequest;
+use App\Http\Requests\UpdateAlunoRequest;
 use App\Models\Aluno;
-use Illuminate\Http\Request;
 
 class AlunoController extends Controller
 {
@@ -30,10 +31,10 @@ class AlunoController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\StoreAlunoRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreAlunoRequest $request)
     {
         //
     }
@@ -63,11 +64,11 @@ class AlunoController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param  \App\Http\Requests\UpdateAlunoRequest  $request
      * @param  \App\Models\Aluno  $aluno
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Aluno $aluno)
+    public function update(UpdateAlunoRequest $request, Aluno $aluno)
     {
         //
     }

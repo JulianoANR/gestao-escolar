@@ -38,7 +38,7 @@ class AuthService
      *
      * @return void
      */
-    public function generateAccessToken() : void
+    public function generateAccessToken(): void
     {
         $response = Http::withBasicAuth(
                     config('sed.user'),

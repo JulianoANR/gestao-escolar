@@ -1,7 +1,5 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-
 /*
 |--------------------------------------------------------------------------
 | Students Web Routes
@@ -13,7 +11,6 @@ use Illuminate\Support\Facades\Route;
 |
 | Prefix: /alunos
 */
-
 
 Route::controller(AlunoController::class)->as('alunos.')->group(function ()
 {
@@ -32,6 +29,3 @@ Route::controller(AlunoController::class)->as('alunos.')->group(function ()
 
     });
 });
-
-
-
