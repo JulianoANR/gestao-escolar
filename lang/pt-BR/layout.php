@@ -22,4 +22,6 @@ return [
     'settings' => 'configurações',
     'settings-profile' => 'configurações de perfil',
     'settings-school' => 'configurações da escola',
+
+
 ];

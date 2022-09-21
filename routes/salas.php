@@ -25,7 +25,7 @@ Route::controller(SalaController::class)->as('salas.')->group(function ()
         Route::get('/matricular', 'create')->name('create');
         Route::post('/store', 'store')->name('store');
         Route::get('/{sala}/editar', 'edit')->name('edit');
-        Route::put('/{sala}/update', 'store')->name('store');
+        Route::put('/{sala}/update', 'update')->name('update');
         Route::delete('/destroy', 'destroy')->name('destroy');
 
         // Other Actions

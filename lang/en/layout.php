@@ -21,4 +21,6 @@ return [
     'settings-profile' => 'settings profile',
     'settings-preferences' => 'preferences',
     'settings-school' => 'settings school',
+
+
 ];

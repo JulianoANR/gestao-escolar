@@ -26,7 +26,7 @@ Route::controller(EscolaController::class)->as('escolas.')->group(function ()
         Route::get('/criar', 'create')->name('create');
         Route::post('/store', 'store')->name('store');
         Route::get('/{escola}/editar', 'edit')->name('edit');
-        Route::put('/{escola}/update', 'store')->name('store');
+        Route::put('/{escola}/update', 'update')->name('update');
         Route::delete('/destroy', 'destroy')->name('destroy');
 
         // Other Actions

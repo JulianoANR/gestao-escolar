@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+
 /*
 |--------------------------------------------------------------------------
 | Students Web Routes
@@ -22,7 +24,7 @@ Route::controller(AlunoController::class)->as('alunos.')->group(function ()
         Route::get('/matricular', 'create')->name('create');
         Route::post('/store', 'store')->name('store');
         Route::get('/{aluno}/editar', 'edit')->name('edit');
-        Route::put('/{aluno}/update', 'store')->name('store');
+        Route::put('/{aluno}/update', 'update')->name('update');
         Route::delete('/destroy', 'destroy')->name('destroy');
 
         // Other Actions
