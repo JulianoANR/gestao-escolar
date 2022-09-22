@@ -1,10 +1,10 @@
 <div class="flex flex-col h-screen w-screen justify-center items-center">
-    <div class="card md:w-2/3 h-auto mx-4 rounded-lg">
-        <div class="flex flex-row justify-between w-full rounded-lg">
+    <div class="card md:max-w-[50%] h-auto mx-4 rounded-md">
+        <div class="flex flex-row justify-between w-auto md:p-8 rounded-lg">
             <div class="hidden md:flex flex-col items-center txt-base card-body w-1/2">
                 <img src="{{ asset('assets/images/informatica_educativa/logo_1.png') }}"
                 alt="Gestão Escolar"
-                class="w-72 rounded-lg shadow-lg shadow-gray-600"
+                class="w-96 rounded-lg shadow-lg shadow-gray-600"
                 >
                 <h3 class="font-bold text-lg mt-4 text-center">Prefeitura Municipal de Caraguatatuba</h3>
                 <h4 class="font-bold text-center">Secretaria de Educação</h4>
