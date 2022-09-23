@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\QueuesController;
 use App\Services\Sed\AuthService;
 use Illuminate\Support\Facades\Route;
 
@@ -41,6 +42,11 @@ Route::middleware(['auth'])->prefix('configuracoes')->group(function () {
     Route::get('/escola', function () {
         return view('settings.school');
     })->name('settings.school');
+});
+
+Route::middleware(['auth'])->prefix('queue')->group(function () {
+    Route::get('/sendMail', [QueuesController::class, 'sendMail'])
+        ->name('queue');
 });
 
 require __DIR__.'/auth.php';
