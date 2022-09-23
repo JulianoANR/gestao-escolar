@@ -1,4 +1,4 @@
-@props(['path' => $path ?? [], 'initial' => $initial ?? ['Home' => route('index')]])
+@props(['path' => $path ?? [], 'initial' => $initial ?? ['Home' => route('dashboard')]])
 
 <nav {{ $attributes->merge(['class' => 'inline-flex items-center space-x-1 md:space-x-3']) }} aria-label="Breadcrumb">
     <a class="inline-flex items-center font-semibold text-sm text-primary dark:text-gray-400 dark:hover:text-gray-300" href="{{ $initial[array_keys($initial)[0]] }}">

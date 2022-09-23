@@ -8,7 +8,7 @@
         </x-slot>
     </x-card>
 
-    <div class="w-full relative mb-6 lg:w-64 lg:mb-0">
+    <div class="w-full min-w-[11rem] relative mb-6 lg:w-64 lg:mb-0">
         <div class="w-full max-h-[11rem] space-y-6 overflow-hidden lg:py-5 lg:max-h-max" id="wrapper_items">
 
             <div>
