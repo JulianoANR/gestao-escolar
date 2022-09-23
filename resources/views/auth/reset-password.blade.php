@@ -18,7 +18,7 @@
         />
         <hr class="dark:border-gray-400">
         <div class="flex justify-center">
-            <x-submit-btn class="button button-primary w-full rounded-md">
+            <x-submit-btn class="button button-lg button-primary w-full rounded-md">
                 {{ __('auth.password-confirm') }}
             </x-submit-btn>
         </div>

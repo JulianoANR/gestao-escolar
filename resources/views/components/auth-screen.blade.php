@@ -1,13 +1,15 @@
-<div class="flex flex-col h-screen w-screen justify-center items-center">
-    <div class="card md:w-2/3 h-auto mx-4 rounded-lg">
-        <div class="flex flex-row justify-between w-full rounded-lg">
-            <div class="hidden md:flex flex-col items-center txt-base card-body w-1/2">
+<div class="flex flex-col h-screen justify-center items-center p-4">
+    <div class="card w-full md:max-w-[60%] h-auto rounded-md">
+        <div class="flex flex-row justify-between w-auto md:p-4 rounded-lg">
+            <div class="hidden md:flex flex-col justify-evenly items-center txt-base card-body w-1/2">
                 <img src="{{ asset('assets/images/informatica_educativa/logo_1.png') }}"
                 alt="Gestão Escolar"
-                class="w-72 rounded-lg shadow-lg shadow-gray-600"
+                class="w-full rounded-lg shadow-lg shadow-gray-600"
                 >
-                <h3 class="font-bold text-lg mt-4 text-center">Prefeitura Municipal de Caraguatatuba</h3>
-                <h4 class="font-bold text-center">Secretaria de Educação</h4>
+                <div class="text-center">
+                    <h3 class="font-bold text-lg mt-4">Prefeitura Municipal de Caraguatatuba</h3>
+                    <h4 class="font-bold">Secretaria de Educação</h4>
+                </div>
             </div>
             <div class="flex flex-col justify-evenly items-center card-body w-1/2 p-8">
                 <h1 class="font-medium txt-base text-2xl">{{ $title }}</h1>
