@@ -149,4 +149,4 @@ class Escola extends Model
 
         return number_format(100 - (($faltas * 100) / $todas->count()), 1);
     }
-
+}

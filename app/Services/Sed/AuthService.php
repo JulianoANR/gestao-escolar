@@ -59,12 +59,21 @@ class AuthService
     public function storeAccessToken($token) : void
     {
         // TO DO: Implementar fila
-        DB::table('sed_access_token')->where('sistema', $this->sistema)
-            ->update([
+        $row = DB::table('sed_access_token')->where('sistema', $this->sistema)->first();
+
+        if ($row) {
+            DB::table('sed_access_token')->where('sistema', $this->sistema)->update([
                 'token' => $token,
-                'sistema' => $this->sistema,
                 'updated_at' => now(),
             ]);
+        } else {
+            DB::table('sed_access_token')->insert([
+                'token' => $token,
+                'sistema' => $this->sistema,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
     }
 
     /**
@@ -87,8 +96,6 @@ class AuthService
             return true;
 
         })->get(config('sed.url') . $route, $body);
-
-        dd($response->collect());
 
         return $response;
     }

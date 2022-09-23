@@ -1,6 +1,7 @@
 <?php
 
 use App\Services\Sed\AuthService;
+use App\Services\Sed\Escolas\GetEscolasService;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,14 +16,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
+
     return view('welcome');
 })->name('index');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
-    //$teste = new AuthService;
-    //$teste->generateAccessToken();
-
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/componentes', function () {

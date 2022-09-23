@@ -21,8 +21,8 @@ class EscolaController extends Controller
      */
     public function index()
     {
-        $teste = ($this->getEscolasService)();
-        dd('construtor', $teste);
+        $teste = $this->getEscolasService::handle();
+        dd('controller', $teste);
 
         return $this->escola->all();
     }
