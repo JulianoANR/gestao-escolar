@@ -1,5 +1,4 @@
 <x-app-layout title="Settings">
-
     <!-- Header page -->
     <div class="my-6 px-5 md:px-7">
         <div class="flex flex-wrap gap-2 justify-between items-center">
@@ -19,17 +18,23 @@
                 {{ 'Account data' }}
             </h2>
             <hr class="dark:border-gray-700 py-2">
-            <form action="" class="flex flex-wrap space-x-2">
+            <form
+            action="{{ route('user.update') }}"
+            class="flex flex-wrap space-x-2"
+            method="post"
+            enctype="multipart/form-data"
+            >
+            @csrf
                 <div class="mb-72 w-full flex justify-center">
                     <div class="mx-auto text-center">
                         <div class="relative w-64">
-                            <img class="w-64 h-64 rounded-full absolute border-2 border-primary" src="{{ asset('assets/images/profile/default.png') }}" alt="" />
+                            <img class="w-64 h-64 rounded-full absolute border-2 border-primary" src="{{ Auth::user()->profile_path_image ? asset('storage/'.Auth::user()->profile_path_image) : asset('assets/images/profile/default.png') }}" alt="" />
                             <label for="upload" class="">
                                 <div class="w-64 h-64 group hover:bg-gray-200 opacity-60 rounded-full absolute flex justify-center items-center cursor-pointer transition duration-500">
                                     <i class="hidden group-hover:block text-5xl text-primary fa-solid fa-arrow-up-from-bracket"></i>
                                 </div>
                             </label>
-                        <input type="file" name="user-image" id="upload" class="hidden">
+                        <input type="file" name="profile_path_image" id="upload" class="hidden">
                         </div>
                     </div>
                 </div>
@@ -53,7 +58,7 @@
                     <div class="flex flex-col w-full">
                         <x-label for="CPF" value="CPF do Usuario" />
                         <x-input
-                        name="CPF"
+                        name="cpf"
                         class="input-sm rounded-md p-3"
                         type="text"
                         placeholder="{{ __('auth.CPF') }}"
@@ -63,7 +68,7 @@
                     <div class="flex flex-col w-full">
                         <x-label for="RG" value="RG do Usuario" />
                         <x-input
-                        name="RG"
+                        name="rg"
                         class="input-sm rounded-md p-3"
                         type="text"
                         placeholder="{{ __('auth.RG') }}"
@@ -73,7 +78,7 @@
                     <div class="flex flex-col w-full">
                         <x-label for="RG" value="Matricula do Usuario" />
                         <x-input
-                        name="RG"
+                        name="matricula"
                         class="input-sm rounded-md p-3"
                         type="text"
                         placeholder="{{ __('auth.RG') }}"

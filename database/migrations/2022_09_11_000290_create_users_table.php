@@ -25,6 +25,7 @@ return new class extends Migration
             $table->foreignId('cargo_id')->references('id')->on('cargos')->onUpdate('cascade')->onDelete('cascade');
             // $table->foreignId('escola_id')->references('id')->on('escolas')->onUpdate('cascade')->onDelete('cascade');            $table->timestamp('email_verified_at')->nullable(true);
             // $table->boolean('autoload_graphic')->default(true); //Desabilita carregamento dos graficos na dashboard
+            $table->string('profile_path_image')->nullable(true);
             $table->string('password');
             $table->string('observacao')->nullable();
             $table->rememberToken();

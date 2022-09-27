@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\QueuesController;
+use App\Http\Controllers\UserController;
 use App\Services\Sed\AuthService;
 use Illuminate\Support\Facades\Route;
 
@@ -47,6 +48,14 @@ Route::middleware(['auth'])->prefix('configuracoes')->group(function () {
 Route::middleware(['auth'])->prefix('queue')->group(function () {
     Route::get('/sendMail', [QueuesController::class, 'sendMail'])
         ->name('queue');
+});
+
+
+Route::middleware(['auth'])->prefix('usuario')->group(function() {
+    Route::get('/configuracoes', [UserController::class, 'edit'])
+        ->name('user.edit');
+    Route::post('/configuracoes', [UserController::class, 'update'])
+        ->name('user.update');
 });
 
 require __DIR__.'/auth.php';

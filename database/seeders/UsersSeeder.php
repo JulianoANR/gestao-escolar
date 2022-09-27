@@ -21,7 +21,7 @@ class UsersSeeder extends Seeder
             'rg'                => '123456789',
             'digito'            => '0',
             'cpf'               => '12345678901',
-            'matricula'         => '123456789',
+            'matricula'         => '1234567',
             'data_nascimento'   => '1990-01-01',
             'cargo_id'          => 1,
             'email'             => 'juliano.appe@gmail.com',

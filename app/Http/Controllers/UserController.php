@@ -2,12 +2,20 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
-use App\Models\User;
+use App\Services\Users\UpdateUserService;
 
 class UserController extends Controller
 {
+
+    public function __construct(
+        public UpdateUserService $updateUserService
+    ){}
+
     /**
      * Display a listing of the resource.
      *
@@ -56,9 +64,9 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit()
     {
-        //
+        return view('settings.profile');
     }
 
     /**
@@ -68,9 +76,11 @@ class UserController extends Controller
      * @param  \App\Models\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateUserRequest $request, User $user)
+    public function update(UpdateUserRequest $request)
     {
-        //
+        $this->updateUserService->handle($request, Auth::user());
+
+        return redirect()->back()->with('success', 'Perfil atualizado com sucesso!');
     }
 
     /**
