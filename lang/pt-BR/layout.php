@@ -13,19 +13,22 @@ return [
     |
     */
 
-    'logout' => 'sair',
-    'profile' => 'perfil',
-    'preferences' => 'preferências',
-    'school' => 'escola',
-
     // Settings
-    'settings' => 'configurações',
-    'settings-profile' => 'configurações de perfil',
-    'settings-school' => 'configurações da escola',
 
+    'settings' => 'Configurações',
+    'account' => 'Minha Conta',
+    'account-data' => 'Dados da Conta',
+    'sections' => 'Seções',
+    'preferences' => 'Preferências',
+    'notifications' => 'Notificações',
+    'profile' => 'Meu Perfil',
+    'schools' => 'Escola',
+    'my-schools' => 'Minhas Escolas',
+    'my-logs' => 'Minhas Ações',
+    'logout' => 'Sair',
 
     // Menu
-
+    'logs'  => 'Ações',
     'btn-save' => 'Salvar',
 
 ];

@@ -31,19 +31,19 @@ Route::get('/componentes', function () {
     return view('template.components');
 })->middleware(['auth'])->name('components');
 
-Route::middleware(['auth'])->prefix('configuracoes')->group(function () {
-    Route::get('/', function () {
-        return view('settings.profile');
-    })->name('settings.profile');
+// Route::middleware(['auth'])->prefix('configuracoes')->group(function () {
+//     Route::get('/', function () {
+//         return view('settings.profile');
+//     })->name('settings.profile');
 
-    Route::get('/preferencias', function () {
-        return view('settings.preferences');
-    })->name('settings.preferences');
+//     Route::get('/preferencias', function () {
+//         return view('settings.preferences');
+//     })->name('settings.preferences');
 
-    Route::get('/escola', function () {
-        return view('settings.school');
-    })->name('settings.school');
-});
+//     Route::get('/escola', function () {
+//         return view('settings.school');
+//     })->name('settings.school');
+// });
 
 Route::middleware(['auth'])->prefix('queue')->group(function () {
     Route::get('/sendMail', [QueuesController::class, 'sendMail'])
@@ -56,6 +56,14 @@ Route::middleware(['auth'])->prefix('usuario')->group(function() {
         ->name('user.edit');
     Route::post('/configuracoes', [UserController::class, 'update'])
         ->name('user.update');
+    Route::get('/preferencias', [UserController::class, 'preferences'])
+        ->name('user.preferences');
+    Route::post('/preferencias', [UserController::class, 'updatePreferences'])
+        ->name('user.preferences-update');
+    Route::get('/sections', [UserController::class, 'sections'])
+        ->name('user.sections');
+    Route::get('/escola', [UserController::class, 'school'])
+        ->name('user.school');
 });
 
 require __DIR__.'/auth.php';

@@ -1,4 +1,4 @@
-@props([ 'active' => $active, 'activeClasses' => 'bg-primary/10 text-primary !hover:bg-primary/10 !focus:bg-primary/20 !dark:hover:bg-primary/10 !dark:focus:bg-primary/20'])
+@props(['active' => $active, 'activeClasses' => 'bg-primary/10 text-primary !hover:bg-primary/10 !focus:bg-primary/20 !dark:hover:bg-primary/10 !dark:focus:bg-primary/20'])
 
 <div class="flex flex-col-reverse lg:flex-row">
 
@@ -17,47 +17,65 @@
                 </h3>
 
                 <a class="flex items-center gap-x-3 relative py-2 px-4 mb-1 w-full cursor-pointer rounded-sm transition text-sm hover:bg-gray-100 focus:bg-gray-200 dark:hover:bg-white/5 dark:focus:bg-white/10
-                          {{ strtolower($active) == 'account_data' ? $activeClasses : '' }}" href="{{ route('settings.profile') }}">
-
+                          {{ strtolower($active) == 'account_data' ? $activeClasses : '' }}" href="{{ route('user.edit') }}">
                     <x-icon class="w-5 h-5 text-xl" name="person-outline" library="ion-icon"></x-icon>
-                    Account data
+                    {{ __('layout.account-data') }}
                 </a>
                 <!---->
                 <!---->
                 <a class="flex items-center gap-x-3 relative py-2 px-4 mb-1 w-full cursor-pointer rounded-sm transition text-sm hover:bg-gray-100 focus:bg-gray-200 dark:hover:bg-white/5 dark:focus:bg-white/10
-                          {{ strtolower($active) == 'preferences' ? $activeClasses : '' }}" href="{{ route('settings.preferences') }}">
-
+                          {{ strtolower($active) == 'preferences' ? $activeClasses : '' }}" href="{{ route('user.preferences') }}">
                     <x-icon class="w-5 h-5 text-xl" name="brush-outline" library="ion-icon"></x-icon>
-                    Preferences
+                    {{ __('layout.preferences') }}
                 </a>
                 <!---->
                 <!---->
-                <a class="flex items-center gap-x-3 relative py-2 px-4 mb-1 w-full cursor-pointer rounded-sm transition text-sm hover:bg-gray-100 focus:bg-gray-200 dark:hover:bg-white/5 dark:focus:bg-white/10
+                {{-- <a class="flex items-center gap-x-3 relative py-2 px-4 mb-1 w-full cursor-pointer rounded-sm transition text-sm hover:bg-gray-100 focus:bg-gray-200 dark:hover:bg-white/5 dark:focus:bg-white/10
                           {{ strtolower($active) == 'teams' ? $activeClasses : '' }}" href="#">
-
                     <x-icon class="w-5 h-5 text-xl" name="people-outline" library="ion-icon"></x-icon>
                     Teams
+                </a> --}}
+                <!---->
+                <!---->
+                <a class="flex items-center gap-x-3 relative py-2 px-4 mb-1 w-full cursor-pointer rounded-sm transition text-sm hover:bg-gray-100 focus:bg-gray-200 dark:hover:bg-white/5 dark:focus:bg-white/10
+                          {{ strtolower($active) == 'browser_sessions' ? $activeClasses : '' }}" href="{{ route('user.sections') }}">
+
+                    <x-icon class="w-5 h-5 text-xl" name="tv-outline" library="ion-icon"></x-icon>
+                    {{ __('layout.sections') }}
                 </a>
                 <!---->
                 <!---->
                 <a class="flex items-center gap-x-3 relative py-2 px-4 mb-1 w-full cursor-pointer rounded-sm transition text-sm hover:bg-gray-100 focus:bg-gray-200 dark:hover:bg-white/5 dark:focus:bg-white/10
-                          {{ strtolower($active) == 'browser_sessions' ? $activeClasses : '' }}" href="#">
+                          {{ strtolower($active) == 'company_data' ? $activeClasses : '' }}" href="{{ route('user.school') }}">
 
-                    <x-icon class="w-5 h-5 text-xl" name="tv-outline" library="ion-icon"></x-icon>
-                    Browser Sessions
+                    <x-icon class="w-5 h-5 text-xl" name="business-outline" library="ion-icon"></x-icon>
+                    {{ __('layout.my-logs') }}
                 </a>
             </div>
 
             <div>
                 <h3 class="font-semibold text-sm pl-4 mb-2">
-                    {{ 'Company' }}
+                    {{ __('layout.schools') }}
                 </h3>
 
                 <a class="flex items-center gap-x-3 relative py-2 px-4 mb-1 w-full cursor-pointer rounded-sm transition text-sm hover:bg-gray-100 focus:bg-gray-200 dark:hover:bg-white/5 dark:focus:bg-white/10
-                          {{ strtolower($active) == 'company_data' ? $activeClasses : '' }}" href="{{ route('settings.school') }}">
+                          {{ strtolower($active) == 'company_data' ? $activeClasses : '' }}" href="{{ route('user.school') }}">
 
                     <x-icon class="w-5 h-5 text-xl" name="business-outline" library="ion-icon"></x-icon>
-                    Company data
+                    {{ __('layout.my-schools') }}
+                </a>
+            </div>
+
+            <div>
+                <h3 class="font-semibold text-sm pl-4 mb-2">
+                    {{ __('layout.logs') }}
+                </h3>
+
+                <a class="flex items-center gap-x-3 relative py-2 px-4 mb-1 w-full cursor-pointer rounded-sm transition text-sm hover:bg-gray-100 focus:bg-gray-200 dark:hover:bg-white/5 dark:focus:bg-white/10
+                          {{ strtolower($active) == 'company_data' ? $activeClasses : '' }}" href="{{ route('user.school') }}">
+
+                    <x-icon class="w-5 h-5 text-xl" name="business-outline" library="ion-icon"></x-icon>
+                    {{ __('layout.my-logs') }}
                 </a>
             </div>
         </div>

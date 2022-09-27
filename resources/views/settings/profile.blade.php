@@ -3,11 +3,11 @@
     <div class="my-6 px-5 md:px-7">
         <div class="flex flex-wrap gap-2 justify-between items-center">
             <h1 class="text-xl font-semibold text-gray-400 dark:text-white">
-                {{ ucfirst(__('layout.settings-profile')) }}
+                {{ ucfirst(__('layout.settings')) }}
             </h1>
 
             <x-layouts.breadcrumb :path="[
-                __('layout.settings') => route('settings.profile'),
+                __('layout.settings') => route('user.edit'),
             ]"/>
         </div>
     </div>
@@ -28,7 +28,7 @@
                 <div class="mb-72 w-full flex justify-center">
                     <div class="mx-auto text-center">
                         <div class="relative w-64">
-                            <img class="w-64 h-64 rounded-full absolute border-2 border-primary" src="{{ Auth::user()->profile_path_image ? asset('storage/'.Auth::user()->profile_path_image) : asset('assets/images/profile/default.png') }}" alt="" />
+                            <img class="w-64 h-64 rounded-full absolute border-2 border-primary" src="{{ Auth::user()->profile_path_image ? asset('storage/'.Auth::user()->profile_path_image) : asset('assets/images/profile/default.png') }}" alt="Foto de Perfil" />
                             <label for="upload" class="">
                                 <div class="w-64 h-64 group hover:bg-gray-200 opacity-60 rounded-full absolute flex justify-center items-center cursor-pointer transition duration-500">
                                     <i class="hidden group-hover:block text-5xl text-primary fa-solid fa-arrow-up-from-bracket"></i>
