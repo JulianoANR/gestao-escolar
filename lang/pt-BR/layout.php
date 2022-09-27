@@ -24,4 +24,8 @@ return [
     'settings-school' => 'configurações da escola',
 
 
+    // Menu
+
+    'btn-save' => 'Salvar',
+
 ];

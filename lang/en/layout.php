@@ -22,5 +22,7 @@ return [
     'settings-preferences' => 'preferences',
     'settings-school' => 'settings school',
 
+    // Menu
 
+    'btn-save' => 'Save',
 ];

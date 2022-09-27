@@ -38,57 +38,57 @@
                         </div>
                     </div>
                 </div>
-                <x-label for="name" value="Nome do Usuario" />
+                <x-label for="name" value="{{ __('form.name-label') }}" />
                 <x-input
                     name="name"
                     class="input-sm rounded-md p-3 w-full"
                     type="text"
-                    placeholder="{{ __('auth.name') }}"
+                    placeholder="{{ __('form.name') }}"
                     :value="Auth::user()->name"
                 />
-                <x-label for="email" value="Email" />
+                <x-label for="email" value="{{ __('form.email-label') }}" />
                 <x-input
                     name="email"
                     class="input-sm rounded-md p-3 w-full"
                     type="email"
-                    placeholder="{{ __('auth.email') }}"
+                    placeholder="{{ __('form.email') }}"
                     :value="Auth::user()->email"
                 />
                 <div class="flex flex-col md:flex-row md:space-x-3 w-full">
                     <div class="flex flex-col w-full">
-                        <x-label for="CPF" value="CPF do Usuario" />
+                        <x-label for="cpf" value="{{ __('form.cpf-label') }}" />
                         <x-input
                         name="cpf"
                         class="input-sm rounded-md p-3"
                         type="text"
-                        placeholder="{{ __('auth.CPF') }}"
+                        placeholder="{{ __('form.cpf') }}"
                         :value="Auth::user()->cpf"
                         />
                     </div>
                     <div class="flex flex-col w-full">
-                        <x-label for="RG" value="RG do Usuario" />
+                        <x-label for="rg" value="{{ __('form.rg-label') }}" />
                         <x-input
                         name="rg"
                         class="input-sm rounded-md p-3"
                         type="text"
-                        placeholder="{{ __('auth.RG') }}"
+                        placeholder="{{ __('form.rg') }}"
                         :value="Auth::user()->rg"
                         />
                     </div>
                     <div class="flex flex-col w-full">
-                        <x-label for="RG" value="Matricula do Usuario" />
+                        <x-label for="matricula" value="{{ __('form.matricula-label') }}" />
                         <x-input
                         name="matricula"
                         class="input-sm rounded-md p-3"
                         type="text"
-                        placeholder="{{ __('auth.RG') }}"
+                        placeholder="{{ __('form.matricula') }}"
                         :value="Auth::user()->matricula"
                         />
                     </div>
                 </div>
                 <div class="w-full mt-4 flex justify-end">
                     <x-submit-btn class="button button-primary w-24">
-                        {{ __('Save') }}
+                        {{ __('layout.btn-save') }}
                     </x-submit-btn>
                 </div>
             </form>
