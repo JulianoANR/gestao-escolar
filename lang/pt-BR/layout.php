@@ -24,6 +24,7 @@ return [
     'profile' => 'Meu Perfil',
     'schools' => 'Escola',
     'my-schools' => 'Minhas Escolas',
+    'my-classrooms' => 'Minhas Turmas',
     'my-logs' => 'Minhas Ações',
     'logout' => 'Sair',
 

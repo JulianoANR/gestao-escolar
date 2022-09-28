@@ -93,4 +93,35 @@ class UserController extends Controller
     {
         //
     }
+
+    /**
+     * Demonstra a tela de preferências de funcionamento do sistema.
+     * Como por exemplo, a preferência de tema de cor, idioma, etc.
+     * @param \App\Models\User $user
+     * @return \Illuminate\Http\Response
+     *
+     */
+
+    public function preferences(User $user)
+    {
+        return view('settings.preferences', compact('user'));
+    }
+
+    public function classrooms(User $user)
+    {
+        return view('classrooms.index', compact('user'));
+    }
+
+    public function schools(User $user)
+    {
+        return view('settings.schools', compact('user'));
+    }
+
+    public function logs(User $user){
+        return view('log.user-logs', compact('user'));
+    }
+
+    public function systemLogs(User $user){
+        return view('log.system-logs', compact('user'));
+    }
 }

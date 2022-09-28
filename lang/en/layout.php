@@ -24,6 +24,7 @@ return [
     'profile' => 'Profile',
     'schools' => 'Schools',
     'my-schools' => 'My Schools',
+    'my-classrooms' => 'My Classrooms',
     'my-logs' => 'My Logs',
     'logout' => 'Logout',
 

@@ -7,13 +7,13 @@
             </h1>
 
             <x-layouts.breadcrumb :path="[
-                __('layout.settings') => route('user.edit'),
+                __('layout.account') => route('user.edit'),
             ]"/>
         </div>
     </div>
 
     <section class="px-4 md:px-6">
-        <x-sides.configuracoes active="account_data">
+        <x-sides.settings active="account_data">
             <h2 class="text-xl font-semibold mb-4">
                 {{ 'Account data' }}
             </h2>
@@ -92,7 +92,7 @@
                     </x-submit-btn>
                 </div>
             </form>
-        </x-sides.configuracoes>
+        </x-sides.settings>
     </section>
 
 </x-app-layout>

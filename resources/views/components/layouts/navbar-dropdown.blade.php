@@ -9,7 +9,6 @@
         <span class="hidden text-sm text-current font-medium sm:block lg:text-base">
             {{ Auth::user()->name }}
         </span>
-        
         <x-icon name="chevron-down" class="w-5 h-5 text-xl" library="ion-icon" />
     </button>
 
@@ -29,7 +28,7 @@
         </a>
         {{-- Schools --}}
         <a class="flex items-center space-x-4 w-full px-4 py-2 text-gray-700 cursor-pointer transition hover:bg-gray-100 focus:bg-gray-200
-                dark:text-gray-100 dark:hover:bg-white/5 dark:focus:bg-white/10" href="{{ route('user.school') }}">
+                dark:text-gray-100 dark:hover:bg-white/5 dark:focus:bg-white/10" href="{{ route('user.schools') }}">
             <ion-icon name="business-outline"></ion-icon>
             <span>{{ __('layout.my-schools') }}</span>
         </a>
