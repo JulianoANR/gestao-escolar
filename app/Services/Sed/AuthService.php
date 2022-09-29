@@ -80,13 +80,13 @@ class AuthService
      * Abstrai a lógica de de consumo de api do sed em rotas GET
      *
      * @param  string  $route
-     * @param  array?  $body
-     * @param  array?  $headers
+     * @param  array|null?  $body
+     * @param  array|null?  $headers
      * @return void
      */
-    public function get($route, $body = [], $headers = [])
+    public function get($route, $body = null, $headers = null)
     {
-        $response = Http::withToken($this->getAccessToken())->retry(3, 100, function ($exception, $request) {
+        $response = Http::withToken($this->getAccessToken())->retry(3, 10, function ($exception, $request) {
 
             // Caso o token esteja expirado, gera um novo token e tenta novamente
             if ($exception->response->status() !== 401) {

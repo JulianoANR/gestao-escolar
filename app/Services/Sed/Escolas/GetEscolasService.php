@@ -18,6 +18,7 @@ class GetEscolasService extends SedAuthService
     /**
      * Retorna todas as escolas cadastradas no SED na diretoria informada
      *
+     * @return array
      */
     protected function getEscolas()
     {

@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StoreEscolaRequest;
-use App\Http\Requests\UpdateEscolaRequest;
+use Illuminate\Http\Client\Request;
+use App\Http\Requests\{StoreEscolaRequest, UpdateEscolaRequest};
 use App\Services\Sed\Escolas\GetEscolasService;
 use App\Models\Escola;
 
@@ -17,14 +17,16 @@ class EscolaController extends Controller
     /**
      * Display a listing of the resource.
      *
+     * 
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $teste = $this->getEscolasService::handle();
-        dd('controller', $teste);
+        $escolas = $request->has('search') ? 
+            $this->escola->search($request->search)->paginate(20) : 
+            $this->escola->paginate(20);
 
-        return $this->escola->all();
+        return view('escolas.index', compact('escolas'));
     }
 
     /**

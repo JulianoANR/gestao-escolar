@@ -16,23 +16,28 @@ return new class extends Migration
         Schema::create('escolas', function (Blueprint $table) {
             // Gestao
             $table->id();
-            $table->string('cod_escola');
-            $table->string('nome');
-            $table->string('email');
-            $table->integer('cie')->unique();
-            $table->foreignId('tipo_ensino_id')->references('id')->on('tipo_ensinos')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('cep');
-            $table->string('endereco');
-            $table->string('numero');
-            $table->string('bairro');
-			$table->string('complemento');
-			$table->string('cod_municipio');
-			$table->string('desc_municipio');
-            $table->string('regiao');
-            $table->string('telefone');
-			$table->string('cod_diretoria');
-			$table->string('desc_nom_diretoria');
-            $table->string('observacao')->default("Sem observações.")->nullable(true);
+            $table->string('nome')->index();
+            $table->string('email')->nullable();
+            $table->integer('cie')->unique()->index();
+
+            // $table->string('cep');
+            // $table->string('endereco');
+            // $table->string('numero');
+            // $table->string('bairro');
+			// $table->string('complemento');
+            // $table->string('regiao');
+            $table->string('tipoLogradouro');
+			$table->string('descEndereco');
+			$table->string('numeroSed');
+			$table->string('descBairro');
+			$table->string('descComplemento');
+			$table->string('codMunicipio');
+			$table->string('descMunicipio');
+			$table->string('latitude');
+			$table->string('longitude');
+
+            $table->string('sed_cod_escola')->index();
+            $table->string('observacao')->nullable();
             $table->timestamps();
             $table->softDeletes();
 
