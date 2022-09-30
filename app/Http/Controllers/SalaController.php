@@ -15,7 +15,7 @@ class SalaController extends Controller
      */
     public function index()
     {
-        //
+        return view('classrooms.index');
     }
 
     /**
@@ -25,7 +25,7 @@ class SalaController extends Controller
      */
     public function create()
     {
-        //
+        return view('classrooms.create');
     }
 
     /**
@@ -36,7 +36,7 @@ class SalaController extends Controller
      */
     public function store(StoreSalaRequest $request)
     {
-        //
+        return redirect()->route('salas.index');
     }
 
     /**
@@ -47,7 +47,7 @@ class SalaController extends Controller
      */
     public function show(Sala $sala)
     {
-        //
+        return view('classrooms.show', compact('sala'));
     }
 
     /**
@@ -58,7 +58,7 @@ class SalaController extends Controller
      */
     public function edit(Sala $sala)
     {
-        //
+        return view('classrooms.edit', compact('sala'));
     }
 
     /**
@@ -70,7 +70,7 @@ class SalaController extends Controller
      */
     public function update(UpdateSalaRequest $request, Sala $sala)
     {
-        //
+        return redirect()->route('salas.index');
     }
 
     /**
@@ -81,6 +81,6 @@ class SalaController extends Controller
      */
     public function destroy(Sala $sala)
     {
-        //
+        return redirect()->route('salas.index');
     }
 }

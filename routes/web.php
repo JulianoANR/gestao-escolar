@@ -36,7 +36,7 @@ Route::middleware(['auth'])->prefix('queue')->group(function () {
         ->name('queue');
 });
 
-Route::middleware(['auth'])->prefix('usuario')->group(function() {
+Route::controller(['auth'])->prefix('usuario')->group(function() {
     Route::get('/configuracoes', [UserController::class, 'edit'])
         ->name('user.edit');
 
@@ -48,14 +48,6 @@ Route::middleware(['auth'])->prefix('usuario')->group(function() {
 
     Route::get('/sections', [UserController::class, 'sections'])
         ->name('user.sections');
-
-    Route::get('/salas', [UserController::class, 'classrooms'])
-        ->name('user.classrooms');
-
-    Route::get('/escolas', [UserController::class, 'schools'])
-        ->name('user.schools');
-
-
 
     Route::get('/acoes', [UserController::class, 'logs'])
         ->name('user.logs');

@@ -8,8 +8,8 @@
         </x-slot>
     </x-card>
 
-    <div class="w-full min-w-[11rem] relative mb-6 lg:w-64 lg:mb-0">
-        <div class="w-full max-h-[11rem] space-y-6 overflow-hidden lg:py-5 lg:max-h-max" id="wrapper_items">
+    <div class="w-full relative mb-6 lg:w-64 lg:mb-0">
+        <div class="w-[11rem] space-y-6 overflow-hidden lg:py-5 lg:max-h-max" id="wrapper_items">
 
             <div>
                 <h3 class="font-semibold text-sm pl-4 mb-2">
@@ -59,14 +59,13 @@
                 </h3>
 
                 <a class="flex items-center gap-x-3 relative py-2 px-4 mb-1 w-full cursor-pointer rounded-sm transition text-sm hover:bg-gray-100 focus:bg-gray-200 dark:hover:bg-white/5 dark:focus:bg-white/10
-                          {{ strtolower($active) == 'schools' ? $activeClasses : '' }}" href="{{ route('user.schools') }}">
-
+                          {{ strtolower($active) == 'schools' ? $activeClasses : '' }}" href="{{ route('escolas.index') }}">
                     <x-icon class="w-5 h-5 text-xl" name="business-outline" library="ion-icon"></x-icon>
                     {{ __('layout.my-schools') }}
                 </a>
-                <a class="flex items-center gap-x-3 relative py-2 px-4 mb-1 w-full cursor-pointer rounded-sm transition text-sm hover:bg-gray-100 focus:bg-gray-200 dark:hover:bg-white/5 dark:focus:bg-white/10
-                          {{ strtolower($active) == 'classrooms' ? $activeClasses : '' }}" href="{{ route('user.classrooms') }}">
 
+                <a class="flex items-center gap-x-3 relative py-2 px-4 mb-1 w-full cursor-pointer rounded-sm transition text-sm hover:bg-gray-100 focus:bg-gray-200 dark:hover:bg-white/5 dark:focus:bg-white/10
+                          {{ strtolower($active) == 'classrooms' ? $activeClasses : '' }}" href="{{ route('salas.index') }}">
                     <x-icon class="w-5 h-5 text-xl" name="business-outline" library="ion-icon"></x-icon>
                     {{ __('layout.my-classrooms') }}
                 </a>

@@ -21,10 +21,11 @@ class EscolaController extends Controller
      */
     public function index()
     {
-        $teste = ($this->getEscolasService)();
-        dd('construtor', $teste);
+        // $teste = ($this->getEscolasService)();
+        // dd('construtor', $teste);
 
-        return $this->escola->all();
+        // return $this->escola->all();
+        return view('schools.index');
     }
 
     /**
@@ -34,7 +35,7 @@ class EscolaController extends Controller
      */
     public function create()
     {
-        //
+        return view('schools.create');
     }
 
     /**
@@ -45,7 +46,7 @@ class EscolaController extends Controller
      */
     public function store(StoreEscolaRequest $request)
     {
-        //
+        return redirect()->route('escolas.index');
     }
 
     /**
@@ -56,7 +57,7 @@ class EscolaController extends Controller
      */
     public function show(Escola $escola)
     {
-        //
+        return view('schools.show', compact('escola'));
     }
 
     /**
@@ -67,7 +68,7 @@ class EscolaController extends Controller
      */
     public function edit(Escola $escola)
     {
-        //
+        return view('schools.edit', compact('escola'));
     }
 
     /**
@@ -79,7 +80,7 @@ class EscolaController extends Controller
      */
     public function update(UpdateEscolaRequest $request, Escola $escola)
     {
-        //
+        return redirect()->route('escolas.index');
     }
 
     /**
@@ -90,6 +91,6 @@ class EscolaController extends Controller
      */
     public function destroy(Escola $escola)
     {
-        //
+        return redirect()->route('escolas.index');
     }
 }

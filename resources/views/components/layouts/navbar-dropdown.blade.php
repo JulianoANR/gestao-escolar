@@ -28,7 +28,7 @@
         </a>
         {{-- Schools --}}
         <a class="flex items-center space-x-4 w-full px-4 py-2 text-gray-700 cursor-pointer transition hover:bg-gray-100 focus:bg-gray-200
-                dark:text-gray-100 dark:hover:bg-white/5 dark:focus:bg-white/10" href="{{ route('user.schools') }}">
+                dark:text-gray-100 dark:hover:bg-white/5 dark:focus:bg-white/10" href="{{ route('escolas.index') }}">
             <ion-icon name="business-outline"></ion-icon>
             <span>{{ __('layout.my-schools') }}</span>
         </a>

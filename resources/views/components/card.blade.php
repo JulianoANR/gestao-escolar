@@ -8,11 +8,11 @@
         </div>
     @endisset
 
-    @isset($body)
+    {{-- @isset($body) --}}
         <div {{ $body->attributes->merge(['class' =>'card-body']) }}>
             {{ $body }}
         </div>
-    @endisset
+    {{-- @endisset --}}
 
     @isset($footer)
         <div {{ $body->attributes->merge(['class' =>'card-footer']) }}>
