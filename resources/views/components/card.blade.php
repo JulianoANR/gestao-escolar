@@ -1,7 +1,6 @@
 @props([])
 
 <div {{ $attributes->merge(['class' => "card"]) }}>
-
     @isset($header)
         <div {{ $header->attributes->merge(['class' =>'card-header']) }}>
             {{ $header }}

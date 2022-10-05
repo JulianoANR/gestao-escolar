@@ -59,25 +59,34 @@ class AuthService
     public function storeAccessToken($token) : void
     {
         // TO DO: Implementar fila
-        DB::table('sed_access_token')->where('sistema', $this->sistema)
-            ->update([
+        $row = DB::table('sed_access_token')->where('sistema', $this->sistema)->first();
+
+        if ($row) {
+            DB::table('sed_access_token')->where('sistema', $this->sistema)->update([
                 'token' => $token,
-                'sistema' => $this->sistema,
                 'updated_at' => now(),
             ]);
+        } else {
+            DB::table('sed_access_token')->insert([
+                'token' => $token,
+                'sistema' => $this->sistema,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
+        }
     }
 
     /**
      * Abstrai a lógica de de consumo de api do sed em rotas GET
      *
      * @param  string  $route
-     * @param  array?  $body
-     * @param  array?  $headers
+     * @param  array|null?  $body
+     * @param  array|null?  $headers
      * @return void
      */
-    public function get($route, $body = [], $headers = [])
+    public function get($route, $body = null, $headers = null)
     {
-        $response = Http::withToken($this->getAccessToken())->retry(3, 100, function ($exception, $request) {
+        $response = Http::withToken($this->getAccessToken())->retry(3, 10, function ($exception, $request) {
 
             // Caso o token esteja expirado, gera um novo token e tenta novamente
             if ($exception->response->status() !== 401) {
@@ -87,8 +96,6 @@ class AuthService
             return true;
 
         })->get(config('sed.url') . $route, $body);
-
-        dd($response->collect());
 
         return $response;
     }

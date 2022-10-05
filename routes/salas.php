@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 | Prefix: /escolas
 */
 
-
 Route::controller(SalaController::class)->as('salas.')->group(function ()
 {
     Route::middleware(['auth'])->group(function ()

@@ -14,27 +14,25 @@ return new class extends Migration
     public function up()
     {
         Schema::create('escolas', function (Blueprint $table) {
-            // Gestao
             $table->id();
-            $table->string('cod_escola');
-            $table->string('nome');
-            $table->string('email');
-            $table->integer('cie')->unique();
-            $table->foreignId('tipo_ensino_id')->references('id')->on('tipo_ensinos')->onUpdate('cascade')->onDelete('cascade');
-            $table->string('cep');
-            $table->string('endereco');
-            $table->string('numero');
-            $table->string('bairro');
-			$table->string('complemento');
-			$table->string('cod_municipio');
-			$table->string('desc_municipio');
-            $table->string('regiao');
-            $table->string('telefone');
-			$table->string('cod_diretoria');
-			$table->string('desc_nom_diretoria');
-            $table->string('observacao')->default("Sem observações.")->nullable(true);
+            $table->string('nome')->index();
+            $table->string('sed_cod_escola')->nullable()->index();
+            $table->integer('cie')->unique()->index();
+            $table->string('email')->nullable();
+            $table->string('telefone_1')->nullable();
+            $table->string('telefone_2')->nullable();
+            $table->enum('segmento', ['EMEI', 'EMEF', 'CEI', 'EMEI/EMEF']);
+            
+            $table->string('cep')->nullable();
+			$table->string('endereco')->nullable();
+			$table->string('numero')->nullable();
+			$table->string('bairro')->nullable();
+			$table->string('complemento')->nullable();
+			$table->string('latitude')->nullable();
+			$table->string('longitude')->nullable();
+
+            $table->string('observacao')->nullable();
             $table->timestamps();
-            $table->softDeletes();
 
             // SED
             // $table->string('codEscola');

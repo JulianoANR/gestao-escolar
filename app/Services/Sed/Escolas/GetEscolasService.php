@@ -18,12 +18,13 @@ class GetEscolasService extends SedAuthService
     /**
      * Retorna todas as escolas cadastradas no SED na diretoria informada
      *
+     * @return array
      */
-    public function __invoke()
+    protected function getEscolas()
     {
         $response = parent::get(
-            SedRouters::GET_ESCOLAS->value,
-            [
+            route: SedRouters::GET_ESCOLAS->value,
+            body: [
                 'inCodDiretoria'  => config('sed.diretoriaId'),
                 'inCodMunicipio'  => config('sed.municipioId'),
                 'inCodRedeEnsino' => config('sed.redeEnsinoCod'),
@@ -31,5 +32,16 @@ class GetEscolasService extends SedAuthService
         );
 
         return $response;
+    }
+
+    /**
+     * Retorna todas as escolas cadastradas no SED na diretoria informada
+     *
+     */
+    public static function handle()
+    {
+        $class = new GetEscolasService;
+
+        return $class->getEscolas();
     }
 }
