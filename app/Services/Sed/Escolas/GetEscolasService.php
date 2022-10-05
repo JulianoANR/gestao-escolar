@@ -2,7 +2,7 @@
 
 namespace App\Services\Sed\Escolas;
 
-use App\Enums\SedRouters;
+use App\Enums\SedRoutersEnum;
 use App\Services\Sed\AuthService as SedAuthService;
 use Illuminate\Support\Facades\{DB, Http};
 
@@ -23,7 +23,7 @@ class GetEscolasService extends SedAuthService
     protected function getEscolas()
     {
         $response = parent::get(
-            route: SedRouters::GET_ESCOLAS->value,
+            route: SedRoutersEnum::GET_ESCOLAS->value,
             body: [
                 'inCodDiretoria'  => config('sed.diretoriaId'),
                 'inCodMunicipio'  => config('sed.municipioId'),

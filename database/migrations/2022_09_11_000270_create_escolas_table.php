@@ -1,5 +1,6 @@
 <?php
 
+use App\Enums\SegmentosEnum;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
@@ -17,12 +18,14 @@ return new class extends Migration
             $table->id();
             $table->string('nome')->index();
             $table->string('sed_cod_escola')->nullable()->index();
-            $table->integer('cie')->unique()->index();
+            $table->integer('cie')->nullable()->unique()->index();
             $table->string('email')->nullable();
-            $table->string('telefone_1')->nullable();
+            $table->string('telefone_1');
             $table->string('telefone_2')->nullable();
-            $table->enum('segmento', ['EMEI', 'EMEF', 'CEI', 'EMEI/EMEF']);
             
+            $table->string('segmento')->nullable(); /* enum */
+            $table->string('regiao'); /* enum */
+
             $table->string('cep')->nullable();
 			$table->string('endereco')->nullable();
 			$table->string('numero')->nullable();
