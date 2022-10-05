@@ -14,32 +14,25 @@ return new class extends Migration
     public function up()
     {
         Schema::create('escolas', function (Blueprint $table) {
-            // Gestao
             $table->id();
             $table->string('nome')->index();
-            $table->string('email')->nullable();
+            $table->string('sed_cod_escola')->nullable()->index();
             $table->integer('cie')->unique()->index();
+            $table->string('email')->nullable();
+            $table->string('telefone_1')->nullable();
+            $table->string('telefone_2')->nullable();
+            $table->enum('segmento', ['EMEI', 'EMEF', 'CEI', 'EMEI/EMEF']);
+            
+            $table->string('cep')->nullable();
+			$table->string('endereco')->nullable();
+			$table->string('numero')->nullable();
+			$table->string('bairro')->nullable();
+			$table->string('complemento')->nullable();
+			$table->string('latitude')->nullable();
+			$table->string('longitude')->nullable();
 
-            // $table->string('cep');
-            // $table->string('endereco');
-            // $table->string('numero');
-            // $table->string('bairro');
-			// $table->string('complemento');
-            // $table->string('regiao');
-            $table->string('tipoLogradouro');
-			$table->string('descEndereco');
-			$table->string('numeroSed');
-			$table->string('descBairro');
-			$table->string('descComplemento');
-			$table->string('codMunicipio');
-			$table->string('descMunicipio');
-			$table->string('latitude');
-			$table->string('longitude');
-
-            $table->string('sed_cod_escola')->index();
             $table->string('observacao')->nullable();
             $table->timestamps();
-            $table->softDeletes();
 
             // SED
             // $table->string('codEscola');

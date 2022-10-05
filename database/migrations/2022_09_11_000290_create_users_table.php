@@ -15,25 +15,16 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
-            $table->string('rg');
-            $table->integer('digito')->nullable(true);
-            $table->string('cpf');
-            $table->string('matricula')->unique();
-            $table->date('data_nascimento');
-            $table->string('email')->unique();
-            $table->foreignId('cargo_id')->references('id')->on('cargos')->onUpdate('cascade')->onDelete('cascade');
-            // $table->foreignId('escola_id')->references('id')->on('escolas')->onUpdate('cascade')->onDelete('cascade');            $table->timestamp('email_verified_at')->nullable(true);
-            // $table->boolean('autoload_graphic')->default(true); //Desabilita carregamento dos graficos na dashboard
+            $table->string('name', 100);
+            $table->string('email')->unique()->index();
             $table->string('password');
-            $table->string('observacao')->nullable();
+            $table->string('cpf', 14)->unique();
+            $table->string('matricula', 8)->unique()->index();
+            $table->date('data_nascimento');
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();
         });
-
-        // Schema::table('users', function (Blueprint $table) {
-        // });
     }
 
     /**

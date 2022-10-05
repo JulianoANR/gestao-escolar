@@ -18,5 +18,18 @@ class CargosSeeder extends Seeder
         Cargo::create([
             'descricao' => 'Administrador',
         ]);
+
+        Cargo::create([
+            'descricao' => 'Supervisor',
+        ]);
+
+        Cargo::create([
+            'descricao' => 'Gestor',
+        ]);
+
+        Cargo::create([
+            'descricao' => 'Professor',
+        ]);
+
     }
 }
