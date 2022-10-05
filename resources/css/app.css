@@ -225,7 +225,7 @@
     }
 
     .card {
-        @apply flex flex-col bg-white shadow rounded-sm dark:bg-aside;
+        @apply w-full flex flex-col bg-white shadow rounded-sm dark:bg-aside;
     }
 
     .card-header {

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('cpf', 14)->unique();
             $table->string('matricula', 8)->unique()->index();
             $table->date('data_nascimento');
+            $table->string('profile_path_image')->nullable();
             $table->rememberToken();
             $table->timestamps();
             $table->softDeletes();

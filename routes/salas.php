@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SalaController;
 use Illuminate\Support\Facades\Route;
 
 /*

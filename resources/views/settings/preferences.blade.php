@@ -1,4 +1,4 @@
-<x-app-layout {{ ucfirst(__('layout.settings')) }}>
+<x-app-layout title="Preferencias">
 
     <!-- Header page -->
     <div class="my-6 px-5 md:px-7">
@@ -8,8 +8,8 @@
             </h1>
 
             <x-layouts.breadcrumb :path="[
-                __('layout.settings') => route('settings.profile'),
-                __('layout.preferences') => route('settings.preferences')
+                __('layout.account') => route('user.edit'),
+                __('layout.preferences') => route('user.preferences')
             ]"/>
         </div>
     </div>
@@ -17,11 +17,11 @@
     <section class="px-4 md:px-6">
         <x-sides.settings active="preferences">
             <h2 class="text-xl font-semibold mb-4">
-                {{ 'Preferences system' }}
+                {{ __('layout.preferences') }}
             </h2>
-
-            {{ 'Select from the available themes the one that best suits you:' }}
         </x-sides.settings>
     </section>
+
+    
 
 </x-app-layout>

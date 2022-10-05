@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\QueuesController;
+use App\Http\Controllers\UserController;
 use App\Services\Sed\AuthService;
 use App\Services\Sed\Escolas\GetEscolasService;
 use Illuminate\Support\Facades\Route;
@@ -28,23 +29,26 @@ Route::get('/componentes', function () {
     return view('template.components');
 })->middleware(['auth'])->name('components');
 
-Route::middleware(['auth'])->prefix('configuracoes')->group(function () {
-    Route::get('/', function () {
-        return view('settings.profile');
-    })->name('settings.profile');
-
-    Route::get('/preferencias', function () {
-        return view('settings.preferences');
-    })->name('settings.preferences');
-
-    Route::get('/escola', function () {
-        return view('settings.school');
-    })->name('settings.school');
+Route::middleware(['auth'])->prefix('queue')->group(function () {
+    Route::get('/send-mail', [QueuesController::class, 'sendMail'])
+        ->name('queue');
 });
 
-Route::middleware(['auth'])->prefix('queue')->group(function () {
-    Route::get('/sendMail', [QueuesController::class, 'sendMail'])
-        ->name('queue');
+Route::controller(['auth'])->prefix('usuario')->group(function() {
+    Route::get('/configuracoes', [UserController::class, 'edit'])
+        ->name('user.edit');
+
+    Route::post('/configuracoes', [UserController::class, 'update'])
+        ->name('user.update');
+
+    Route::get('/preferencias', [UserController::class, 'preferences'])
+        ->name('user.preferences');
+
+    Route::get('/sections', [UserController::class, 'sections'])
+        ->name('user.sections');
+
+    Route::get('/acoes', [UserController::class, 'logs'])
+        ->name('user.logs');
 });
 
 require __DIR__.'/auth.php';

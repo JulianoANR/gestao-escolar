@@ -19,7 +19,7 @@
                 {{ 'Dashboard' }}
             </h2>
 
-            <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+            <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
                         dark:hover:bg-white/10 dark:focus:bg-white/20
                         bg-white/5 xl:text-primary xl:bg-gray-50 dark:bg-white/5 dark:text-white" href="{{ route('dashboard') }}">
 
@@ -41,7 +41,7 @@
                     <x-icon name="settings-outline" library="ion-icon"></x-icon>
 
                     <span class="grow flex justify-between items-center">
-                        Settings
+                        {{ __('layout.settings') }}
                         <x-icon class="h-5 w-5 text-xl" name="chevron-down" library="ion-icon"></x-icon>
                     </span>
                 </button>
@@ -50,26 +50,32 @@
                     <!---->
                     <!---->
                     <a class="py-2 px-12 block relative text-sm text-current cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200 dark:hover:bg-white/5 dark:focus:bg-white/10
-                                before-marker before:absolute before:left-5 before:top-1/2 before:-translate-y-1/2" href="{{ route('settings.profile') }}">
-                        Account data
+                                before-marker before:absolute before:left-5 before:top-1/2 before:-translate-y-1/2" href="{{ route('user.edit') }}">
+                        {{ __('layout.account') }}
                     </a>
                     <!---->
                     <!---->
                     <a class="py-2 px-12 block relative text-sm text-current cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200 dark:hover:bg-white/5 dark:focus:bg-white/10
-                                before-marker before:absolute before:left-5 before:top-1/2 before:-translate-y-1/2" href="{{ route('settings.preferences') }}">
-                        Preferences
+                                before-marker before:absolute before:left-5 before:top-1/2 before:-translate-y-1/2" href="{{ route('user.preferences') }}">
+                        {{ __('layout.preferences') }}
                     </a>
                     <!---->
                     <!---->
                     <a class="py-2 px-12 block relative text-sm text-current cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200 dark:hover:bg-white/5 dark:focus:bg-white/10
-                                before-marker before:absolute before:left-5 before:top-1/2 before:-translate-y-1/2" href="{{ route('settings.school') }}">
-                        Company data
+                                before-marker before:absolute before:left-5 before:top-1/2 before:-translate-y-1/2" href="{{ route('user.logs') }}">
+                        {{ __('layout.my-logs') }}
+                    </a>
+                    <!---->
+                    <!---->
+                    <a class="py-2 px-12 block relative text-sm text-current cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200 dark:hover:bg-white/5 dark:focus:bg-white/10
+                                before-marker before:absolute before:left-5 before:top-1/2 before:-translate-y-1/2" href="{{ route('escolas.index') }}">
+                        {{ __('layout.my-schools') }}
                     </a>
                 </div>
             </div>
         </div>
 
-        <!-- Ui Elements -->
+        {{-- <!-- Ui Elements -->
         <div class="space-y-2">
             <h2 class="text-gray-200 font-semibold ml-2 xl:text-gray-500 dark:text-gray-300">
                 {{ 'Ui Elements' }}
@@ -114,7 +120,7 @@
                     </a>
                 </div>
             </div>
-        </div>
+        </div> --}}
 
         <div class="p-3 flex flex-col gap-y-4 bg-white/10 rounded xl:bg-gray-100 dark:bg-white/5">
 
@@ -123,7 +129,7 @@
             </div>
 
             <p class="text-sm text-center">
-                Support this project by leaving your star on github.
+                Sistema de Gestão Escolar, desenvolvido e mantido pela <strong class="text-primary">Informatica Educativa</strong>
             </p>
 
             <button class="button button-primary button-sm w-full waves-effect">

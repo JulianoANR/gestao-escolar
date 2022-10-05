@@ -13,14 +13,22 @@ return [
     |
     */
 
-    'logout' => 'logout',
-    'profile' => 'profile',
-    'preferences' => 'preferences',
-
     // Settings
-    'settings-profile' => 'settings profile',
-    'settings-preferences' => 'preferences',
-    'settings-school' => 'settings school',
 
+    'settings' => 'Settings',
+    'account' => 'Account',
+    'account-data' => 'Account Data',
+    'sections' => 'Sections',
+    'preferences' => 'Preferences',
+    'notifications' => 'Notifications',
+    'profile' => 'Profile',
+    'schools' => 'Schools',
+    'my-schools' => 'My Schools',
+    'my-classrooms' => 'My Classrooms',
+    'my-logs' => 'My Logs',
+    'logout' => 'Logout',
 
+    // Menu
+    'logs'  => 'Logs',
+    'btn-save' => 'Save',
 ];
