@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Enums\{RegioesEnum, SegmentosEnum};
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
@@ -11,12 +12,35 @@ class Escola extends Model
 
     protected $fillable = [
         'nome', 
-        'cie', 
+        'segmento',
+        'sed_cod_escola',
+        'cie',
+        'email',
+        'telefone_1',
+        'telefone_2',
         'regiao', 
-        'bairro', 
+        'cep',
+        'endereco',
+        'numero',
+        'bairro',
+        'complemento',
+        'latitude',
+        'longitude',
+        'observacao',
         'endereco', 
-        'observacao'];
+        'observacao'
+    ];
 
+    /**
+     * The attributes that should be cast.
+     *
+     * @var array<string, string>
+     */
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+        'segmento'          => SegmentosEnum::class,
+        'regiao'            => RegioesEnum::class,
+    ];
 
     // Scopes
     public function scopeSearch($query, $search)

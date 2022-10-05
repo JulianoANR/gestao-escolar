@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-enum SedRouters : string
+enum SedRoutersEnum : string
 {
     // Autenticação
     case VALIDA_USUARIO = "/Usuario/ValidarUsuario";

@@ -2,7 +2,7 @@
 
 namespace App\Services\Sed;
 
-use App\Enums\{SedRouters};
+use App\Enums\{SedRoutersEnum};
 use GuzzleHttp\Exception\RequestException;
 use Illuminate\Support\Facades\{DB, Http};
 
@@ -44,7 +44,7 @@ class AuthService
                     config('sed.user'),
                     config('sed.password'))
                 ->get(
-                    config('sed.url') . SedRouters::VALIDA_USUARIO->value
+                    config('sed.url') . SedRoutersEnum::VALIDA_USUARIO->value
                 );
 
         Self::storeAccessToken($response->object()->outAutenticacao);
