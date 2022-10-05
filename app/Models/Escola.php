@@ -10,11 +10,11 @@ class Escola extends Model
     use HasFactory;
 
     protected $fillable = [
-        'nome', 
-        'cie', 
-        'regiao', 
-        'bairro', 
-        'endereco', 
+        'nome',
+        'cie',
+        'regiao',
+        'bairro',
+        'endereco',
         'observacao'];
 
 
@@ -24,6 +24,18 @@ class Escola extends Model
         return $query->where('nome'   , 'like', "%$search%")
                     ->orWhere('cie'   , 'like', "%$search%")
                     ->orWhere('regiao', 'like', "%$search%");
+    }
+
+
+    // Relationships
+
+
+    public function salas(){
+        return $this->hasMany(Sala::class);
+    }
+
+    public function users(){
+        return $this->belongsToMany(User::class);
     }
 
     // Accessors

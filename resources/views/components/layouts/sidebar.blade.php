@@ -34,6 +34,12 @@
                 Inbox
             </a>
 
+            <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                        dark:hover:bg-white/10 dark:focus:bg-white/20" href="{{ route('salas.index') }}">
+                <x-icon name="home-outline" library="ion-icon"></x-icon>
+                Salas
+            </a>
+
             <div>
                 <button class="flex items-center gap-x-3 relative py-2 px-3 w-full text-current cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
                                 dark:hover:bg-white/10 dark:focus:bg-white/20" data-trigger="collapse">
