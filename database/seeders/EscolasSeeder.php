@@ -21,7 +21,7 @@ class EscolasSeeder extends Seeder
             'nome' => 'Secretaria Municipal de Educação de Caraguatatuba',
             'segmento' => null,
             'sed_cod_escola' => null,
-            'cie' => '350000000000000',
+            'cie' => '35000',
             'email' => '',
             'telefone_1' => '00000000000',
             'telefone_2' => '',

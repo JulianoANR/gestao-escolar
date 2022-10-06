@@ -16,12 +16,12 @@ return new class extends Migration
         Schema::create('cargo_user', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-            $table->foreignId('role_id')->references('id')->on('roles')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('cargo_id')->references('id')->on('cargos')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();
         });
 
-        
+
 
     }
 
