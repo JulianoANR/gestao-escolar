@@ -18,21 +18,21 @@ class EscolasSeeder extends Seeder
     {
         Escola::create([
             'id' => 1,
-            'nome' => 'Secretaria Municipal de Educação de Caraguatatuba',
+            'nome' => 'Secretaria Municipal da Educação de Caraguatatuba',
             'segmento' => null,
             'sed_cod_escola' => null,
-            'cie' => '350000000000000',
-            'email' => '',
-            'telefone_1' => '00000000000',
+            'cie' => null,
+            'email' => 'seduc@seduc.com',
+            'telefone_1' => '',
             'telefone_2' => '',
             'regiao' => RegioesEnum::CENTRO->value,
-            'cep' => '00000000',
-            'endereco' => 'Rua',
-            'numero' => '0',
-            'bairro' => 'Bairro',
+            'cep' => '',
+            'endereco' => '',
+            'numero' => '',
+            'bairro' => '',
             'complemento' => '',
-            'latitude' => '0.000000',
-            'longitude' => '0.000000',
+            'latitude' => '',
+            'longitude' => '',
             'observacao' => 'Destinado a testes'
         ]);
     }

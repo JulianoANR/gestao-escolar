@@ -6,10 +6,6 @@ use App\Http\Requests\UpdateUserRequest;
 
 class UpdateUserService {
 
-    /**
-     * @var \App\Requests\
-     */
-
     public static function handle(UpdateUserRequest $request, $user){
         $user->update($request->validated());
         if($request->hasFile('profile_path_image')){
