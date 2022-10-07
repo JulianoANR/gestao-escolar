@@ -46,10 +46,7 @@ class AuthService
                 ->get(
                     config('sed.url') . SedRoutersEnum::VALIDA_USUARIO->value
                 );
-
-        if ($response->failed()) {
-            abort(500, 'Erro ao conectar com o SED');
-        }
+        dd($response);
 
         Self::storeAccessToken($response->object()->outAutenticacao);
     }
@@ -65,7 +62,7 @@ class AuthService
         // TO DO: Implementar fila
         $row = DB::table('sed_access_token')->where('sistema', $this->sistema)->first();
 
-        if ($row) { 
+        if ($row) {
             DB::table('sed_access_token')->where('sistema', $this->sistema)->update([
                 'token' => $token,
                 'updated_at' => now(),
@@ -101,11 +98,6 @@ class AuthService
 
         })->get(config('sed.url') . $route, $body);
 
-        // TO DO: Implementar tratamento de erro
-        if ($response->failed()) {
-            abort(500, 'Erro ao carregar os dados do SED');
-        }
-
-        return $response->collect();
+        return $response;
     }
 }

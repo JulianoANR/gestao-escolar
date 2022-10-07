@@ -53,6 +53,7 @@ class User extends Authenticatable
     ];
 
 
+
     public function escolas(){
         return $this->belongsToMany(Escola::class);
     }
@@ -60,4 +61,9 @@ class User extends Authenticatable
     public function salas(){
         return $this->belongsToMany(Sala::class);
     }
+    
+    public function cargos(){
+        return $this->belongsToMany(Cargo::class);
+    }
+    
 }

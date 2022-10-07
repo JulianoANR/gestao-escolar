@@ -12,4 +12,9 @@ class Cargo extends Model
     protected $fillable = [
         'descricao',
     ];
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class);
+    }
 }

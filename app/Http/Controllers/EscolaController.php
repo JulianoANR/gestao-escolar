@@ -20,34 +20,15 @@ class EscolaController extends Controller
      * 
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index()
     {
-        $escolas = $request->has('search') ? 
-            $this->escola->search($request->search)->paginate(20) : 
-            $this->escola->paginate(20);
+        // $escolas = $request->has('search') ? 
+        //     $this->escola->search($request->search)->paginate(20) : 
+        //     $this->escola->paginate(20);
 
+        $escolas = $this->getEscolasService->handle();
+        dd($escolas);
         return view('escolas.index', compact('escolas')); 
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        return view('schools.create');
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreEscolaRequest  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(StoreEscolaRequest $request)
-    {
-        return redirect()->route('escolas.index');
     }
 
     /**
@@ -80,17 +61,6 @@ class EscolaController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(UpdateEscolaRequest $request, Escola $escola)
-    {
-        return redirect()->route('escolas.index');
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Escola  $escola
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(Escola $escola)
     {
         return redirect()->route('escolas.index');
     }

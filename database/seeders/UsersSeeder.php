@@ -18,12 +18,14 @@ class UsersSeeder extends Seeder
     {
         $user = User::create([
             'name'              => 'Juliano Appezzato Nunes Rosa',
-            'email'             => 'juliano.appe@gmail.com',
             'cpf'               => '12345678901',
             'matricula'         => '1234567',
             'data_nascimento'   => '1990-01-01',
+            'email'             => 'juliano.appe@gmail.com',
             'password'          => Hash::make('admin'),
         ]);
+
+        $user->cargos()->attach(1);
 
         $user = User::create([
             'name' => 'Caio Willwohl Perez Ribeiro',
@@ -33,5 +35,7 @@ class UsersSeeder extends Seeder
             'matricula' => '25296',
             'data_nascimento' => '2002-04-11',
         ]);
+
+        $user->cargos()->attach(1);
     }
 }
