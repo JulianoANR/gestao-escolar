@@ -2,11 +2,15 @@
 
 namespace App\Enums;
 
-enum SegmentosEnum : string
+enum RegioesEnum : int
 {
-    case CENTRO = 'EMEI';
-    case EMEF = 'EMEF';
-    case CEI  = 'CEI';
-    case EMEI_EMEF = 'EMEI/EMEF';
-    case CEI_EMEI_EMEF = 'CEI/EMEI/EMEF';
+    case EXTREMO_NORTE = 1;
+    case NORTE         = 2;
+    case NORTE_CENTRO  = 3;
+    case CENTRO        = 4;
+    case CENTRO_SUL    = 5;
+    case SUL           = 6;
+    case EXTREMO_SUL   = 7;
 }
+
+

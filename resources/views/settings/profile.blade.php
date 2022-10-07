@@ -66,16 +66,6 @@
                         />
                     </div>
                     <div class="flex flex-col w-full">
-                        <x-label for="rg" value="{{ __('form.rg-label') }}" />
-                        <x-input
-                        name="rg"
-                        class="input-sm rounded-md p-3"
-                        type="text"
-                        placeholder="{{ __('form.rg') }}"
-                        :value="Auth::user()->rg"
-                        />
-                    </div>
-                    <div class="flex flex-col w-full">
                         <x-label for="matricula" value="{{ __('form.matricula-label') }}" />
                         <x-input
                         name="matricula"

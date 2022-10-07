@@ -27,7 +27,6 @@ class UpdateUserRequest extends FormRequest
             'name' => 'string|max:255',
             'email' => 'string|email|max:255|',
             'cpf' => 'string|max:14|',
-            'rg' => 'string|max:12|',
             'matricula' => 'string|max:7|',
             'image' => 'image|max:2048',
         ];

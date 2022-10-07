@@ -29,11 +29,11 @@ class UsersSeeder extends Seeder
 
         $user = User::create([
             'name' => 'Caio Willwohl Perez Ribeiro',
+            'email' => 'caio.w.ribeiro@gmail.com',
+            'password' => Hash::make('admin'),
             'cpf' => '479.118.358-45',
             'matricula' => '25296',
             'data_nascimento' => '2002-04-11',
-            'email' => 'caio.w.ribeiro@gmail.com',
-            'password' => Hash::make('admin'),
         ]);
 
         $user->cargos()->attach(1);

@@ -12,15 +12,19 @@
                 </div>
             </div>
             <div class="flex flex-col justify-evenly items-center card-body w-1/2 p-8">
-                <h1 class="font-medium txt-base text-2xl">{{ $title }}</h1>
-                <form
-                action="{{ route($action) }}"
-                method="post"
-                class="w-full txt-base space-y-5"
-                >
-                    @csrf
-                    {{ $slot }}
-                </form>
+                <div class="w-full text-center">
+                    <h1 class="font-medium txt-base text-2xl">{{ $title }}</h1>
+                </div>
+                <div class="w-full h-full flex flex-col justify-evenly">
+                    <form
+                    action="{{ route($action) }}"
+                    method="post"
+                    class="w-full txt-base space-y-5"
+                    >
+                        @csrf
+                        {{ $slot }}
+                    </form>
+                </div>
             </div>
         </div>
     </div>
