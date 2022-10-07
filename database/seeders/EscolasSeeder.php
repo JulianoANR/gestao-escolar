@@ -2,10 +2,11 @@
 
 namespace Database\Seeders;
 
-use App\Enums\RegioesEnum;
 use App\Models\Escola;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Enums\RegioesEnum;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 class EscolasSeeder extends Seeder
 {
@@ -34,6 +35,16 @@ class EscolasSeeder extends Seeder
             'latitude' => '0.000000',
             'longitude' => '0.000000',
             'observacao' => 'Destinado a testes'
+        ]);
+
+        DB::table('escola_user')->insert([
+            'user_id' => 1,
+            'escola_id' => 1,
+        ]);
+
+        DB::table('escola_user')->insert([
+            'user_id' => 2,
+            'escola_id' => 1,
         ]);
     }
 }
