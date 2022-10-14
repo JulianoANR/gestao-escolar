@@ -25,7 +25,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 402862,
             'email' => 'emefadolfinacaraguatatuba@gmail.com',
             'telefone_1' => '(12)3881-2521',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO->value,
             'cep' => '11661-400',
             'endereco' => 'AVENIDA SIQUEIRA CAMPOS',
@@ -34,7 +34,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'AVENIDA',
             'latitude' => '-23,6170997619629',
             'longitude' => '-45,3986015319824',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -44,7 +44,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 5420,
             'email' => 'cei.adrianacassiano@gmail.com',
             'telefone_1' => '(12)3887-1449',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::EXTREMO_SUL->value,
             'cep' => '11668-315',
             'endereco' => 'RUA SAO ROQUE',
@@ -53,7 +53,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,7133598327637',
             'longitude' => '-45,4362716674805',
-            'observacao' => ''
+            'observacao' => null,
         ]);
         
         Escola::create([
@@ -63,7 +63,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 225940,
             'email' => 'emefgraziolicaraguatatuba@gmail.com',
             'telefone_1' => '(12)3882-2610',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO->value,
             'cep' => '11675-690',
             'endereco' => 'RUA FRANCISCO RIBEIRO',
@@ -72,7 +72,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,6128005981445',
             'longitude' => '-45,4231986999512',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -82,7 +82,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 223098,
             'email' => 'emefjunqueiracaraguatatuba@gmail.com',
             'telefone_1' => '(12)3887-2612',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::EXTREMO_SUL->value,
             'cep' => '11669-050',
             'endereco' => 'RUA JOSE FERREIRA DOS SANTOS',
@@ -91,17 +91,17 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,6979503631592',
             'longitude' => '-45,4443092346191',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
             'id' => 5,
             'nome' => 'ANTONIA ANTUNES AROUCA PROFA EMEF',
             'segmento' => SegmentosEnum::EMEF->value,
-            'sed_cod_escola' => null,
+            'sed_cod_escola' => 225939,
             'email' => 'emefaroucacaraguatatuba@gmail.com',
             'telefone_1' => '(12)3884-3900',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::NORTE->value,
             'cep' => '11677-457',
             'endereco' => 'RUA ITALIA BASI MAGNIS',
@@ -110,17 +110,17 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,5808906555176',
             'longitude' => '-45,3330383300781',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
             'id' => 6,
             'nome' => 'ANTONIA RIBEIRO DA SILVA PROFA CIEFI',
             'segmento' => SegmentosEnum::EMEI_EMEF->value,
-            'sed_cod_escola' => null,
+            'sed_cod_escola' => 243449,
             'email' => 'ciefiribeiro@gmail.com',
             'telefone_1' => '(12)3882-2286',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO->value,
             'cep' => '11660-497',
             'endereco' => 'RUA ALCIDES ALVES PEREIRA',
@@ -129,7 +129,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,6252002716064',
             'longitude' => '-45,4176406860352',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -139,7 +139,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 447785,
             'email' => 'emefavelarcaraguatatuba@gmail.com',
             'telefone_1' => '(12)3882-2493',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO->value,
             'cep' => '11660-600',
             'endereco' => 'RUA JOAO MARCELO',
@@ -148,7 +148,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,6207008361816',
             'longitude' => '-45,4203987121582',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -158,7 +158,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 2033,
             'email' => 'crecheolaria@gmail.com',
             'telefone_1' => '(12)3883-8988',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO_NORTE->value,
             'cep' => '11663-380',
             'endereco' => 'TRAVESSA IPIRANGA',
@@ -167,7 +167,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'TRAVESSA',
             'latitude' => '-23,6073303222656',
             'longitude' => '-45,3729209899902',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -177,7 +177,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 208334,
             'email' => 'emefsoarescaraguatatuba@gmail.com',
             'telefone_1' => '(12)3884-2450',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO_NORTE->value,
             'cep' => '11677-340',
             'endereco' => 'AVENIDA REGINA MARGARETH PASSOS',
@@ -186,7 +186,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'AVENIDA',
             'latitude' => '-23,5831728694558',
             'longitude' => '-45,3297607063294',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -196,7 +196,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 208346,
             'email' => 'emeflouzadacaraguatatuba@gmail.com',
             'telefone_1' => '(12)3882-2221',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO->value,
             'cep' => '11675-730',
             'endereco' => 'RUA HORTO FLORESTAL',
@@ -205,7 +205,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,5969295501709',
             'longitude' => '-45,4300193786621',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -215,7 +215,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 225952,
             'email' => 'emefortegacaraguatatuba@gmail.com',
             'telefone_1' => '(12)3887-3021',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::SUL->value,
             'cep' => '11671-020',
             'endereco' => 'RUA SETE',
@@ -224,7 +224,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,68432554272',
             'longitude' => '-45,453681439209',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -234,7 +234,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 215077,
             'email' => 'emefrodriguescaraguatatuba@gmail.com',
             'telefone_1' => '(12)3882-4679',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO->value,
             'cep' => '11665-070',
             'endereco' => 'AVENIDA PERNAMBUCO',
@@ -243,7 +243,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'AVENIDA',
             'latitude' => '-23,6315002441406',
             'longitude' => '-45,4240989685059',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -253,7 +253,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 422423,
             'email' => 'cepoiares@gmail.com',
             'telefone_1' => '(12)3887-6315',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO_SUL->value,
             'cep' => '11673-000',
             'endereco' => 'AVENIDA FLORIANO PEIXOTO MARECHAL',
@@ -262,7 +262,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'AVENIDA',
             'latitude' => '-23,6389999389648',
             'longitude' => '-45,4365005493164',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -272,7 +272,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 279626,
             'email' => 'cei.celialobo@caraguatatuba.sp.org.br',
             'telefone_1' => '(12)3888-3311',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::EXTREMO_SUL->value,
             'cep' => '11668-100',
             'endereco' => 'RUA BENEDITO JACINTO DO PRADO',
@@ -281,7 +281,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,7140998840332',
             'longitude' => '-45,4425010681152',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -291,7 +291,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 807679,
             'email' => 'criancaa@uol.com.br',
             'telefone_1' => '(12)3887-3304',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO_SUL->value,
             'cep' => '11674-670',
             'endereco' => 'RUA ELVIRA PEUPETA',
@@ -300,7 +300,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,6345386505127',
             'longitude' => '-45,4347457885742',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -310,7 +310,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 300603,
             'email' => 'emefednaferrazcaraguatatuba@gmail.com',
             'telefone_1' => '(12)3887-3014',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::EXTREMO_SUL->value,
             'cep' => '11668-005',
             'endereco' => 'RUA BENEDITO FORTUNATO',
@@ -319,7 +319,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,7082290649414',
             'longitude' => '-45,4427795410156',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -329,7 +329,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 6288,
             'email' => 'ceielisabutschkau@gmail.com',
             'telefone_1' => '(12)3887-1016',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::EXTREMO_SUL->value,
             'cep' => '11670-010',
             'endereco' => 'RUA MANOEL SEVERINO DE CASTRO',
@@ -338,7 +338,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,6875305175781',
             'longitude' => '-45,4489288330078',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -348,7 +348,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 273314,
             'email' => 'ceinunescaraguatatuba@gmail.com',
             'telefone_1' => '(12)3884-1655',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::NORTE->value,
             'cep' => '11677-180',
             'endereco' => 'RUA MANOEL FRANCISCO RICARDO',
@@ -357,7 +357,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,580099105835',
             'longitude' => '-45,3373985290527',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -367,7 +367,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 499559,
             'email' => 'emefeuclydesferreira@gmail.com',
             'telefone_1' => '(12)3885-1802',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::EXTREMO_SUL->value,
             'cep' => '11669-470',
             'endereco' => 'RUA JOSE GERALDO FERNANDES DA SILVA FILHO',
@@ -376,7 +376,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,7046394348145',
             'longitude' => '-45,445728302002',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -386,7 +386,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 499560,
             'email' => 'ceifranciscoassisdecarvalho@gmail.com',
             'telefone_1' => '(12)3885-1801',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::EXTREMO_SUL->value,
             'cep' => '11669-470',
             'endereco' => 'RUA JOSE GERALDO FERNANDES DA SILVA FILHO',
@@ -395,7 +395,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,7045402526855',
             'longitude' => '-45,4454307556152',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -405,7 +405,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 225988,
             'email' => 'emeflimacaraguatatuba@gmail.com',
             'telefone_1' => '(12)3887-4322',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::EXTREMO_SUL->value,
             'cep' => '11668-015',
             'endereco' => 'AVENIDA PEDRO GONCALVES LEITE',
@@ -414,7 +414,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'AVENIDA',
             'latitude' => '-23,7087993621826',
             'longitude' => '-45,4422988891602',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -424,7 +424,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 273302,
             'email' => 'cei.riodoouro@gmail.com',
             'telefone_1' => '(12)3883-5577',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO->value,
             'cep' => '11675-670',
             'endereco' => 'AVENIDA AMERICO TIMOTEO DO ROSARIO',
@@ -433,7 +433,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'AVENIDA',
             'latitude' => '-23,6072998046875',
             'longitude' => '-45,4258995056152',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -443,7 +443,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 5336,
             'email' => 'emefjanefocesi@gmail.com',
             'telefone_1' => '(12)3887-1514',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::EXTREMO_SUL->value,
             'cep' => '11668-315',
             'endereco' => 'RUA SAO ROQUE',
@@ -452,7 +452,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,7138690948486',
             'longitude' => '-45,4361190795898',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -462,7 +462,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 215089,
             'email' => 'emefgardelincaraguatatuba@gmail.com',
             'telefone_1' => '(12)3887-3101',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO_SUL->value,
             'cep' => '11673-250',
             'endereco' => 'RUA JOAQUIM JOSE DA SILVA XAVIER',
@@ -471,7 +471,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,6399002075195',
             'longitude' => '-45,4366989135742',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -481,7 +481,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 200359,
             'email' => 'emefmarcondescaraguatatuba@gmail.com',
             'telefone_1' => '(12)3887-4291',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::EXTREMO_SUL->value,
             'cep' => '11670-150',
             'endereco' => 'RUA BENEDITO SEVERINO CASTRO',
@@ -490,7 +490,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,6884002685547',
             'longitude' => '-45,4499015808105',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -500,7 +500,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 383636,
             'email' => 'cei.joaocruz@gmail.com',
             'telefone_1' => '(12)3888-2865',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::EXTREMO_SUL->value,
             'cep' => '11670-015',
             'endereco' => 'RUA LUIZ JACINTO DA SILVA',
@@ -509,7 +509,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,6880397796631',
             'longitude' => '-45,447811126709',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -519,7 +519,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 208358,
             'email' => 'emefrosariocaraguatatuba@gmail.com',
             'telefone_1' => '(12)3889-0278',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO_NORTE->value,
             'cep' => '11661-395',
             'endereco' => 'AVENIDA ANTONIO FRANCISCO PASCHOAL PELICIARI',
@@ -528,7 +528,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'AVENIDA',
             'latitude' => '-23,6002998352051',
             'longitude' => '-45,3959693908691',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -538,7 +538,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 225997,
             'email' => 'emefpassoscaraguatatuba@gmail.com',
             'telefone_1' => '(12)3882-4395',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO->value,
             'cep' => '11675-300',
             'endereco' => 'RUA OSIEL EGIDIO DE FARIA',
@@ -547,7 +547,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,6132698059082',
             'longitude' => '-45,4315795898438',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -557,7 +557,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 22226,
             'email' => 'ceileonor.travessao@gmail.com',
             'telefone_1' => '(12)3887-6108',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::EXTREMO_SUL->value,
             'cep' => '11669-301',
             'endereco' => 'RUA JOAO CARLOS BALIO',
@@ -566,7 +566,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,6993999481201',
             'longitude' => '-45,4490013122559',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -576,7 +576,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 222324,
             'email' => 'emefsantoscaraguatatuba@gmail.com',
             'telefone_1' => '(12)3883-4533',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO_SUL->value,
             'cep' => '11674-470',
             'endereco' => 'RUA DENILZA SEBASTIANA SANTOS',
@@ -585,7 +585,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,6282997131348',
             'longitude' => '-45,4361000061035',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -595,7 +595,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 243450,
             'email' => 'emefmunizcaraguatatuba@gmail.com',
             'telefone_1' => '(12)3882-5698',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO->value,
             'cep' => '11662-320',
             'endereco' => 'RUA ANALANDIA',
@@ -604,7 +604,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,6175994873047',
             'longitude' => '-45,3899993896484',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -614,7 +614,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 565817,
             'email' => 'emef.luizsilvar@caraguatatuba.sp.gov.br',
             'telefone_1' => '(12)3886-9931',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO_NORTE->value,
             'cep' => '11663-660',
             'endereco' => 'RUA JOSE PEDRO DE OLIVEIRA BARBOSA',
@@ -623,7 +623,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,6087',
             'longitude' => '45,3811',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -633,7 +633,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 495037,
             'email' => 'emefmariacarvalhocaraguatatuba@gmail.com',
             'telefone_1' => '(12)3886-2050',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO_SUL->value,
             'cep' => '11674-410',
             'endereco' => 'AVENIDA DEODORO DA FONSECA MARECHAL',
@@ -642,7 +642,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'AVENIDA',
             'latitude' => '-23,6288795471191',
             'longitude' => '-45,436897277832',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -652,7 +652,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 225903,
             'email' => 'ujiomariaaparecida@yahoo.com.br',
             'telefone_1' => '(12)3887-3836',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::SUL->value,
             'cep' => '11667-810',
             'endereco' => 'AVENIDA EZEQUIEL DA SILVA BARRETO',
@@ -661,7 +661,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'AVENIDA',
             'latitude' => '-23,691780090332',
             'longitude' => '-45,4358215332031',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -671,7 +671,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 22299,
             'email' => 'cei.mariacarlita@gmail.com',
             'telefone_1' => '(12)3888-3223',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::SUL->value,
             'cep' => '11671-206',
             'endereco' => 'TRAVESSA CINCO',
@@ -680,7 +680,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'TRAVESSA',
             'latitude' => '-23,6827602386475',
             'longitude' => '-45,4519309997559',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -690,7 +690,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 201777,
             'email' => 'emeiperezcaraguatatuba@gmail.com',
             'telefone_1' => '(12)3887-7822',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO->value,
             'cep' => '11665-280',
             'endereco' => 'AVENIDA CATARINA SANTA',
@@ -699,7 +699,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'AVENIDA',
             'latitude' => '-23,6359004974365',
             'longitude' => '-45,4253005981445',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -709,7 +709,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 495025,
             'email' => 'ceimansano@gmail.com',
             'telefone_1' => '(12)3886-2054',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO_SUL->value,
             'cep' => '11674-410',
             'endereco' => 'AVENIDA DEODORO DA FONSECA MARECHAL',
@@ -718,7 +718,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'AVENIDA',
             'latitude' => '-23,6280994415283',
             'longitude' => '-45,437198638916',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -728,7 +728,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 565748,
             'email' => 'ceiemeimariaeugenia@gmail.com',
             'telefone_1' => '(12)3886-9932',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO_NORTE->value,
             'cep' => '11663-660',
             'endereco' => 'RUA JOSE PEDRO DE OLIVEIRA BARBOSA',
@@ -737,7 +737,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,608699798584',
             'longitude' => '-45,3811988830566',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -747,7 +747,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 435879,
             'email' => 'emefgaivotascaraguatatuba@gmail.com',
             'telefone_1' => '(12)3887-7462',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO_SUL->value,
             'cep' => '11673-480',
             'endereco' => 'RUA PICA-PAU',
@@ -756,7 +756,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,6343002319336',
             'longitude' => '-45,4402008056641',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -766,7 +766,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 569537,
             'email' => 'cei.mariaonicie@gmail.com',
             'telefone_1' => '(12)3887-8087',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO->value,
             'cep' => '11675-420',
             'endereco' => 'RUA JOSE NEDER',
@@ -775,7 +775,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,615909576416',
             'longitude' => '-45,433910369873',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -785,7 +785,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 225976,
             'email' => 'emefcastrocaraguatatuba@gmail.com',
             'telefone_1' => '(12)3884-2921',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::NORTE->value,
             'cep' => '11676-403',
             'endereco' => 'RUA SEISHI YOSHIMOTO',
@@ -794,7 +794,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,6019992828369',
             'longitude' => '-45,3499984741211',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -804,7 +804,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 208361,
             'email' => 'emefsonecaraguatatuba@gmail.com',
             'telefone_1' => '(12)3887-2444',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::EXTREMO_SUL->value,
             'cep' => '11667-826',
             'endereco' => 'RUA ABRA DE DENTRO',
@@ -813,7 +813,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,711669921875',
             'longitude' => '-45,4646911621094',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -823,7 +823,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 810642,
             'email' => 'cmeimei250@gmail.com',
             'telefone_1' => '(12)3883-4648',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO_SUL->value,
             'cep' => '11674-588',
             'endereco' => 'RUA ODETE MACHADO PINTO',
@@ -832,7 +832,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,6335906982422',
             'longitude' => '-45,4313583374023',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -842,7 +842,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 273351,
             'email' => 'ceiemeimessiasipiranga@gmail.com',
             'telefone_1' => '(12)3883-9788',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO->value,
             'cep' => '11661-200',
             'endereco' => 'AVENIDA BRASIL',
@@ -851,7 +851,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'AVENIDA',
             'latitude' => '-23,620398103948',
             'longitude' => '-45,4016271614075',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -861,7 +861,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 225964,
             'email' => 'emefferreiracaraguatatuba@gmail.com',
             'telefone_1' => '(12)3882-1067',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO_NORTE->value,
             'cep' => '11663-660',
             'endereco' => 'RUA JOSE PEDRO DE OLIVEIRA BARBOSA',
@@ -870,7 +870,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,6086',
             'longitude' => '-45,3807',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -880,7 +880,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 226002,
             'email' => 'emefoliveiracaraguatatuba@gmail.com',
             'telefone_1' => '(12)3884-2091',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::NORTE->value,
             'cep' => '11679-150',
             'endereco' => 'RUA BENEDITO SERRADO',
@@ -889,7 +889,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,5762',
             'longitude' => '-45,2748',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -899,7 +899,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 78086,
             'email' => 'ceiregina.travessao@gmail.com',
             'telefone_1' => '(12)3887-6422',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::EXTREMO_SUL->value,
             'cep' => '11669-100',
             'endereco' => 'RUA JACUPIRANGA',
@@ -908,7 +908,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,6963005065918',
             'longitude' => '-45,443000793457',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -918,7 +918,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 375172,
             'email' => 'emefserracaraguatatuba@gmail.com',
             'telefone_1' => '(12)3888-4186',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::SUL->value,
             'cep' => '11666-530',
             'endereco' => 'RUA ALDO MARCUCCI',
@@ -927,7 +927,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,6748695373535',
             'longitude' => '-45,4363288879395',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -937,7 +937,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 78074,
             'email' => 'ceisantinanardicaraguatatuba@gmail.com',
             'telefone_1' => '(12)3883-3477',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO->value,
             'cep' => '11660-450',
             'endereco' => 'RUA ANTONIO NARDI',
@@ -946,7 +946,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,6198997497559',
             'longitude' => '-45,4183006286621',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -956,7 +956,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 435983,
             'email' => 'ceigaivotas@gmail.com',
             'telefone_1' => '(12)3887-3047',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO_SUL->value,
             'cep' => '11673-460',
             'endereco' => 'AVENIDA CARDEAL',
@@ -965,7 +965,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'AVENIDA',
             'latitude' => '-23,6371002197266',
             'longitude' => '-45,440299987793',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -975,7 +975,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 442628,
             'email' => 'cei.telmaveiga@caraguatatuba.sp.gov.br',
             'telefone_1' => '(12)3882-6090',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO_SUL->value,
             'cep' => '11674-480',
             'endereco' => 'RUA ANTONIO DOS SANTOS',
@@ -984,7 +984,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,6270999908447',
             'longitude' => '-45,4355010986328',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -994,7 +994,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 451861,
             'email' => 'ceiportonovo.caragua@gmail.com',
             'telefone_1' => '(12)3887-1565',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::SUL->value,
             'cep' => '11667-810',
             'endereco' => 'AVENIDA EZEQUIEL DA SILVA BARRETO',
@@ -1003,7 +1003,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'AVENIDA',
             'latitude' => '-23,6921520233154',
             'longitude' => '-45,4355850219727',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -1013,7 +1013,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 5780,
             'email' => 'cemeifazendinha@hotmail.com',
             'telefone_1' => '(12)3889-3535',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::NORTE->value,
             'cep' => '11676-250',
             'endereco' => 'RUA DAS AZALEIAS',
@@ -1022,7 +1022,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,5969295501709',
             'longitude' => '-45,3592681884766',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -1032,7 +1032,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 212489,
             'email' => 'emeiyasutadacaraguatatuba@gmail.com',
             'telefone_1' => '(12)3887-4322',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::EXTREMO_SUL->value,
             'cep' => '11668-015',
             'endereco' => 'AVENIDA PEDRO GONCALVES LEITE',
@@ -1041,7 +1041,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'AVENIDA',
             'latitude' => '-23,7088',
             'longitude' => '-45,4422',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -1051,7 +1051,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 1,
             'email' => 'informatica.educativa@caraguatatuba.sp.gov.br',
             'telefone_1' => '(12)3897-7027',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::CENTRO->value,
             'cep' => '11665-050',
             'endereco' => 'AVENIDA RIO DE JANEIRO',
@@ -1060,7 +1060,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'AVENIDA',
             'latitude' => '-23.62936296921738',
             'longitude' => '-45.42146664973637',
-            'observacao' => ''
+            'observacao' => null,
 
             
         ]);
@@ -1072,7 +1072,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 9028,
             'email' => 'cei.stelasilva@caraguatatuba.sp.gov.br',
             'telefone_1' => '(12)3897-7000',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::EXTREMO_SUL->value,
             'cep' => '11669-301',
             'endereco' => 'AVENIDA JOAO CARLOS BALIO',
@@ -1081,7 +1081,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'AVENIDA',
             'latitude' => '-23,6992797851563',
             'longitude' => '-45,4487991333008',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -1091,7 +1091,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 9034,
             'email' => 'cei.waldete.souza@educacaocaraguatatuba.com.br',
             'telefone_1' => '(12)3897-7000',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::EXTREMO_SUL->value,
             'cep' => '11667-839',
             'endereco' => 'RUA CIRCULAR',
@@ -1100,7 +1100,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'RUA',
             'latitude' => '-23,7168807983398',
             'longitude' => '-45,4562492370605',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
         Escola::create([
@@ -1110,7 +1110,7 @@ class EscolasSeeder extends Seeder
             'sed_cod_escola' => 8982,
             'email' => 'emef.debora.pilon@educacaocaraguatatuba.com.br',
             'telefone_1' => '(12)3897-7000',
-            'telefone_2' => '',
+            'telefone_2' => null,
             'regiao' => RegioesEnum::EXTREMO_SUL->value,
             'cep' => '11669-000',
             'endereco' => 'AVENIDA JOSE DA COSTA PINHEIRO JUNIOR',
@@ -1119,7 +1119,7 @@ class EscolasSeeder extends Seeder
             'complemento' => 'AVENIDA',
             'latitude' => '-23,7091102600098',
             'longitude' => '-45,4429512023926',
-            'observacao' => ''
+            'observacao' => null,
         ]);
 
     }
