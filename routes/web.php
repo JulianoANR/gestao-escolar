@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\QueuesController;
-use App\Http\Controllers\UserController;
 use App\Services\Sed\AuthService;
-use App\Services\Sed\Escolas\GetEscolasService;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\QueuesController;
+use App\Services\Sed\Escolas\GetEscolasService;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,7 +23,8 @@ Route::get('/', function () {
 })->name('index');
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
+    $user = Auth::user();
+    return view('dashboard', compact('user'));
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/componentes', function () {

@@ -4,14 +4,17 @@
             {{ __('Dashboard') }}
         </h2>
     </x-slot>
-
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 bg-white border-b border-gray-200">
-                    You're logged in!
-                </div>
+    <div class="w-full min-h-full flex justify-center">
+        <div class="max-w-[100%] h-32 bg-body rounded-md p-2 flex overflow-y-hidden scroll-smooth items-center">
+            <div class="flex flex-row space-x-2 justify-start">
+                @foreach ($user->salas()->get() as $sala)
+                    <a href="{{ route('salas.diario', $sala) }}">
+                        <x-classroom-card name="{{ $sala->turma }}" school="{{ $sala->escola->nome }}" />
+                    </a>
+                @endforeach
             </div>
         </div>
     </div>
+
+
 </x-app-layout>

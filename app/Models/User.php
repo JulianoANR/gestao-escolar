@@ -61,9 +61,15 @@ class User extends Authenticatable
     public function salas(){
         return $this->belongsToMany(Sala::class);
     }
-    
+
     public function cargos(){
         return $this->belongsToMany(Cargo::class);
     }
-    
+
+
+    // Acessors
+
+    public function getEscolas(){
+        return $this->escolas()->with('salas')->get();
+    }
 }

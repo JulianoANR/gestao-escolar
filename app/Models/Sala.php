@@ -31,4 +31,10 @@ class Sala extends Model
         return $this->belongsToMany(User::class);
     }
 
+
+    // Accessors
+
+    public function getEscolaName(){
+        return $this->escola->nome;
+    }
 }
