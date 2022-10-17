@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use salas;
+use App\Models\Sala;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\StoreSalaRequest;
 use App\Http\Requests\UpdateSalaRequest;
-use App\Models\Sala;
 
 class SalaController extends Controller
 {
@@ -15,7 +17,8 @@ class SalaController extends Controller
      */
     public function index()
     {
-        return view('classrooms.index');
+        $user = Auth::user();
+        return view('classrooms.index', compact('user'));
     }
 
     /**
@@ -36,6 +39,7 @@ class SalaController extends Controller
      */
     public function store(StoreSalaRequest $request)
     {
+
         return redirect()->route('salas.index');
     }
 
@@ -82,5 +86,16 @@ class SalaController extends Controller
     public function destroy(Sala $sala)
     {
         return redirect()->route('salas.index');
+    }
+
+    /**
+     * Mostra o diário de classe da sala recebida por parâmetro.
+     *
+     * @param \App\Models\Sala $sala
+     * @return \Illuminate\Http\Response
+     */
+
+    public function diario(Sala $sala){
+        return view('diary.index', compact('sala'));
     }
 }

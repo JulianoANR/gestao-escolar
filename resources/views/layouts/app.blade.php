@@ -50,6 +50,21 @@
                 document.documentElement.classList.remove('dark')
             }
         </script>
+
+        <style>
+            ::-webkit-scrollbar
+            {
+                width: 5px;
+                height: 4px;
+            }
+            ::-webkit-scrollbar-thumb
+            {
+                border: 1px;
+                background: #ccc;
+                border-radius: 6px;
+            }
+
+        </style>
     </head>
 
     <body {{ $attributes }}>
