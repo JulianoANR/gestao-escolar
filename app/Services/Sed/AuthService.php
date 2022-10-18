@@ -88,7 +88,6 @@ class AuthService
 
         })->get(config('sed.url') . $route, $body);
 
-        dd($response->collect());
 
         return $response;
     }
