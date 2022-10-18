@@ -20,9 +20,9 @@ return new class extends Migration
             $table->string('sed_cod_escola')->nullable()->index();
             $table->integer('cie')->nullable()->unique()->index();
             $table->string('email')->nullable();
-            $table->string('telefone_1');
+            $table->string('telefone_1')->nullable();
             $table->string('telefone_2')->nullable();
-            
+
             $table->string('segmento')->nullable(); /* enum */
             $table->string('regiao'); /* enum */
 

@@ -17,18 +17,19 @@ class EscolaController extends Controller
     /**
      * Display a listing of the resource.
      *
-     * 
+     *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        // $escolas = $request->has('search') ? 
-        //     $this->escola->search($request->search)->paginate(20) : 
+
+        // $escolas = $request->has('search') ?
+        //     $this->escola->search($request->search)->paginate(20) :
         //     $this->escola->paginate(20);
 
         $escolas = $this->getEscolasService->handle();
         dd($escolas);
-        return view('escolas.index', compact('escolas')); 
+        return view('escolas.index', compact('escolas'));
     }
 
     /**
