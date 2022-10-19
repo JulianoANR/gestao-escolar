@@ -102,10 +102,15 @@ class AuthService
     
             })->get(config('sed.url') . $route, $body);
 
+<<<<<<< Updated upstream
         } catch (\Throwable $th) {
             dd($th);
             abort(500, 'Erro ao carregar os dados do SED');
         }
+=======
+        })->get(config('sed.url') . $route, $body);
+
+>>>>>>> Stashed changes
 
         return $response->collect();
     }
