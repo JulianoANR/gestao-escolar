@@ -2,7 +2,7 @@
 
 namespace App\Services\Sed\Escolas;
 
-use App\Enums\SedRoutersEnum;
+use App\Enums\Sed\SedRoutersEnum;
 use App\Services\Sed\AuthService as SedAuthService;
 use Illuminate\Support\Facades\{DB, Http};
 

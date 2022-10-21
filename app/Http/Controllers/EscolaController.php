@@ -6,12 +6,13 @@ use Illuminate\Http\Client\Request;
 use App\Http\Requests\{StoreEscolaRequest, UpdateEscolaRequest};
 use App\Services\Sed\Escolas\GetEscolasService;
 use App\Models\Escola;
+use App\Services\Sed\Escolas\SyncEscolasService;
 
 class EscolaController extends Controller
 {
     public function __construct(
         protected Escola $escola,
-        protected GetEscolasService $getEscolasService
+        protected SyncEscolasService $syncEscolasService
     ){}
 
     /**
@@ -22,12 +23,11 @@ class EscolaController extends Controller
      */
     public function index()
     {
-
         // $escolas = $request->has('search') ?
         //     $this->escola->search($request->search)->paginate(20) :
         //     $this->escola->paginate(20);
 
-        $escolas = $this->getEscolasService->handle();
+        $escolas = $this->syncEscolasService->handle();
         dd($escolas);
         return view('escolas.index', compact('escolas'));
     }

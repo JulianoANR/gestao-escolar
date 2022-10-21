@@ -2,24 +2,35 @@
 
 namespace App\Services\Sed\Escolas;
 
-use App\Enums\SedRouters;
 use App\Models\Escola;
-use Illuminate\Support\Facades\{DB};
 use App\Services\Sed\Escolas\GetEscolasService;
 
 class SyncEscolasService
 {
     public function __construct(
-        protected Escola $escola,
-        protected GetEscolasService $getEscolasService
+        // 
     ){}
 
     /**
-     * Retorna todas as escolas cadastradas no SED na diretoria informada
+     * Sincroniza as escolas do SED com o banco de dados
      *
      */
-    public function __invoke()
+    public function sync()
     {
-        $escolas =  ($this->getEscolasService)();
+        $escolasSedCod = getEscolasService::handle()->pluck('codEscola')->toArray();
+        dd($escolasSedCod);
+        $escolasCod   = Escola::all(['sed_cod_escola']);
+
+    }
+
+    /**
+     * Função statica para ser chamada pelo controller
+     *
+     */
+    public static function handle()
+    {
+        $class = new SyncEscolasService;
+
+        return $class->sync();
     }
 }

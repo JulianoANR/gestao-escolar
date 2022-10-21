@@ -2,7 +2,7 @@
 
 namespace App\Services\Sed;
 
-use App\Enums\{SedRoutersEnum};
+use App\Enums\Sed\{SedRoutersEnum};
 use GuzzleHttp\Exception\RequestException;
 use Illuminate\Support\Facades\{DB, Http};
 
@@ -102,15 +102,10 @@ class AuthService
     
             })->get(config('sed.url') . $route, $body);
 
-<<<<<<< Updated upstream
         } catch (\Throwable $th) {
             dd($th);
             abort(500, 'Erro ao carregar os dados do SED');
         }
-=======
-        })->get(config('sed.url') . $route, $body);
-
->>>>>>> Stashed changes
 
         return $response->collect();
     }
