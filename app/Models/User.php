@@ -52,8 +52,6 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-
-
     public function escolas(){
         return $this->belongsToMany(Escola::class);
     }
@@ -71,5 +69,16 @@ class User extends Authenticatable
 
     public function getEscolas(){
         return $this->escolas()->with('salas')->get();
+    }
+
+    // Scopes
+
+    public function scopeClassroomDisciplines($classroom_id){
+        return $this->salas()
+                    ->withPivot('disciplina_id')
+                    ->whereSalaId($classroom_id)
+                    ->get(['disciplina_id'])
+                    ->pluck('disciplina_id')
+                    ->toArray();
     }
 }

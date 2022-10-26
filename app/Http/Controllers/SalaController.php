@@ -94,8 +94,8 @@ class SalaController extends Controller
      * @param \App\Models\Sala $sala
      * @return \Illuminate\Http\Response
      */
+    public function diario(){
 
-    public function diario(Sala $sala){
-        return view('diary.index', compact('sala'));
+        return view('diary.index');
     }
 }

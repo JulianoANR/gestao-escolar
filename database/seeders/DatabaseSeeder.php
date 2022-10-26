@@ -26,6 +26,7 @@ class DatabaseSeeder extends Seeder
             CargosSeeder::class,
             EscolasSeeder::class,
             UsersSeeder::class,
+            DisciplinaSeeder::class,
             SalasSeeder::class,
         ]);
     }
