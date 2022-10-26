@@ -5,7 +5,7 @@
                 {{-- TODO FAZER UM MODAL DE ESCOLHA DE TURMA --}}
                 Diario de Atividades
                 <span class="badge text-base">
-                    6º ano B
+                    {{ $sala->turma }}
                 </span>
             </h1>
 
@@ -15,7 +15,7 @@
         </div>
     </div>
     <section class="w-full min-h-full px-4 md:px-6">
-        <div class="w-full h-full flex flex-wrap justify-center bg-body rounded-sm p-4">
+        <div class="w-full h-full flex flex-wrap justify-center bg-body rounded-sm">
 
 
             <div class="card">

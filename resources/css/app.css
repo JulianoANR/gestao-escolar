@@ -242,6 +242,10 @@
         dark:bg-aside/5 dark:border-zinc-700;
     }
 
+    .card-active {
+        @apply bg-gradient-to-b from-success/80 to-success;
+    }
+
     .card-primary {
         @apply bg-gradient-to-b from-primary/80 to-primary;
     }

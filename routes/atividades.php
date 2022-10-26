@@ -21,8 +21,8 @@ Route::controller(AtividadeController::class)->as('atividades.')->group(function
     {
         // Crud Actions
         Route::get('/', 'index')->name('index');
-        Route::get('/{atividade}', 'show')->name('show');
         Route::get('/nova-atividade', 'create')->name('create');
+        Route::get('/{atividade}', 'show')->name('show');
         Route::post('/store', 'store')->name('store');
         Route::get('/{atividade}/editar', 'edit')->name('edit');
         Route::put('/{aluno}/update', 'update')->name('update');

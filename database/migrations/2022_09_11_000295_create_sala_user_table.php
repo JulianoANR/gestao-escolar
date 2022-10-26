@@ -10,7 +10,7 @@ class CreateSalaUserTable extends Migration {
             $table->foreignId('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('sala_id')->references('id')->on('salas')->onUpdate('cascade')->onDelete('cascade');
             $table->foreignId('escola_id')->references('id')->on('escolas')->onUpdate('cascade')->onDelete('cascade');
-            // $table->foreignId('disciplina_id')->references('id')->on('disciplinas')->onUpdate('cascade')->onDelete('cascade');
+            $table->foreignId('disciplina_id')->references('id')->on('disciplinas')->onUpdate('cascade')->onDelete('cascade');
             // $table->foreignId('tipo_professor_id')->references('id')->on('tipo_professor')->onUpdate('cascade')->onDelete('cascade');
             $table->timestamps();
             $table->softDeletes();

@@ -5,6 +5,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\QueuesController;
+use App\Http\Controllers\SessionController;
+use App\Services\Salas\GetSelectedClassroom;
 use App\Services\Sed\Escolas\GetEscolasService;
 
 /*
@@ -24,7 +26,10 @@ Route::get('/', function () {
 
 Route::get('/dashboard', function () {
     $user = Auth::user();
-    return view('dashboard', compact('user'));
+    $salas = $user->salas()->get()->unique();
+    $salaSelecionada = GetSelectedClassroom::handle($user);
+
+    return view('dashboard', compact('user', 'salas', 'salaSelecionada'));
 })->middleware(['auth'])->name('dashboard');
 
 Route::get('/componentes', function () {
@@ -51,6 +56,16 @@ Route::controller(['auth'])->prefix('usuario')->group(function() {
 
     Route::get('/acoes', [UserController::class, 'logs'])
         ->name('user.logs');
+});
+
+// API
+
+Route::controller(SessionController::class)
+        ->prefix('session')
+        ->group(function () {
+            Route::middleware(['auth'])->group(function () {
+                Route::post('/change-class', 'changeClassroom')->name('update.classroom');
+            });
 });
 
 require __DIR__.'/auth.php';

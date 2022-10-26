@@ -64,36 +64,49 @@ class SalasSeeder extends Seeder
             'escola_id' => 1,
             'user_id' => 2,
             'sala_id' => 1,
+            'disciplina_id' => 1,
         ]);
 
         DB::table('sala_user')->insert([
             'escola_id' => 1,
             'user_id' => 2,
             'sala_id' => 2,
+            'disciplina_id' => 1,
         ]);
 
         DB::table('sala_user')->insert([
             'escola_id' => 1,
             'user_id' => 2,
             'sala_id' => 3,
+            'disciplina_id' => 1,
         ]);
 
         DB::table('sala_user')->insert([
             'escola_id' => 1,
             'user_id' => 2,
             'sala_id' => 4,
+            'disciplina_id' => 1,
         ]);
 
         DB::table('sala_user')->insert([
             'escola_id' => 1,
             'user_id' => 2,
             'sala_id' => 5,
+            'disciplina_id' => 1,
         ]);
 
         DB::table('sala_user')->insert([
             'escola_id' => 1,
             'user_id' => 2,
             'sala_id' => 6,
+            'disciplina_id' => 1,
+        ]);
+
+        DB::table('sala_user')->insert([
+            'escola_id' => 1,
+            'user_id' => 2,
+            'sala_id' => 6,
+            'disciplina_id' => 3,
         ]);
 
     }

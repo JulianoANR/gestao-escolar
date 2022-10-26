@@ -21,7 +21,7 @@ Route::controller(SalaController::class)->as('salas.')->group(function ()
     {
         // Crud Actions
         Route::get('/', 'index')->name('index');
-        Route::get('/{sala}/diario', 'diario')->name('diario');
+        Route::get('/diario', 'diario')->name('diario');
         Route::get('/{sala}', 'edit')->name('show');
         Route::get('/matricular', 'create')->name('create');
         Route::post('/store', 'store')->name('store');
