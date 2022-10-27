@@ -73,4 +73,22 @@ return [
     */
 
     'redeEnsinoCod' => 2,
+
+    
+    /*
+    |--------------------------------------------------------------------------
+    | Codigo da Rede de Ensino
+    |--------------------------------------------------------------------------
+    |
+    | Para realizar as consultas as APIs
+    | Equivalente no SED : inCodRedeEnsino
+    |
+    |   1 – Estadual
+    |   2 – Municipal
+    |   3 – Privada
+    |   4 – Federal
+    |   5 – Estadual Outros (Centro Paula Souza)
+    */
+
+    'redeEnsinoPrivadaCod' => 3,
 ];

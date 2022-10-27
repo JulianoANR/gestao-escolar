@@ -32,7 +32,7 @@ class GetEscolasService extends SedAuthService
     public function __construct()
     {
         $this->diretoria_id   = config('sed.diretoriaId');
-        $this->rede_ensino_id = config('sed.redeEnsinoId');
+        $this->rede_ensino_id = config('sed.redeEnsinoCod');
         $this->municipio_id   = config('sed.municipioId');
     }
 
@@ -49,7 +49,7 @@ class GetEscolasService extends SedAuthService
                 'inCodDiretoria'  => $this->diretoria_id,
                 'inCodMunicipio'  => $this->municipio_id,
                 'inCodRedeEnsino' => $this->rede_ensino_id,
-            ]
+            ] 
         );
 
         return $response;
