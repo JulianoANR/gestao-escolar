@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Models\Atividade;
 use App\Models\Disciplina;
+use App\Enums\BimestresEnum;
+use App\Models\Bimestre;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use App\Services\Salas\GetSelectedClassroom;
 use App\Services\Salas\GetUserDisciplines;
+use App\Services\Salas\GetSelectedClassroom;
 
 class AtividadeController extends Controller
 {
@@ -17,7 +19,6 @@ class AtividadeController extends Controller
      */
     public function index(){
         $user = Auth::user();
-
         $sala = GetSelectedClassroom::handle($user);
         return view('activities.index', compact('sala'));
     }
@@ -28,9 +29,11 @@ class AtividadeController extends Controller
      */
     public function create(){
         $user = Auth::user();
+        $bimestres = BimestresEnum::getString();
         $sala = GetSelectedClassroom::handle($user);
         $disciplinas = GetUserDisciplines::handle($user);
-        return view('activities.create', compact('user', 'sala', 'disciplinas'));
+
+        return view('activities.create', compact('user', 'sala', 'disciplinas', 'bimestres'));
     }
 
     public function show(Atividade $atividade){

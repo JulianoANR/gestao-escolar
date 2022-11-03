@@ -3,8 +3,9 @@
 namespace App\Models;
 
 use App\configs\Enums;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\Disciplina;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Sala extends Model
 {
@@ -37,4 +38,9 @@ class Sala extends Model
     public function getEscolaName(){
         return $this->escola->nome;
     }
+
+    public function formatDisciplina($disciplina) {
+        return Disciplina::where('id', $disciplina)->first()->descricao;
+    }
+
 }

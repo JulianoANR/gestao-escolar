@@ -109,5 +109,19 @@ class SalasSeeder extends Seeder
             'disciplina_id' => 3,
         ]);
 
+        DB::table('sala_user')->insert([
+            'escola_id' => 1,
+            'user_id' => 2,
+            'sala_id' => 6,
+            'disciplina_id' => 2,
+        ]);
+
+        DB::table('sala_user')->insert([
+            'escola_id' => 1,
+            'user_id' => 2,
+            'sala_id' => 6,
+            'disciplina_id' => 6,
+        ]);
+
     }
 }

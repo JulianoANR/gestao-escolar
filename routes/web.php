@@ -24,11 +24,12 @@ Route::get('/', function () {
     return view('welcome');
 })->name('index');
 
+
+
 Route::get('/dashboard', function () {
     $user = Auth::user();
-    $salas = $user->salas()->get()->unique();
+    $salas = $user->salas()->withPivot('disciplina_id')->get();
     $salaSelecionada = GetSelectedClassroom::handle($user);
-
     return view('dashboard', compact('user', 'salas', 'salaSelecionada'));
 })->middleware(['auth'])->name('dashboard');
 

@@ -1,14 +1,13 @@
 <x-app-layout>
     <div class="my-6 px-5 md:px-7">
         <div class="flex flex-wrap gap-2 justify-between items-center">
-            <h1 class="text-xl font-semibold text-gray-400 dark:text-white">
-                {{-- TODO FAZER UM MODAL DE ESCOLHA DE TURMA --}}
-                Criando Atividade para a turma:
+
+            <h1 class="text-lg font-semibold text-gray-400 dark:text-white">
+                Turma:
                 <span class="badge text-base">
                     {{ $sala->turma }}
                 </span>
             </h1>
-
             <x-layouts.breadcrumb :path="[
                 'Menu de Atividades' => route('atividades.index'),
                 'Nova Atividade' => route('atividades.create'),
@@ -22,7 +21,6 @@
                     <div class="card-header">
                         {{ "Nova Atividade" }}
                     </div>
-
                     <div class="card-body">
                         <div class="flex flex-wrap justify-between space-y-2">
                             <div class="w-full flex flex-col">
@@ -32,13 +30,11 @@
                             <div class="w-full flex flex-col">
                                 <x-label for="disciplina" value="Selecione a Disciplina: " />
                                 <select name="disciplina" id="disciplina" class="input input-sm w-full">
-                                    <option value="">Selecione a Disciplina...</option>
-                                    @foreach($disciplinas as $disciplina)
-                                        <option value="{{ $disciplina->id }}">{{ $disciplina->descricao }}</option>
-                                    @endforeach
+                                <option value="{{ $sala->pivot->disciplina_id }}">{{ $sala->formatDisciplina($sala->pivot->disciplina_id) }}</option>
                                 </select>
                             </div>
-                            <div class="w-full flex flex-row space-x-2">
+
+                            <div class="w-full flex flex-col md:flex-row md:space-x-2">
                                 <div class="w-full flex flex-col">
                                     <x-label for="titulo" value="Data da Atividade: " class="w-full"/>
                                     <x-input type="date" name="date" placeholder="Título da Atividade" class="input-sm w-full" />
@@ -46,8 +42,9 @@
                                 <div class="flex flex-col w-full">
                                     <x-label for="bimestre" value="Bimestre: " />
                                     <select name="programada" id="programada" class="input-sm input">
-                                        <option value="false">Não</option>
-                                        <option value="true">Sim</option>
+                                        @foreach ($bimestres as $bimestre)
+                                            <option value="{{ $bimestre['id'] }}">{{ $bimestre['descricao'] }}</option>
+                                        @endforeach
                                     </select>
                                 </div>
                                 <div class="flex flex-col w-full">

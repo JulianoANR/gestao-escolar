@@ -5,7 +5,7 @@
                 {{-- TODO FAZER UM MODAL DE ESCOLHA DE TURMA --}}
                 Diario de Atividades
                 <span class="badge text-base">
-                    {{ $sala->turma }}
+                    {{ $sala->turma }} - {{ $sala->formatDisciplina($sala->pivot->disciplina_id) }}
                 </span>
             </h1>
 

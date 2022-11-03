@@ -8,7 +8,10 @@
         <div class="max-w-[100%] h-32 bg-body rounded-md p-2 flex overflow-y-hidden scroll-smooth items-center">
             <div class="flex flex-row space-x-2 justify-start">
                 @foreach ($salas as $sala)
-                    <x-classroom-card sala="{{ $salaSelecionada->id }}" name="{{ $sala->turma }}" school="{{ $sala->escola->nome }}"  classId="{{ $sala->id }}" />
+                    <x-classroom-card
+                    :salaSelecionada="$salaSelecionada"
+                    :sala="$sala"
+                    />
                 @endforeach
             </div>
         </div>
@@ -52,7 +55,8 @@
             $.post({
                     url: "{{ route('update.classroom') }}",
                     data: {
-                        class: $(this).data('class')
+                        class: $(this).data('class'),
+                        disciplina: $(this).data('disciplina')
                     },
                     success: function (data) {
                         console.log(data);

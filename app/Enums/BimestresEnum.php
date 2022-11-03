@@ -2,7 +2,7 @@
 
 namespace App\Enums;
 
-enum CorRacasEnum : int
+enum BimestresEnum : int
 {
     case PRIMEIRO = 1;
     case SEGUNDO = 2;
@@ -10,14 +10,18 @@ enum CorRacasEnum : int
     case QUARTO = 4;
     case ANUAL = 5;
 
-    public static function values(): array
-    {
+    public static function getString() {
         return [
-            self::PRIMEIRO->value,
-            self::SEGUNDO->value,
-            self::TERCEIRO->value,
-            self::QUARTO->value,
-            self::ANUAL->value,
+            ['id' => self::PRIMEIRO->value,
+            'descricao' => '1º Bimestre'],
+            ['id' => self::SEGUNDO->value,
+            'descricao' => '2º Bimestre'],
+            ['id' => self::TERCEIRO->value,
+            'descricao' => '3º Bimestre'],
+            ['id' => self::QUARTO->value,
+            'descricao' => '4º Bimestre'],
+            ['id' => self::ANUAL->value,
+            'descricao' => 'Anual'],
         ];
     }
 }
