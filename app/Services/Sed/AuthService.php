@@ -90,21 +90,25 @@ class AuthService
      */
     public function get($route, $body = null, $headers = null)
     {
-        // try {
-            $response = Http::withToken($this->getAccessToken())->retry(2, 0, function ($exception, $request) {
 
-                // Caso o token esteja expirado, gera um novo token e tenta novamente
-                if ($exception->response->status() != 401) {
-                    return true;
+        try {
+            $response = Http::withToken($this->getAccessToken())->retry(3, 50, function ($exception, $request) {
+                
+                if ($exception->response->status() !== 401) {
+                    return false;
                 }
-                // dd('caiu 401', $exception->response);
-                $request->withToken($this->generateAccessToken());
-                return false;
+                
+                Self::generateAccessToken();
+                $request->withToken($this->getAccessToken());
+
+                return true;
     
             })->get(config('sed.url') . $route, $body);
-        // } catch (\Throwable $th) {
-        //     abort(500, 'Erro ao carregar os dados do SED');
-        // }
+
+            dd($response->collect());
+        } catch (\Throwable $th) {
+            abort(500, 'Erro ao carregar os dados do SED');
+        }
         
 
         return $response->collect();

@@ -20,15 +20,14 @@ class SyncEscolasService
         $escolasSedCod = collect(getEscolasService::handle()['outEscolas'])->pluck('outCodEscola');
         $escolasCod    = Escola::all(['sed_cod_escola'])->pluck('sed_cod_escola');
 
-        // $escolasCod->each(function ($escola) use ($escolasSedCod) {
-        //     if (!$escolasSedCod->contains($escola->sed_cod_escola)) {
+        $escolasCod->each(function ($escola) use ($escolasSedCod) {
+            if (!$escolasSedCod->contains($escola->sed_cod_escola)) {
                 
-        //     }
-        // });
+            }
+        });
 
         $escolasSync = $escolasSedCod->diff($escolasCod);
             dd($escolasSync);
-
     }
 
     /**

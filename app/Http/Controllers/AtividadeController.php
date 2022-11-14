@@ -17,8 +17,8 @@ class AtividadeController extends Controller
      */
     public function index(){
         $user = Auth::user();
-
         $sala = GetSelectedClassroom::handle($user);
+
         return view('activities.index', compact('sala'));
     }
 
@@ -27,9 +27,10 @@ class AtividadeController extends Controller
      *
      */
     public function create(){
-        $user = Auth::user();
-        $sala = GetSelectedClassroom::handle($user);
+        $user        = Auth::user();
+        $sala        = GetSelectedClassroom::handle($user);
         $disciplinas = GetUserDisciplines::handle($user);
+
         return view('activities.create', compact('user', 'sala', 'disciplinas'));
     }
 
