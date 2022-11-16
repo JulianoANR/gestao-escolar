@@ -16,13 +16,17 @@ return new class extends Migration
         Schema::create('atividades', function (Blueprint $table) {
             $table->id();
             $table->date('data');
+
             $table->string('titulo', 100);
-            $table->integer('disciplina_id');
-            $table->string('conteudo', 1500);
-            $table->integer('peso_atividade')->default('1');
+            $table->integer('peso_atividade');
             $table->boolean('programada');
+            $table->foreignId('professor_id')->constrained('users');
+            $table->foreignId('disciplina_id')->constrained('disciplinas');
+            $table->foreignId('sala_id')->constrained('salas');
+            $table->foreignId('tipo_programada_id')->nullable()->constrained('tipo_programada');
             $table->integer('bimestre')->nullable(true);
             $table->string('observacao', 5000)->default('Sem observações')->nullable();
+
             $table->softDeletes();
             $table->timestamps();
         });

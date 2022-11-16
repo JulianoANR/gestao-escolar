@@ -69,4 +69,5 @@ Route::controller(SessionController::class)
             });
 });
 
+
 require __DIR__.'/auth.php';

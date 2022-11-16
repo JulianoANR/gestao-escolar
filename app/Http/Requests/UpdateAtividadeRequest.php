@@ -13,7 +13,7 @@ class UpdateAtividadeRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,11 @@ class UpdateAtividadeRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'id' => 'required|integer',
+            'titulo' => 'string|max:100',
+            'data' => 'date',
+            'aula' => 'integer',
+            'tipo_programada_id' => 'integer'
         ];
     }
 }

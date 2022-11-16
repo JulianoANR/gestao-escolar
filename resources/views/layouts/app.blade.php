@@ -86,11 +86,21 @@
                 <div class="grow flex flex-col bg-body xl:ml-72">
 
                     <main class="grow pb-12">
-
+                        
                         {{-- Alertas --}}
-                        @if (session('status') && session('class'))
-                            <x-layouts.alerta class="{{ session('class') }}">
-                                {{ session('status')  }}
+                        @if (session('success'))
+                            <x-layouts.alerta classe="green">
+                                {{ session('success')  }}
+                            </x-layouts.alerta>
+                        @endif
+                        @if (session('warning'))
+                            <x-layouts.alerta classe="yellow">
+                                {{ session('warning')  }}
+                            </x-layouts.alerta>
+                        @endif
+                        @if (session('error'))
+                            <x-layouts.alerta>
+                                {{ session('error')  }}
                             </x-layouts.alerta>
                         @endif
 

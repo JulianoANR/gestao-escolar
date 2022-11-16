@@ -10,14 +10,12 @@
             </h1>
 
             <x-layouts.breadcrumb :path="[
-                'Diario' => route('salas.index'),
+                'Atividades da Turma' => route('salas.index'),
             ]"/>
         </div>
     </div>
     <section class="w-full min-h-full px-4 md:px-6">
         <div class="w-full h-full flex flex-wrap justify-center bg-body rounded-sm">
-
-
             <div class="card">
                 <div class="card-header">
                     {{ 'Lista de Atividades' }}
@@ -28,25 +26,25 @@
                     <table id="table_id" class="stripe hover display">
                         <thead>
                             <tr>
-                                <th>Data</th>
-                                <th>Aula</th>
-                                <th>Bim</th>
-                                <th>Disciplina</th>
-                                <th>Habilidade</th>
-                                <th>Professor</th>
-                                <th>Opções</th>
+                                <td>Data</th>
+                                <td>Aula</th>
+                                <td>Bim</th>
+                                <td>Disciplina</th>
+                                <td>Professor</th>
+                                <td>Opções</th>
                             </tr>
                         </thead>
                         <tbody>
+                            @foreach ($atividades as $atividade)
                             <tr>
-                                <td>1</td>
-                                <td>Jonny</td>
-                                <td>27</td>
-                                <td>Stockholm</td>
-                                <td>Jonny</td>
-                                <td>27</td>
-                                <td>Stockholm</td>
+                                <td class="my-auto">{{ $atividade->data }}</td>
+                                <td class="my-auto">{{ $atividade->titulo }}</td>
+                                <td class="my-auto">{{ $atividade->bimestre }}</td>
+                                <td class="my-auto">{{ $atividade->disciplina->descricao }}</td>
+                                <td class="my-auto">{{ $atividade->user->name }}</td>
+                                <td class="my-auto"><a href="{{ route('atividades.show', $atividade->id) }}" class="button button-sm button-primary-outline">Visualizar</button></td>
                             </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>

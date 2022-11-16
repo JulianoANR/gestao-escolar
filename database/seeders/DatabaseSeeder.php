@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             UsersSeeder::class,
             DisciplinaSeeder::class,
             SalasSeeder::class,
+            TipoProgramada::class,
         ]);
     }
 }

@@ -4,18 +4,17 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Disciplina extends Model
+class TipoProgramada extends Model
 {
     use HasFactory;
-    use SoftDeletes;
+
+    protected $table = 'tipo_programada';
 
     protected $fillable = [
         'descricao',
-        'sigla',
-        'cod',
     ];
+
 
     // Relationships
 

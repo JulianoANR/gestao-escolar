@@ -32,8 +32,13 @@ class Sala extends Model
         return $this->belongsToMany(User::class);
     }
 
+    public function salas(){
+        return $this->hasMany(Disciplina::class);
+    }
+
 
     // Accessors
+
 
     public function getEscolaName(){
         return $this->escola->nome;
@@ -42,5 +47,6 @@ class Sala extends Model
     public function formatDisciplina($disciplina) {
         return Disciplina::where('id', $disciplina)->first()->descricao;
     }
+
 
 }
