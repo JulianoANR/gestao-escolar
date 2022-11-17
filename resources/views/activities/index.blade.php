@@ -37,12 +37,12 @@
                         <tbody>
                             @foreach ($atividades as $atividade)
                             <tr>
-                                <td class="my-auto">{{ $atividade->data }}</td>
-                                <td class="my-auto">{{ $atividade->titulo }}</td>
-                                <td class="my-auto">{{ $atividade->bimestre }}</td>
-                                <td class="my-auto">{{ $atividade->disciplina->descricao }}</td>
-                                <td class="my-auto">{{ $atividade->user->name }}</td>
-                                <td class="my-auto"><a href="{{ route('atividades.show', $atividade->id) }}" class="button button-sm button-primary-outline">Visualizar</button></td>
+                                <td class="">{{ date('d/m/Y', strtotime($atividade->data)) }}</td>
+                                <td class="">{{ $atividade->titulo }}</td>
+                                <td class="">{{ $atividade->bimestre }}</td>
+                                <td class="">{{ $atividade->disciplina->descricao }}</td>
+                                <td class="">{{ $atividade->user->name }}</td>
+                                <td class=""><a href="{{ route('atividades.show', $atividade->id) }}" class="button button-sm button-primary-outline">Visualizar</button></td>
                             </tr>
                             @endforeach
                         </tbody>

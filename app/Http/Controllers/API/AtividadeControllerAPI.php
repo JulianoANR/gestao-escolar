@@ -14,11 +14,12 @@ class AtividadeControllerAPI extends Controller
     {
         $atividade = Atividade::findOrFail($request->id);
 
-        UpdateActivitiesService::handle($request, $atividade);
+        $atividade = UpdateActivitiesService::handle($request, $atividade);
 
         return response()->json([
             'success' => true,
             'message' => 'Atividade atualizada com sucesso!',
+            'atividade' => $atividade
         ], 200);
     }
 }

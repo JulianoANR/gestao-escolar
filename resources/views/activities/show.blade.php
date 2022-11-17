@@ -3,7 +3,7 @@
         <div class="flex flex-wrap gap-2 justify-between items-center">
             <h1 class="text-xl font-semibold text-gray-400 dark:text-white">
                 {{-- TODO FAZER UM MODAL DE ESCOLHA DE TURMA --}}
-                Atividade: {{ $atividade->titulo }}
+                Atividade: <span class="titulo-atividade">{{ $atividade->titulo }}</span>
                 <span class="badge text-base">
                     {{ $sala->turma }} - {{ $sala->formatDisciplina($sala->pivot->disciplina_id) }}
                 </span>
@@ -20,7 +20,7 @@
         <x-card class="m-6">
             <x-slot name="header" class="flex justify-between">
                 <h1 class="text-center">
-                    <span class="font-bold">Informações da Atividade: </span>{{ $atividade->titulo }}
+                    <span class="font-bold">Informações da Atividade: </span><span class="titulo-atividade">{{ $atividade->titulo }}</span>
                 </h1>
 
                 <div>
@@ -76,16 +76,25 @@
                 <div class="flex flex-col mt-4 @if($atividade->programada != 1) hidden @endif">
                     <x-label for="tipo_programada" value="Tipo Programada: " class="mt-0"/>
                     <select name="tipo_programada" id="tipo_programada" class="input input-sm" disabled>
-                        <option value="{{ $atividade->tipo_programada_id }}" id="tipo_programada_selected">{{ $atividade->tipo_programada->descricao }}</option>
+                        <option value="{{ $atividade->tipo_programada_id ?? '' }}" id="tipo_programada_selected">{{ $atividade->tipo_programada->descricao ?? '' }}</option>
                         @foreach ($tipos_programada as $tipo_programada)
-                            <option value="{{ $tipo_programada->id }} @if($tipo_programada->id == $atividade->tipo_programada_id) selected @endif">{{ $tipo_programada->descricao }}</option>
+                            <option value="{{ $tipo_programada->id  ?? ''}} @if($tipo_programada->id == $atividade->tipo_programada_id) selected @endif">{{ $tipo_programada->descricao  ?? ''}}</option>
                         @endforeach
                     </select>
                 </div>
 
                 <div class="flex flex-col mt-4">
                     <x-label for="descricao" value="Habilidades da Atividade: " class="mt-0"/>
-                    <x-textarea id="descricao" name="descricao" value='(ATIVIDADE PROGRAMADA): {{ $atividade->tipo_programada->descricao }}' disabled />
+                    @if ($atividade->programada == 1)
+                        <x-textarea id="descricao" name="descricao" value='(ATIVIDADE PROGRAMADA): {{ $atividade->tipo_programada->descricao }}' disabled />
+                    @else
+                        <x-textarea id="descricao" name="descricao" disabled />
+                    @endif
+                </div>
+
+                <div class="flex flex-col w-full">
+                    <x-label for="observacao" value="Observacão: " />
+                    <x-textarea id="observacao" name="observacao" rows="2" cols="30"/>
                 </div>
 
             </x-slot>
@@ -115,6 +124,10 @@
                 });
             }
 
+            function changeTitle(atividade){
+                $('.titulo-atividade').text(atividade);
+            }
+
             function setTipoProgramadaValueInDescription(){
                 let tipo_programada = document.getElementById('tipo_programada');
                 let descricao = document.getElementById('descricao');
@@ -141,6 +154,7 @@
                     $('#aula').removeAttr('disabled');
                     $('#bimestre').removeAttr('disabled');
                     $('#tipo_programada').removeAttr('disabled');
+                    $('#observacao').removeAttr('disabled');
                 });
 
                 $('#cancel-button').click(function(){
@@ -151,6 +165,7 @@
                     $('#cancel-button').addClass('hidden');
                     $('#save-button').addClass('hidden');
                     $('#tipo_programada_selected').removeClass('hidden');
+
                     // Desabilita os campos de edição.
 
                     $('#titulo').attr('disabled', true);
@@ -160,6 +175,7 @@
                     $('#programada').attr('disabled', true);
                     $('#tipo_programada').attr('disabled', true);
                     $('#habilidades').attr('disabled', true);
+                    $('#observacao').attr('disabled', true);
 
                     // Adiciona os valores antigos nos campos.
 
@@ -170,6 +186,11 @@
                     $('#programada').val('{{ $atividade->programada }}');
                     $('#tipo_programada').val('{{ $atividade->tipo_programada->id ?? '' }}');
                     $('#descricao').val('(ATIVIDADE PROGRAMADA): {{ $atividade->tipo_programada->descricao ?? '' }}');
+                    $('#observacao').val('{{ $atividade->observacao }}');
+                });
+
+                $('#tipo_programada').change(function(){
+                    setTipoProgramadaValueInDescription();
                 });
 
                 $('#save-button').click(function(){
@@ -186,16 +207,33 @@
                             data: $('#data').val(),
                             aula: $('#aula').val(),
                             tipo_programada_id: $('#tipo_programada').val(),
+                            observacao: $('#observacao').val(),
                         },
 
                         success: function(response){
                             console.log(response);
+                            changeTitle(response.atividade.titulo);
                         },
                     })
+
+                    // Esconde os botões da visualização do usuario.
+
+                    $('#edit-button').removeClass('hidden');
+                    $('#cancel-button').addClass('hidden');
+                    $('#save-button').addClass('hidden');
+                    $('#tipo_programada_selected').removeClass('hidden');
+
+                    // Desabilita os campos de edição.
+
+                    $('#titulo').attr('disabled', true);
+                    $('#disciplina').attr('disabled', true);
+                    $('#data').attr('disabled', true);
+                    $('#aula').attr('disabled', true);
+                    $('#programada').attr('disabled', true);
+                    $('#tipo_programada').attr('disabled', true);
+                    $('#habilidades').attr('disabled', true);
+                    $('#observacao').attr('disabled', true);
                 })
-                $('#tipo_programada').change(function(){
-                    setTipoProgramadaValueInDescription();
-                });
             });
         </script>
     @endpush

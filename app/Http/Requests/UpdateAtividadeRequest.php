@@ -28,7 +28,8 @@ class UpdateAtividadeRequest extends FormRequest
             'titulo' => 'string|max:100',
             'data' => 'date',
             'aula' => 'integer',
-            'tipo_programada_id' => 'integer'
+            'conteudo' => 'string',
+            'tipo_programada_id' => 'nullable|integer'
         ];
     }
 }
