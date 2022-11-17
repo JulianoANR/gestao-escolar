@@ -20,7 +20,7 @@ class GetSelectedClassroom{
         if(session('classroom') != null){
             return session('classroom');
         }
-        return $user->salas()->first();
+        return $user->salas()->withPivot('disciplina_id')->first();
     }
 
 }

@@ -13,7 +13,7 @@ class StoreAtividadeRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,15 @@ class StoreAtividadeRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'data' => 'required|date',
+            'titulo' => 'required|string|max:100',
+            'disciplina' => 'required|integer',
+            'peso_atividade' => 'required|integer',
+            'programada' => 'required',
+            'tipo_programada' => 'required_if:programada,==,1',
+            'bimestre' => 'required|integer',
+            'observacao' => 'nullable|string',
         ];
     }
+
 }

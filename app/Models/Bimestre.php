@@ -6,21 +6,21 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Disciplina extends Model
+class Bimestre extends Model
 {
     use HasFactory;
     use SoftDeletes;
 
     protected $fillable = [
+        'sed_id',
         'descricao',
-        'sigla',
-        'cod',
     ];
 
-    // Relationships
+    protected $hidden = [
+        'created_at',
+        'updated_at',
+        'deleted_at',
+    ];
 
-    public function atividades(){
-        return $this->hasMany(Atividade::class);
-    }
-
+    
 }

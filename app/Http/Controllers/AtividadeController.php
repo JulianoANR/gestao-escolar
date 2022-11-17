@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\Atividade;
-use App\Models\Disciplina;
-use Illuminate\Http\Request;
+use App\Enums\BimestresEnum;
 use Illuminate\Support\Facades\Auth;
-use App\Services\Salas\GetSelectedClassroom;
 use App\Services\Salas\GetUserDisciplines;
+use App\Http\Requests\StoreAtividadeRequest;
+use App\Models\TipoProgramada;
+use App\Services\Salas\GetSelectedClassroom;
+use App\Services\Atividade\CRUD\CreateActivitiesService;
+use App\Services\Atividade\GetClassroomActivities;
 
 class AtividadeController extends Controller
 {
@@ -18,8 +21,9 @@ class AtividadeController extends Controller
     public function index(){
         $user = Auth::user();
         $sala = GetSelectedClassroom::handle($user);
-
-        return view('activities.index', compact('sala'));
+        $atividades = GetClassroomActivities::handle($user, $sala);
+        
+        return view('activities.index', compact('user', 'sala', 'atividades'));
     }
 
     /**
@@ -27,15 +31,31 @@ class AtividadeController extends Controller
      *
      */
     public function create(){
-        $user        = Auth::user();
-        $sala        = GetSelectedClassroom::handle($user);
+        $user = Auth::user();
+        $bimestres = BimestresEnum::getString();
+        $sala = GetSelectedClassroom::handle($user);
         $disciplinas = GetUserDisciplines::handle($user);
+        $tipos_programada = TipoProgramada::all();
+        
+        return view('activities.create', compact('user', 'sala', 'disciplinas', 'bimestres', 'tipos_programada'));
+    }
 
-        return view('activities.create', compact('user', 'sala', 'disciplinas'));
+    public function store(StoreAtividadeRequest $request){
+
+        $user = Auth::user();
+        $sala = GetSelectedClassroom::handle($user);
+        $atividade = CreateActivitiesService::handle($request, $user, $sala);
+
+        session()->flash('success', 'Atividade: '.$atividade->titulo.' criada com sucesso!');
+        return redirect()->route('atividades.index');
     }
 
     public function show(Atividade $atividade){
-        return view('activities.show', compact('atividade'));
+        $user = Auth::user();
+        $sala = GetSelectedClassroom::handle($user);
+        $tipos_programada = TipoProgramada::all();
+
+        return view('activities.show', compact( 'user', 'sala', 'atividade', 'tipos_programada'));
     }
 
 }
