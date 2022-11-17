@@ -12,7 +12,7 @@ class AtividadeControllerAPI extends Controller
 {
     public function update(UpdateAtividadeRequest $request)
     {
-        $atividade = Atividade::findOrFail($request->id);
+        $atividade = Atividade::with('disciplina')->findOrFail($request->id);
 
         $atividade = UpdateActivitiesService::handle($request, $atividade);
 
