@@ -41,5 +41,17 @@ class UsersSeeder extends Seeder
             'password' => Hash::make('admin'),
             'observacao' => 'Gênio',
         ]);
+        $user = User::create([
+            'name' => 'Admin Seduc',
+            'rg' => '57.050.766-9',
+            'digito' => '9',
+            'cpf' => '010.092.695-93',
+            'matricula' => '18698',
+            'data_nascimento' => '1983-04-11',
+            'email' => 'admin@admin.com',
+            'cargo_id' => 1,
+            'password' => Hash::make('Atividade1!'),
+            'observacao' => 'obs',
+        ]);
     }
 }
