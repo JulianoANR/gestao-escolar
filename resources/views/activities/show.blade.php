@@ -150,7 +150,7 @@
 
             $('document').ready(function(){
                 disableAllInputs();
-                console.log($('#observacao').val());
+                console.log($('#observacao').val()); 
                 // Cria uma variavel atividade que recebe os dados atuais da atividade vindo do AtividadeController.
                 var atividade = @json($atividade);
 

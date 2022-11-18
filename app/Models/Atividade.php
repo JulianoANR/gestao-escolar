@@ -50,4 +50,13 @@ class Atividade extends Model
         return $this->bimestre.'º Bimestre';
     }
 
+    public function formatQuantidadeAulas(){
+        if($this->peso_atividade == 1){
+            return 'Aula Única';
+        }
+        if($this->peso_atividade == 2){
+            return 'Aula Dupla';
+        }
+    }
+
 }

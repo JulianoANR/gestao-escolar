@@ -51,8 +51,6 @@
                                 <x-input type="date" name="data" id="data" class="input-sm w-full" />
                             </div>
 
-                            <hr>
-
                                 <div class="w-full flex flex-col md:flex-row md:space-x-2">
                                     <div class="w-full flex flex-col">
                                         <x-label for="peso_atividade" value="Quantidade de Aulas: "/>
@@ -87,16 +85,20 @@
                                     @endforeach
                                 </select>
                             </div>
+
                             <div class="flex flex-col w-full">
                                 <x-label for="descricao" value="Descrição da Atividade: " />
                                 <x-textarea id="descricao" name="descricao" rows="5" cols="30" disabled/>
+                            </div>
+
+                            <div class="flex flex-row w-full justify-end">
+                                <button type="button" class="button button-sm button-info" id="btnSalvar" type="button" data-modal-toggle="defaultModal">Selecionar Curriculos</button>
                             </div>
 
                             <div class="flex flex-col w-full">
                                 <x-label for="observacao" value="Observacão: " />
                                 <x-textarea id="observacao" name="observacao" rows="2" cols="30"/>
                             </div>
-
 
                             <div class="w-full mt-4 flex justify-end">
                                 <x-submit-btn class="button button-primary w-24">
@@ -109,6 +111,49 @@
             </form>
         </div>
     </section>
+
+    // Curriculos Modal
+
+    <div id="defaultModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 p-4 w-full md:inset-0 h-modal md:h-full">
+        <div class="relative w-full max-w-8xl h-full md:h-auto">
+            <!-- Modal content -->
+            <div class="relative bg-aside rounded-lg shadow">
+                <!-- Modal header -->
+                <div class="flex justify-between items-start p-4 rounded-t border-b">
+                    <h3 class="txt-title">
+                        Selecionar Curriculos
+                    </h3>
+                </div>
+                <!-- Modal body -->
+                <div class="p-6 space-y-6">
+                    <table width="100%" id="curriculos_table" class="stripe hover display">
+                        <thead>
+                            <tr>
+                                <td>Codigo</th>
+                                <td>Descricao</th>
+                                <td>Selecione</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>1</td>
+                                <td>ASDÇLASDÓASDÓI ASÓDIASÓID HASOÍD HASOÍD HAÓSID HAÓISDH AOSI DHAŚOID HAÓSIHD</td>
+                                <td><x-checkbox name="curriculos[]" /></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <!-- Modal footer -->
+                <div class="flex items-center justify-end p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
+                    <button data-modal-toggle="defaultModal" type="button" class="button button-success">Confimar Curriculos</button>
+                    <button data-modal-toggle="defaultModal" type="button" class="button button-danger">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
 
     @push('scripts')
         <script>
@@ -152,6 +197,15 @@
                         $('#tipo_programada').change(function(){
                             setTipoProgramadaValueInDescription();
                         });
+                });
+
+
+                // DataTables
+
+                $('#curriculos_table').DataTable({
+                    "language": {
+                        "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json",
+                    }
                 });
             });
         </script>
