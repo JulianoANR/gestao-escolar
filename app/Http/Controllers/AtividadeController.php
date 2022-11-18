@@ -22,6 +22,7 @@ class AtividadeController extends Controller
         $user = Auth::user();
         $sala = GetSelectedClassroom::handle($user);
         $atividades = GetClassroomActivities::handle($user, $sala);
+        
         return view('activities.index', compact('user', 'sala', 'atividades'));
     }
 
@@ -35,8 +36,7 @@ class AtividadeController extends Controller
         $sala = GetSelectedClassroom::handle($user);
         $disciplinas = GetUserDisciplines::handle($user);
         $tipos_programada = TipoProgramada::all();
-
-
+        
         return view('activities.create', compact('user', 'sala', 'disciplinas', 'bimestres', 'tipos_programada'));
     }
 
@@ -45,7 +45,6 @@ class AtividadeController extends Controller
         $user = Auth::user();
         $sala = GetSelectedClassroom::handle($user);
         $atividade = CreateActivitiesService::handle($request, $user, $sala);
-
 
         session()->flash('success', 'Atividade: '.$atividade->titulo.' criada com sucesso!');
         return redirect()->route('atividades.index');

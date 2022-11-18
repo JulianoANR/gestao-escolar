@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\{DB, Http};
 | Retorna os cies das escolas cadastradas no SED, com base na diretoria, rede de ensino e municipio.
 */
 
-class GetEscolasService extends SedAuthService
+class GetEscolaService extends SedAuthService
 {
     /**
      * Id do municipio
@@ -47,7 +47,7 @@ class GetEscolasService extends SedAuthService
      *
      * @return Illuminate\Support\Collection|null
      */
-    protected function getEscolas()
+    protected function getEscola()
     {
         $response = parent::get(
             route: SedRoutersEnum::GET_ESCOLAS->value,
@@ -68,8 +68,8 @@ class GetEscolasService extends SedAuthService
     public static function handle()
     {
 
-        $class = new GetEscolasService;
+        $class = new GetEscolaService;
 
-        return $class->getEscolas();
+        return $class->getEscola();
     }
 }
