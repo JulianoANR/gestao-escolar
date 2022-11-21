@@ -6,7 +6,7 @@ use App\Models\Disciplina;
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-class DisciplinaSeeder extends Seeder
+class DisciplinasSeeder extends Seeder
 {
     /**
      * Run the database seeds.

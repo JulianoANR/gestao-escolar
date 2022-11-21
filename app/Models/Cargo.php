@@ -10,11 +10,20 @@ class Cargo extends Model
     use HasFactory;
 
     protected $fillable = [
-        'descricao',
+        'title',
     ];
 
     public function users()
     {
         return $this->belongsToMany(User::class);
+    }
+    /**
+     * The roles that belong to the Cargo
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
+     */
+    public function permissions()
+    {
+        return $this->belongsToMany(Permission::class);
     }
 }
