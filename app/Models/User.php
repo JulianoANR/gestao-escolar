@@ -73,6 +73,10 @@ class User extends Authenticatable
         return $this->escolas()->with('salas')->get();
     }
 
+    public function getFirstName(){
+        return explode(' ', $this->name)[0];
+    }
+
     // Scopes
 
     public function scopeClassroomDisciplines($classroom_id){

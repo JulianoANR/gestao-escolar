@@ -10,9 +10,11 @@ class QueuesController extends Controller
 {
     public function sendMail(){
 
-        if(SendMailsJob::dispatch(Auth::user())){
-            return view('queue.send-mail');
-        }
-        return redirect()->route('dashboard')->with('success', 'Email enviado com sucesso!');
+
+        return view('queue.send-mail');
+        // if(SendMailsJob::dispatch(Auth::user())){
+        //     return view('queue.send-mail');
+        // }
+        // return redirect()->route('dashboard')->with('success', 'Email enviado com sucesso!');
     }
 }
