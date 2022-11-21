@@ -18,7 +18,6 @@
     </div>
     @push('scripts')
     <script>
-
         function activeCard() {
             const cards = document.querySelectorAll('.classroom-card');
             cards.forEach(card => {

@@ -42,7 +42,9 @@ Route::controller(AtividadeControllerAPI::class)->as('api.atividades.')->group(f
         // Crud Actions
         Route::post('/update', 'update')->name('update');
 
-        // Other Actions
+        // Another Actions
+
+        Route::get('/get-curriculos', 'getCurriculos')->name('get-curriculos');
 
     });
 });

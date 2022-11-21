@@ -30,6 +30,7 @@ class DatabaseSeeder extends Seeder
             DisciplinaSeeder::class,
             SalasSeeder::class,
             TipoProgramada::class,
+            CurriculosTableSeeder::class
         ]);
     }
 }

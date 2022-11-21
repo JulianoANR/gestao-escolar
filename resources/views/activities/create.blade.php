@@ -126,6 +126,9 @@
                 </div>
                 <!-- Modal body -->
                 <div class="p-6 space-y-6">
+                    <x-textarea id="curriculos" name="curriculos" rows="3" cols="20" disabled/>
+                </div>
+                <div class="p-6 space-y-6">
                     <table width="100%" id="curriculos_table" class="stripe hover display">
                         <thead>
                             <tr>
@@ -138,7 +141,7 @@
                             <tr>
                                 <td>1</td>
                                 <td>ASDÇLASDÓASDÓI ASÓDIASÓID HASOÍD HASOÍD HAÓSID HAÓISDH AOSI DHAŚOID HAÓSIHD</td>
-                                <td><x-checkbox name="curriculos[]" /></td>
+                                <td><x-checkbox name="curriculos[]" class="curriculo" data-curriculo-id="1"/></td>
                             </tr>
                         </tbody>
                     </table>
@@ -191,6 +194,8 @@
             }
 
             $(document).ready(function(){
+
+
                 $('#programada').change(function(){
                     unlockAtividadeProgramadaField();
                     clearDescriptionField();
@@ -202,12 +207,56 @@
 
                 // DataTables
 
-                $('#curriculos_table').DataTable({
-                    "language": {
-                        "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json",
-                    }
+                // $('#curriculos_table').DataTable({
+                //     "language": {
+                //         "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json",
+                //     }
+                // });
+
+                $('.curriculo').change(function(){
+                    let curriculos = [];
+                    $('.curriculo:checked').each(function(){
+                        curriculos.push($(this).data('curriculo-id'));
+                    });
+                    $('#curriculos').val(curriculos);
                 });
+
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        }
+                    });
+
+                    $.get({
+                            url: "{{ route('api.atividades.get-curriculos') }}",
+                            success: function (data) {
+                                console.log(data.curriculos);
+                                let curriculos = data.curriculos;
+                                    let curriculos_table = $('#curriculos_table').DataTable({
+                                        "language": {
+                                            "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json",
+                                        },
+
+                                        pageLength: 5,
+                                    });
+                                    curriculos_table.clear();
+                                    curriculos.forEach(curriculo => {
+                                        curriculos_table.row.add([
+                                            curriculo.id,
+                                            curriculo.descricao,
+                                            `<input type="checkbox" class="curriculo" data-curriculo-id="${curriculo.id}">`
+                                        ]).draw();
+                                    });
+                            }
+                    });
+
+
             });
+
+            // Toda a configuração do Script do Modal está no arquivo modal.js em public
         </script>
+
+
+        <script src="/js/atividade/create.js"></script>
     @endpush
 </x-app-layout>

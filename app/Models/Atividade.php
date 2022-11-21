@@ -44,6 +44,10 @@ class Atividade extends Model
         return $this->belongsTo(TipoProgramada::class);
     }
 
+    public function curriculos(){
+        return $this->belongsToMany(Curriculo::class);
+    }
+    
     // Accessors
 
     public function formatBimestre(){
