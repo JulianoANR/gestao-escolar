@@ -24,12 +24,18 @@ class DatabaseSeeder extends Seeder
 
         $this->call([
             CargosSeeder::class,
+            UsersSeeder::class,
+            PermissionsSeeder::class,
             BimestresSeeder::class,
             EscolasSeeder::class,
-            UsersSeeder::class,
-            DisciplinaSeeder::class,
             SalasSeeder::class,
-            TipoProgramada::class,
+            DisciplinasSeeder::class,
+
+            TipoProgramadaSeeder::class,
+            CargoPermissionSeeder::class,
+            CargoUserSeeder::class,
+            EscolaUserSeeder::class,
+            SalaUserSeeder::class,
         ]);
     }
 }
