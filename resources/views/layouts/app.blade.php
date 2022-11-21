@@ -25,6 +25,9 @@
         <link rel="stylesheet" href="{{ asset('assets/pace/minimal.css') }}">
         <script src="{{ asset('assets/pace/pace.min.js') }}"></script>
 
+        <!-- Flowbite -->
+        <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.4/dist/flowbite.min.css" />
+
         {{-- Icon --}}
         <link rel="shortcut icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
 
@@ -86,7 +89,7 @@
                 <div class="grow flex flex-col bg-body xl:ml-72">
 
                     <main class="grow pb-12">
-                        
+
                         {{-- Alertas --}}
                         @if (session('success'))
                             <x-layouts.alerta classe="green">
@@ -195,6 +198,9 @@
         <script src="{{ asset('js/jquery-3.6.0.min.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
         <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.0/js/jquery.dataTables.js"></script>
+
+        <!-- Flowbite -->
+        <script src="https://unpkg.com/flowbite@1.5.4/dist/flowbite.js"></script>
 
         @stack('scripts')
 

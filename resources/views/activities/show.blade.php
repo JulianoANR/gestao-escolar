@@ -117,6 +117,8 @@
 
 
         <script>
+            // Reforça a desabilitação dos campos de edição.
+
             function disableAllInputs(){
                 let inputs = document.querySelectorAll('input, select, textarea');
                 inputs.forEach(input => {
@@ -124,9 +126,13 @@
                 });
             }
 
+            // Função que recebe o nome da atividade e faz a troca do titulo da atividade presente na página
+
             function changeTitle(atividade){
                 $('.titulo-atividade').text(atividade);
             }
+
+            // Função que aplica o na descrição da atividade o tipo de atividade programada.
 
             function setTipoProgramadaValueInDescription(){
                 let tipo_programada = document.getElementById('tipo_programada');
@@ -140,10 +146,16 @@
                 }
             }
 
+            // Codigo Main
 
             $('document').ready(function(){
                 disableAllInputs();
+                console.log($('#observacao').val()); 
+                // Cria uma variavel atividade que recebe os dados atuais da atividade vindo do AtividadeController.
+                var atividade = @json($atividade);
+
                 $('#edit-button').click(function(){
+                    console.log(atividade);
                     $('#edit-button').addClass('hidden');
                     $('#cancel-button').removeClass('hidden');
                     $('#save-button').removeClass('hidden');
@@ -179,14 +191,14 @@
 
                     // Adiciona os valores antigos nos campos.
 
-                    $('#titulo').val('{{ $atividade->titulo }}');
-                    $('#disciplina').val('{{ $atividade->disciplina->descricao }}');
-                    $('#data').val('{{ $atividade->data }}');
-                    $('#aula').val('{{ $atividade->peso_atividade }}');
-                    $('#programada').val('{{ $atividade->programada }}');
-                    $('#tipo_programada').val('{{ $atividade->tipo_programada->id ?? '' }}');
-                    $('#descricao').val('(ATIVIDADE PROGRAMADA): {{ $atividade->tipo_programada->descricao ?? '' }}');
-                    $('#observacao').val('{{ $atividade->observacao }}');
+                    $('#titulo').val(atividade.titulo);
+                    $('#disciplina').val(atividade.disciplina.descricao);
+                    $('#data').val(atividade.data);
+                    $('#aula').val(atividade.peso_atividade);
+                    $('#programada').val(atividade.programada);
+                    $('#tipo_programada').val(atividade.tipo_programada_id != null ? atividade.tipo_programada_id : '');
+                    $('#descricao').val(setTipoProgramadaValueInDescription());
+                    $('#observacao').val(atividade.observacao);
                 });
 
                 $('#tipo_programada').change(function(){
@@ -211,9 +223,12 @@
                         },
 
                         success: function(response){
-                            console.log(response);
+                            // Salva na variavel atividade criada no inicio do codigo os dados atualizados da atividade.
+                            atividade = response.atividade;
+                            // Faz a troca do titulo da atividade na página.
                             changeTitle(response.atividade.titulo);
                         },
+
                     })
 
                     // Esconde os botões da visualização do usuario.
