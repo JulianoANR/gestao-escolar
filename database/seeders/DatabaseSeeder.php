@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
             EscolasSeeder::class,
             SalasSeeder::class,
             DisciplinasSeeder::class,
-            CurriculosTableSeeder::class
+            CurriculosTableSeeder::class,
 
             TipoProgramadaSeeder::class,
             CargoPermissionSeeder::class,

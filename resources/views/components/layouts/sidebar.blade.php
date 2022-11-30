@@ -30,24 +30,260 @@
             <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
                         dark:hover:bg-white/10 dark:focus:bg-white/20" href="#">
 
-                <x-icon name="mail-open-outline" library="ion-icon"></x-icon>
-                Inbox
+                <x-icon name="edit_calendar" library="material-icon"></x-icon>
+                Atividades
             </a>
             <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
-                        dark:hover:bg-white/10 dark:focus:bg-white/20" href="{{ route('users.index') }}">
+                        dark:hover:bg-white/10 dark:focus:bg-white/20" href="#">
 
-                <x-icon name="people-outline" library="ion-icon"></x-icon>
-                Usuários
+                <x-icon name="assignment" library="material-icon"></x-icon>
+                Avaliações
             </a>
-
             <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
                         dark:hover:bg-white/10 dark:focus:bg-white/20" href="{{ route('atividades.index') }}">
 
-                <x-icon name="book-outline" library="ion-icon"></x-icon>
-                Atividade
+                <x-icon name="clinical_notes" library="material-icon"></x-icon>
+                Diários
             </a>
 
             <div>
+                <button class="flex items-center gap-x-3 relative py-2 px-3 w-full text-current cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                                dark:hover:bg-white/10 dark:focus:bg-white/20" data-trigger="collapse">
+
+                    <x-icon name="duplicate-outline" library="ion-icon"></x-icon>
+
+                    <span class="grow flex justify-between items-center">
+                        {{ __('Cadastrar') }}
+                        <x-icon class="h-5 w-5 text-xl" name="chevron-down" library="ion-icon"></x-icon>
+                    </span>
+                </button>
+
+                <div class="is-collapsed collapsible mt-2 space-y-1">
+                    <!---->
+                    <!---->
+                    <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                        dark:hover:bg-white/10 dark:focus:bg-white/20" href="{{ route('users.index') }}">
+                        <div class="ml-6 flex flex-row space-x-3 items-center">
+                            <x-icon name="add_reaction" library="material-icon" ></x-icon>
+                            <p>Aluno</p>
+                        </div>
+                    </a>
+                    <!---->
+                    <!---->
+                    <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                        dark:hover:bg-white/10 dark:focus:bg-white/20" href="{{ route('users.index') }}">
+                        <div class="ml-6 flex flex-row space-x-3 items-center">
+                            <x-icon name="person_add" library="material-icon" ></x-icon>
+                            <p>Funcionário</p>
+                        </div>
+                    </a>
+                    <!---->
+                    <!---->
+                    <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                        dark:hover:bg-white/10 dark:focus:bg-white/20" href="{{ route('users.index') }}">
+                        <div class="ml-6 flex flex-row space-x-3 items-center">
+                            <x-icon name="add_home_work" library="material-icon" ></x-icon>
+                            <p>Sala</p>
+                        </div>
+                    </a>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div>
+                <button class="flex items-center gap-x-3 relative py-2 px-3 w-full text-current cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                                dark:hover:bg-white/10 dark:focus:bg-white/20" data-trigger="collapse">
+
+                    <x-icon name="layers-outline" library="ion-icon"></x-icon>
+
+                    <span class="grow flex justify-between items-center">
+                        {{ __('Gerenciar') }}
+                        <x-icon class="h-5 w-5 text-xl" name="chevron-down" library="ion-icon"></x-icon>
+                    </span>
+                </button>
+
+                <div class="is-collapsed collapsible mt-2 space-y-1">
+                    <!---->
+                    <!---->
+                    <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                        dark:hover:bg-white/10 dark:focus:bg-white/20" href="{{ route('users.index') }}">
+                        <div class="ml-6 flex flex-row space-x-3 items-center">
+                            <x-icon name="child_care" library="material-icon" ></x-icon>
+                            <p>Aluno</p>
+                        </div>
+                    </a>
+                    <!---->
+                    <!---->
+                    <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                        dark:hover:bg-white/10 dark:focus:bg-white/20" href="{{ route('users.index') }}">
+                        <div class="ml-6 flex flex-row space-x-3 items-center">
+                            <x-icon name="library-outline" library="ion-icon" ></x-icon>
+                            <p>Disciplina</p>
+                        </div>
+                    </a>
+                    <!---->
+                    <!---->
+                    <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                        dark:hover:bg-white/10 dark:focus:bg-white/20" href="{{ route('users.index') }}">
+                        <div class="ml-6 flex flex-row space-x-3 items-center">
+                            <x-icon name="home_work" library="material-icon" ></x-icon>
+                            <p>Escola</p>
+                        </div>
+                    </a>
+                    <!---->
+                    <!---->
+                    <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                        dark:hover:bg-white/10 dark:focus:bg-white/20" href="{{ route('users.index') }}">
+                        <div class="ml-6 flex flex-row space-x-3 items-center">
+                            <x-icon name="manage_accounts" library="material-icon" ></x-icon>
+                            <p>Funcionário</p>
+                        </div>
+                    </a>
+                    <!---->
+                    <!---->
+                    <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                        dark:hover:bg-white/10 dark:focus:bg-white/20" href="{{ route('users.index') }}">
+                        <div class="ml-6 flex flex-row space-x-3 items-center">
+                            <x-icon name="location_away" library="material-icon" ></x-icon>
+                            <p>Sala</p>
+                        </div>
+                    </a>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div>
+                <button class="flex items-center gap-x-3 relative py-2 px-3 w-full text-current cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                                dark:hover:bg-white/10 dark:focus:bg-white/20" data-trigger="collapse">
+
+                    <x-icon name="folder_open" library="material-icon"></x-icon>
+
+                    <span class="grow flex justify-between items-center">
+                        {{ __('Documentos') }}
+                        <x-icon class="h-5 w-5 text-xl" name="chevron-down" library="ion-icon"></x-icon>
+                    </span>
+                </button>
+
+                <div class="is-collapsed collapsible mt-2 space-y-1">
+                    <!---->
+                    <!---->
+                    <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                        dark:hover:bg-white/10 dark:focus:bg-white/20" href="{{ route('users.index') }}">
+                        <div class="ml-6 flex flex-row space-x-3 items-center">
+                            <x-icon name="multiple_stop" library="material-icon" ></x-icon>
+                            <p>Transferência</p>
+                        </div>
+                    </a>
+                    <!---->
+                    <!---->
+                    <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                        dark:hover:bg-white/10 dark:focus:bg-white/20" href="{{ route('users.index') }}">
+                        <div class="ml-6 flex flex-row space-x-3 items-center">
+                            <x-icon name="co_present" library="material-icon" ></x-icon>
+                            <p>Vaga</p>
+                        </div>
+                    </a>
+                    <!---->
+                    <!---->
+                    <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                        dark:hover:bg-white/10 dark:focus:bg-white/20" href="{{ route('users.index') }}">
+                        <div class="ml-6 flex flex-row space-x-3 items-center">
+                            <x-icon name="cancel_presentation" library="material-icon" ></x-icon>
+                            <p>Indisponibilidade</p>
+                        </div>
+                    </a>
+                    <!---->
+                    <!---->
+                    <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                        dark:hover:bg-white/10 dark:focus:bg-white/20" href="{{ route('users.index') }}">
+                        <div class="ml-6 flex flex-row space-x-3 items-center">
+                            <x-icon name="how_to_reg" library="material-icon" ></x-icon>
+                            <p>Comparecimento</p>
+                        </div>
+                    </a>
+                    <!---->
+                    <!---->
+                    <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                        dark:hover:bg-white/10 dark:focus:bg-white/20" href="{{ route('users.index') }}">
+                        <div class="ml-6 flex flex-row space-x-3 items-center">
+                            <x-icon name="recent_actors" library="material-icon" ></x-icon>
+                            <p>Matrícula</p>
+                        </div>
+                    </a>
+                    <!---->
+                    <!---->
+                    <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                        dark:hover:bg-white/10 dark:focus:bg-white/20" href="{{ route('users.index') }}">
+                        <div class="ml-6 flex flex-row space-x-3 items-center">
+                            <x-icon name="library_books" library="material-icon" ></x-icon>
+                            <p>Conclusão</p>
+                        </div>
+                    </a>
+                    <!---->
+                    <!---->
+                </div>
+            </div>
+            <div>
+                <button class="flex items-center gap-x-3 relative py-2 px-3 w-full text-current cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                                dark:hover:bg-white/10 dark:focus:bg-white/20" data-trigger="collapse">
+
+                    <x-icon name="admin_panel_settings" library="material-icon"></x-icon>
+
+                    <span class="grow flex justify-between items-center">
+                        {{ __('Configurações') }}
+                        <x-icon class="h-5 w-5 text-xl" name="chevron-down" library="ion-icon"></x-icon>
+                    </span>
+                </button>
+
+                <div class="is-collapsed collapsible mt-2 space-y-1">
+                    <!---->
+                    <!---->
+                    <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                        dark:hover:bg-white/10 dark:focus:bg-white/20" href="{{ route('users.index') }}">
+                        <div class="ml-6 flex flex-row space-x-3 items-center">
+                            <x-icon name="groups" library="material-icon" ></x-icon>
+                            <p>Alunos</p>
+                        </div>
+                    </a>
+                    <!---->
+                    <!---->
+                    <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                        dark:hover:bg-white/10 dark:focus:bg-white/20" href="{{ route('users.index') }}">
+                        <div class="ml-6 flex flex-row space-x-3 items-center">
+                            <x-icon name="description" library="material-icon" ></x-icon>
+                            <p>Notas</p>
+                        </div>
+                    </a>
+                    <!---->
+                    <!---->
+                    <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                        dark:hover:bg-white/10 dark:focus:bg-white/20" href="{{ route('users.index') }}">
+                        <div class="ml-6 flex flex-row space-x-3 items-center">
+                            <x-icon name="edit_calendar" library="material-icon" ></x-icon>
+                            <p>Atividades</p>
+                        </div>
+                    </a>
+                    <!---->
+                    <!---->
+                    <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                        dark:hover:bg-white/10 dark:focus:bg-white/20" href="{{ route('users.index') }}">
+                        <div class="ml-6 flex flex-row space-x-3 items-center">
+                            <x-icon name="list" library="material-icon" ></x-icon>
+                            <p>Logs</p>
+                        </div>
+                    </a>
+                    <!---->
+                    <!---->
+                    <a class="flex items-center gap-x-3 relative py-2 px-3 w-full cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
+                        dark:hover:bg-white/10 dark:focus:bg-white/20" href="{{ route('users.index') }}">
+                        <div class="ml-6 flex flex-row space-x-3 items-center">
+                            <x-icon name="home_work" library="material-icon" ></x-icon>
+                            <p>Escolas</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {{-- <div>
                 <button class="flex items-center gap-x-3 relative py-2 px-3 w-full text-current cursor-pointer rounded-sm transition hover:bg-white/10 focus:outline-none xl:hover:bg-gray-100 xl:focus:bg-gray-200
                                 dark:hover:bg-white/10 dark:focus:bg-white/20" data-trigger="collapse">
 
@@ -85,7 +321,7 @@
                         {{ __('layout.my-schools') }}
                     </a>
                 </div>
-            </div>
+            </div> --}}
         </div>
 
         {{-- <!-- Ui Elements -->
