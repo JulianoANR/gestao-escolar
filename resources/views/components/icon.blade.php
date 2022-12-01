@@ -14,4 +14,8 @@
         <i {{ $attributes->merge(['class' => "fa-solid fa-{$name}"]) }}></i>
     @break
 
+    @case('material-icon')
+        <div class="material-symbols-outlined">{{ $name }}</div>
+    @break
+
 @endswitch

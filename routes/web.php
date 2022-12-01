@@ -57,6 +57,13 @@ Route::controller(['auth'])->prefix('usuario')->group(function() {
 
     Route::get('/acoes', [UserController::class, 'logs'])
         ->name('user.logs');
+
+    // Route::get('/index', [UserController::class, 'index'])
+    //     ->name('user.index');
+    Route::resource('users',UserController::class);
+
+    Route::any('resetar-senha/{user}', [UserController::class,'resetarSenha'])
+        ->name('resetar-senha');
 });
 
 // API

@@ -3,11 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
+use App\Models\Cargo;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
+use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\StoreUserRequest;
 use App\Http\Requests\UpdateUserRequest;
 use App\Services\Users\UpdateUserService;
+use Symfony\Component\HttpFoundation\Response;
 
 class UserController extends Controller
 {
@@ -23,7 +27,10 @@ class UserController extends Controller
      */
     public function index()
     {
-        //
+        abort_if(Gate::denies('professor_access'), Response::HTTP_FORBIDDEN, 'Você não tem permissão para acessar esta página.');
+        $users = User::with('cargos')->get();
+
+        return view('users.index', compact('users'));
     }
 
     /**
@@ -33,7 +40,9 @@ class UserController extends Controller
      */
     public function create()
     {
-        //
+        $cargos = Cargo::pluck('title', 'id');
+
+        return view('users.create', compact('users'));
     }
 
     /**
@@ -44,7 +53,10 @@ class UserController extends Controller
      */
     public function store(StoreUserRequest $request)
     {
-        //
+        $user = User::crete($request->validated());
+        $user->cargos()->sync($request->input('cargos',[]));
+
+        return redirect()->route('users.index');
     }
 
     /**
@@ -91,7 +103,9 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
-        //
+        abort_if(Gate::denies('admin_access'), Response::HTTP_FORBIDDEN, 'Acesso não permitido!');
+        $user->delete();
+        return redirect()->route('users.index')->with('excluir.user', ''.$user->name);
     }
 
     /**
@@ -123,5 +137,17 @@ class UserController extends Controller
 
     public function systemLogs(User $user){
         return view('log.system-logs', compact('user'));
+    }
+    public function resetarSenha(User $user)
+    {
+        abort_if(Gate::denies('admin_access'), Response::HTTP_FORBIDDEN, 'Acesso não permitido!');
+
+        $password = 'Atividade1!';
+
+        $user->forceFill([
+            'password' => Hash::make($password)
+        ]);
+        $user->save();
+        return redirect()->route('users.index')->with('resetar.senha', ''.$user->name);
     }
 }

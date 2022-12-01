@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Support\Facades\Gate;
 
 class StoreUserRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class StoreUserRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return Gate::allows('gestor_access');
     }
 
     /**
@@ -24,7 +25,13 @@ class StoreUserRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'              => ['required','string',],
+            'email'             => ['required','unique:users,email,'],
+            'cargos.*'          => ['integer',],
+            'cargos'            => ['required','array',],
+            'matricula'         => ['nullable','integer', 'min:1000', 'max:50000', ],
+            'cpf'               => ['required', 'string',],
+            'data_nascimento'   => ['nullable', 'date'],
         ];
     }
 }

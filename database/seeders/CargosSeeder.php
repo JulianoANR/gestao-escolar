@@ -15,21 +15,30 @@ class CargosSeeder extends Seeder
      */
     public function run()
     {
-        Cargo::create([
-            'descricao' => 'Administrador',
-        ]);
 
-        Cargo::create([
-            'descricao' => 'Supervisor',
-        ]);
+        $cargos = [
+            [
+                'id' => 1,
+                'title' => 'Administrador',
+            ],
+            [
+                'id' => 2,
+                'title' => 'Supervisor',
+            ],
+            [
+                'id' => 3,
+                'title' => 'Gestor',
+            ],
+            [
+                'id' => 4,
+                'title' => 'Professor',
+            ],
+            [
+                'id' => 5,
+                'title' => 'Administrativo',
+            ],
+        ];
 
-        Cargo::create([
-            'descricao' => 'Gestor',
-        ]);
-
-        Cargo::create([
-            'descricao' => 'Professor',
-        ]);
-
+        Cargo::insert($cargos);
     }
 }
