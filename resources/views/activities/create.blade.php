@@ -88,11 +88,12 @@
 
                             <div class="flex flex-col w-full">
                                 <x-label for="descricao" value="Descrição da Atividade: " />
+                                <input type="hidden" id="curriculos-input" name="curriculos[]">
                                 <x-textarea id="descricao" name="descricao" rows="5" cols="30" disabled/>
                             </div>
 
                             <div class="flex flex-row w-full justify-end">
-                                <button type="button" class="button button-sm button-info" id="btnSalvar" type="button" data-modal-toggle="defaultModal">Selecionar Curriculos</button>
+                                <button type="button" class="button button-sm button-info" id="btnCurriculos" type="button" data-modal-toggle="defaultModal">Selecionar Curriculos</button>
                             </div>
 
                             <div class="flex flex-col w-full">
@@ -115,7 +116,7 @@
     // Curriculos Modal
 
     <div id="defaultModal" tabindex="-1" aria-hidden="true" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 p-4 w-full md:inset-0 h-modal md:h-full">
-        <div class="relative w-full max-w-8xl h-full md:h-auto">
+        <div class="relative w-full max-w-8xl h-full md:h-screen m-8">
             <!-- Modal content -->
             <div class="relative bg-aside rounded-lg shadow">
                 <!-- Modal header -->
@@ -126,37 +127,38 @@
                 </div>
                 <!-- Modal body -->
                 <div class="p-6 space-y-6">
-                    <x-textarea id="curriculos" name="curriculos" rows="3" cols="20" disabled/>
+                    <x-textarea id="selected-curriculos" name="curriculos" rows="3" cols="20" disabled/>
                 </div>
                 <div class="p-6 space-y-6">
                     <table width="100%" id="curriculos_table" class="stripe hover display">
                         <thead>
                             <tr>
+                                <td>Bimestre</th>
                                 <td>Codigo</th>
                                 <td>Descricao</th>
-                                <td>Selecione</td>
+                                <td>Obj. Conhecimento</th>
+                                <td>Ação</td>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>1</td>
-                                <td>ASDÇLASDÓASDÓI ASÓDIASÓID HASOÍD HASOÍD HAÓSID HAÓISDH AOSI DHAŚOID HAÓSIHD</td>
-                                <td><x-checkbox name="curriculos[]" class="curriculo" data-curriculo-id="1"/></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
                 <!-- Modal footer -->
                 <div class="flex items-center justify-end p-6 space-x-2 rounded-b border-t border-gray-200 dark:border-gray-600">
-                    <button data-modal-toggle="defaultModal" type="button" class="button button-success">Confimar Curriculos</button>
+                    <button data-modal-toggle="defaultModal" type="button" class="button button-success" id="confirm-curriculos">Confimar Curriculos</button>
                     <button data-modal-toggle="defaultModal" type="button" class="button button-danger">Cancelar</button>
                 </div>
             </div>
         </div>
     </div>
-
-
-
 
     @push('scripts')
         <script>
@@ -195,7 +197,6 @@
 
             $(document).ready(function(){
 
-
                 $('#programada').change(function(){
                     unlockAtividadeProgramadaField();
                     clearDescriptionField();
@@ -204,59 +205,73 @@
                         });
                 });
 
-
                 // DataTables
 
-                // $('#curriculos_table').DataTable({
-                //     "language": {
-                //         "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json",
-                //     }
-                // });
-
-                $('.curriculo').change(function(){
-                    let curriculos = [];
-                    $('.curriculo:checked').each(function(){
-                        curriculos.push($(this).data('curriculo-id'));
-                    });
-                    $('#curriculos').val(curriculos);
-                });
-
+                async function curriculosTable(){
                     $.ajaxSetup({
                         headers: {
                             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
                         }
                     });
-
-                    $.get({
+                    await $.get({
                             url: "{{ route('api.atividades.get-curriculos') }}",
                             success: function (data) {
-                                console.log(data.curriculos);
                                 let curriculos = data.curriculos;
-                                    let curriculos_table = $('#curriculos_table').DataTable({
-                                        "language": {
-                                            "url": "//cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json",
-                                        },
-
-                                        pageLength: 5,
-                                    });
-                                    curriculos_table.clear();
-                                    curriculos.forEach(curriculo => {
-                                        curriculos_table.row.add([
-                                            curriculo.id,
-                                            curriculo.descricao,
-                                            `<input type="checkbox" class="curriculo" data-curriculo-id="${curriculo.id}">`
-                                        ]).draw();
-                                    });
+                                let curriculos_table = $('#curriculos_table').DataTable({
+                                    "pageLength": 100,
+                                });
+                                curriculos_table.clear();
+                                curriculos.forEach(curriculo => {
+                                    curriculos_table.row.add([
+                                        curriculo.bimestre,
+                                        curriculo.codigo,
+                                        curriculo.descricao,
+                                        curriculo.objeto_conhecimento,
+                                        '<input type="checkbox" id="select-curriculo" class="select-curriculo checkbox" name="curriculos[]" value="'+curriculo.id+'" data-name="'+curriculo.codigo+' - '+curriculo.descricao+'">'
+                                    ]).draw();
+                                });
                             }
                     });
+                }
 
+                curriculosTable();
+                var global_curriculos = [];
 
+                $(document).on("change", ".select-curriculo", function(){
+                    var selectedId = [];
+                    var selectedDescription = [];
+                    var textarea = document.getElementById('selected-curriculos');
+                    var descricao = document.getElementById('descricao');
+                    $("#curriculos_table input[type=checkbox]:checked").each(function(){
+                        selectedDescription.push($(this).data('name'));
+                        selectedId.push($(this).val());
+                        global_curriculos.push($(this).val());
+                    });
+                    textarea.value = selectedDescription.join("\n");
+                });
+
+                $('#btnCurriculos').click(function(){
+                    global_curriculos = [];
+                    selected = [];
+                    document.getElementById('selected-curriculos').value = '';
+                    document.getElementById('descricao').value = '';
+                    $('#curriculos_table input[type=checkbox]').each(function(){
+                        $(this).prop('checked', false);
+                    });
+                });
+
+                function removeDuplicates(arr) {
+                    return arr.filter((item, index) => arr.indexOf(item) === index);
+                }
+
+                $('#confirm-curriculos').click(function(){
+                    const curriculos = removeDuplicates(global_curriculos);
+                    $('#curriculos-input').value = curriculos;
+                    document.getElementById('descricao') = curriculos.join("\n");
+                    console.log($('#curriculos-input'));
+                });
             });
-
-            // Toda a configuração do Script do Modal está no arquivo modal.js em public
         </script>
 
-
-        <script src="/js/atividade/create.js"></script>
     @endpush
 </x-app-layout>
